@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <title>会员注册 - 无极软件后台管理系统</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="http://www.58wuji.com/application/home/view/public/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://www.58wuji.com/application/home/view/public/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://www.58wuji.com/application/home/view/public/css/zhuce2.css" />
+    <style>
+        .right{
+            position: relative;
+        }
+    </style>
+    
+</head>
+
+<body class="login1">
+<h5 class="page-title">无极软件自助开卡系统</h5>
+<div class="page-form">
+    <form method="post" id="aform" autocomplete="off" class="form-horizontal" action="/register.html">
+        <!--<input type="hidden" id="geetest_challenge" name="geetest_challenge"    value="" />-->
+        <!--<input type="hidden" id="geetest_validate"  name="geetest_validate"     value="" />-->
+        <!--<input type="hidden" id="geetest_seccode"   name="geetest_seccode"      value="" />-->
+        <div class="form-body pal">
+            <div class="form-group">
+                            </div>
+            <div class="form-group">
+                <div class="input-icon right">
+                    <i class="fa fa-user"></i>
+                    <input id="user_account" name="name" type="text" placeholder="请输入登录账号" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-icon right">
+                    <i class="fa fa-lock"></i>
+                    <input id="user_passwd" name="pwd" type="password" placeholder="请输入登录密码" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-icon right">
+                    <i class="fa fa-mobile-phone"></i>
+                    <input id="user_mobile" name="tel" type="text" placeholder="手机号码(选填)" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <input id="user_verify" name="verify" type="text" placeholder="短信验证码" class="form-control"/>
+                    <span id="get_vcode" class="input-group-addon" id="basic-addon2">获取验证码</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="check_ok" checked/>
+                <small>我已同意《<a href="javascript:;" class="btn-link" id="reg-agreement">无极软件自助开卡平台服务隐私协议</a>》</small>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" id="login-btn">我要注册</button>
+                <a href="/login.html" class="btn btn-link text-danger pull-right">已有账号? 去登录</a>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal fade" id="reg-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document" style="width: 900px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title text-center">无极软件自助开卡平台服务以及隐私保护协议</h5>
+            </div>
+            <div class="modal-body" id="reg-body">
+                <div style="padding: 5px 30px;text-align: left;font-size: 12px;">
+                    <p>本协议是您与无极软件开放平台相关事宜所订立的契约，请您仔细阅读本注册协议，您点击“同意”后，本协议即构成对双方有约束力的法律文件。</p>
+                    <h6>第1条 用户注册</h6>
+                    <p>1、用户注册是指用户登录无极软件开放平台，按要求填写相关信息并确认同意本服务协议的过程。</p>
+                    <p>2、无极软件开放平台用户必须是具有完全民事行为能力的自然人。</p>
+                    <p>3、本产品一经售出，概不退款。</p>
+
+                    <h6>第2条 用户的帐号，密码和安全性</h6>
+                    <p>
+                        用户一旦注册成功，成为本站的合法用户。无极软件开放平台将对用户名和密码安全负全部责任，若是因个人行为造成的密码用户安全问题，本公司不负责任。此外，每个用户都要对以其用户名进行的所有活动和事件负全责。用户若发现任何非法使用用户帐号或存在安全漏洞的情况，请立即通告本站或者致电官网电话。</p>
+
+                    <h6>第3条 用户依法言行义务</h6>
+                    <p>本协议依据国家相关法律法规规章制定，用户同意严格遵守以下义务：</p>
+                    <p>
+                        （1）不得传输或发表：煽动抗拒、破坏宪法和法律、行政法规实施的言论，煽动颠覆国家政权，推翻社会主义制度的言论，煽动分裂国家、破坏国家统一的的言论，煽动民族仇恨、民族歧视、破坏民族团结的言论；</p>
+                    <p>（2）从中国大陆向境外传输资料信息时必须符合中国有关法规；</p>
+                    <p>（3）不得利用本站从事洗钱、窃取商业秘密、窃取个人信息等违法犯罪活动；</p>
+                    <p>（4）不得干扰本站的正常运转，不得侵入本站及国家计算机信息系统；</p>
+                    <p>（5）不得传输或发表任何违法犯罪的、骚扰性的、中伤他人的、辱骂性的、恐吓性的、伤害性的、庸俗的，淫秽的、不文明的等信息资料；</p>
+                    <p>（6）不得传输或发表损害国家社会公共利益和涉及国家安全的信息资料或言论；</p>
+                    <p>（7）不得教唆他人从事本条所禁止的行为；</p>
+                    <p>（8）不得利用在本站注册的账户进行牟利性经营活动；</p>
+                    <p>（9）不得发布任何侵犯他人著作权、商标权等知识产权或合法权利的内容；</p>
+                    <p>用户应不时关注并遵守本站不时公布或修改的各类合法规则规定。本站保有删除站内各类不符合法律政策或不真实的信息内容而无须通知用户的权利。
+                        若用户未遵守以上规定的，本站有权作出独立判断并采取暂停或关闭用户帐号等措施。用户须对自己在网上的言论和行为承担法律责任。</p>
+
+                    <h6>第4条 协议更新及用户关注义务</h6>
+                    <p>根据国家法律法规变化及网站运营需要，无极软件开放平台有权对本协议条款不时地进行修改，修改后的协议一旦被张贴在本站上即生效，并代替原来的协议。用户可随时登录查阅最新协议；
+                        用户有义务不时关注并阅读最新版的协议及网站公告。如用户不同意更新后的协议，可以且应立即停止接受网站依据本协议提供的服务；如用户继续使用本网站提供的服务的，即视为同意更新后的协议。无极软件开放平台建议您在使用本站之前阅读本协议及本站的公告。
+                        如果本协议中任何一条被视为废止、无效或因任何理由不可执行，该条应视为可分的且并不影响任何其余条款的有效性和可执行性。</p>
+
+                    <h6>第5条 法律管辖和适用</h6>
+                    <p>本协议的订立、执行和解释及争议的解决均应适用在中华人民共和国大陆地区适用之有效法律（但不包括其冲突法规则）。 <br>如发生本协议与适用之法律相抵触时，则这些条款将完全按法律规定重新解释，而其它有效条款继续有效。
+                        <br>如缔约方就本协议内容或其执行发生任何争议，双方应尽力友好协商解决；协商不成时，任何一方均可向有管辖权的中华人民共和国大陆地区法院提起诉讼。</p>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success btn-xs" data-dismiss="modal">同意</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="verify-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">发送验证码</h4>
+            </div>
+            <!-- <div class="modal-body">
+                <div style="padding: 5px 30px;line-height: 25px;text-align: center;">
+                    <div class="row">
+                        <div class="col-md-3" style="padding-left: 0;">
+                        </div>
+                        <div class="col-md-3" style="padding-left: 0;padding-right: 0">
+                            <form autocomplete="off">
+                                <input type="text" onfocus="this.type = 'password'" autocomplete="off"
+                                       disableautocomplete id="img_code" class="form-control" maxlength="4"
+                                       style="padding-left:5px;" placeholder="请输入验证码">
+                            </form>
+                        </div>
+                        <div class="col-md-3" style="width: 90px;padding-left: 0;line-height: 34px">
+                            <img src="picture/6298f90ea24940a99458a5f2c35d5414.gif"
+                                 onclick="this.src = $(this).attr('src') + '?' + Date.parse(new Date())"
+                                 data-src="http://pt.wujiruanjian.com/misc/verify" alt=""/>
+                        </div>
+                        <div class="col-md-3" style="padding-left: 0;">
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success btn-xs" id="btn_send_sms">确认</button>
+                <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear" id="right_nav">
+    <div class="down">
+        <ul>
+            <li class="p_b_color"><a class="a1" title="返回顶部" href="javascript:;"></a></li>
+            <li class="p_b_color"><a class="a3" title="联系客服" target="_blank"
+                                     href="http://wpa.qq.com/msgrd?v=3&amp;uin=2852266702&amp;site=qq&amp;menu=yes"></a>
+            </li>
+            <li><a class="a4" title="关注微信" href="javascript:;"></a>
+                <div class="p_cont a4_cont" style="display: none;">
+                    <img src="http://www.58wuji.com/application/home/view/public/imges/er.png">
+                    <span class="a4_right"></span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript" src="http://www.58wuji.com/application/home/view/public/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.58wuji.com/application/home/view/public/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://www.58wuji.com/application/home/view/public/js/lhgdialog.min.js"></script>
+<script type="text/javascript" src="http://www.58wuji.com/application/home/view/public/js/rgx.lib.min.js"></script>
+<script type="text/javascript" src="http://www.58wuji.com/application/home/view/public/js/rgx.js"></script>
+<script type="text/javascript" src="http://www.58wuji.com/application/home/view/public/js/laydate.js"></script>
+
+<script>
+
+    var
+        get_timestamp = function (s) {
+            return parseInt(Date.parse(new Date(s + " 0:0:0")) / 1000);
+        },
+        apply_filter = function () {
+            var params = [];
+
+            $('.search_type,.search_key').each(function () {
+                var val = $(this).attr('data-val');
+                if (this.tagName.toUpperCase() == 'INPUT' || this.tagName.toUpperCase() == 'TEXTAREA') {
+                    val = $(this).val();
+                }
+                if ($(this).hasClass('search_key')) {
+                    if ($(this).hasClass('date-picker') || $(this).hasClass('date-picker1')) {
+                        val = get_timestamp(val);
+                        val = isNaN(val) ? '0' : val;
+                    }
+                    else {
+                        val = encodeURIComponent(val);
+                    }
+                }
+
+                if (val != '' && val != '0') {
+                    _filter[$(this).attr('data-key')] = val;
+                }
+                else {
+                    _filter[$(this).attr('data-key')] = '';
+                }
+            });
+
+            for (var key in _filter) {
+                if (_filter.hasOwnProperty(key)) {
+                    if (_filter[key] != '0' && $.trim(_filter[key]) != '') {
+                        params.push(key + '-' + _filter[key]);
+                    }
+                }
+            }
+
+            location.href = RGXLIB.url(_url + '-' + params.join('-'));
+        };
+
+    $(function () {
+
+        $('#right_nav .a4').hover(
+            function () {
+                $('#right_nav .a4_cont').css('display', 'block')
+            },
+            function () {
+                $('#right_nav .a4_cont').css('display', 'none');
+            }
+        );
+
+        $("#right_nav .a1").click(function () {
+            $('body,html').animate({scrollTop: 0}, 300);
+        });
+
+        /**
+         * 分页跳转处理
+         */
+        $('body').on('click', '.pagination-atag', function (e) {
+            var url = $(this).attr('href'),
+                callback = $(this).parents('.paging').attr('data-callback');
+
+            if (!$(this).parents('li').hasClass('disabled')) {
+                // Btn Go
+                if ($(this).attr('data-url') != undefined) {
+                    var pn = parseInt($(this).parents('.input-group').find('.paging_pn').val());
+                    if (isNaN(pn)) {
+                        $(this).parents('.input-group').find('.paging_pn').focus();
+                        url = null;
+                    }
+                    else {
+                        url = $(this).attr('data-url') + pn;
+                    }
+                }
+
+                if (url != null && url != 'javascript:;') {
+                    if (typeof(callback) != 'undefined' && callback != "nil" && callback != "{nil}") {
+                        window[callback](url);
+                    }
+                    else {
+                        location.href = url;
+                    }
+                }
+            }
+
+            e.stopPropagation();
+            return false;
+        });
+
+        $('.dpm_opt').on('click', function () {
+            $($(this).attr('data-target')).attr('data-val', $(this).attr('data-val'));
+            $($(this).attr('data-target')).html($(this).text());
+            ;
+        });
+
+        $('.date-picker').on('click', function () {
+            laydate();
+        });
+
+        if ($('.dpm_opt').length > 0) {
+            $('.dpm_opt[data-val=""]').trigger('click');
+        }
+
+        $('.filter-opt').on('click', function () {
+            var key = $(this).attr('data-key'),
+                val = $(this).attr('data-val');
+            if ($.trim(val) != '' && val != '0') {
+                if ($(this).hasClass('active')) {
+                    _filter[key] = '';
+                }
+                else {
+                    _filter[key] = val;
+                }
+                apply_filter();
+            }
+        });
+
+        $('#filter_search_btn').on('click', function () {
+            apply_filter();
+        });
+
+        $('.filter-sort').on('click', function () {
+            // desc => null
+            if ($(this).hasClass('sort-desc')) {
+                _filter[$(this).attr('data-key')] = 1;
+            }
+            // asc => desc
+            else if ($(this).hasClass('sort-asc')) {
+                _filter[$(this).attr('data-key')] = 0;
+            }
+            // asc
+            else {
+                _filter[$(this).attr('data-key')] = 2;
+            }
+            apply_filter();
+        });
+
+
+        $('.modify_field').on('click', function () {
+            $(this).attr('data-val', $(this).text());
+            $(this).attr('contenteditable', true).addClass('modify_active');
+        });
+
+        $('.modify_field').on('keydown', function (e) {
+            if (e.keyCode == 13) {
+                $(this).trigger('blur');
+                e.stopPropagation();
+                return false;
+            }
+        });
+
+        $('.modify_field').on('blur', function () {
+            $(this).attr('contenteditable', false).removeClass('modify_active');
+            if ($(this).attr('data-val') != $(this).text()) {
+                RGX.get_json($(this).attr('data-url') + encodeURIComponent($(this).text()), function (d) {
+                    RGX.msg(d.msg);
+                });
+            }
+        });
+
+        $('.ajax_input').on('focus', function () {
+            $(this).attr('data-val', $(this).val());
+        });
+
+        $('.ajax_input').on('blur', function () {
+            if ($(this).val() != $(this).attr('data-val')) {
+                RGX.get_json($(this).attr('data-url') + encodeURIComponent($(this).val()), function (d) {
+                    if (d.code != '0') {
+                        RGX.msg(d.msg);
+                    }
+                });
+            }
+        });
+
+        $('.ajax_input').on('keydown', function (e) {
+            if (e.keyCode == 13) {
+                $(this).trigger('blur');
+            }
+        });
+
+        $('.check_all').on('click', function () {
+            var checked = this.checked;
+            $('.row_checkbox').each(function () {
+                this.checked = checked;
+            });
+        });
+
+        $('.ajax_update').on('click', function () {
+            RGX.get_json($(this).attr('data-url'), function (d) {
+                RGX.msg(d.msg);
+                if (d['url'] != undefined) {
+                    setTimeout(function () {
+                        location.href = d.url;
+                    }, 500);
+                }
+            });
+            return false;
+        });
+
+        $('.ajax_update_confirm').on('click', function () {
+            if (confirm($(this).attr('data-confirm') || '确定进行该操作?')) {
+                RGX.get_json($(this).attr('data-url'), function (d) {
+                    RGX.msg(d.msg);
+                    if (d['url'] != undefined) {
+                        setTimeout(function () {
+                            location.href = d.url;
+                        }, 500);
+                    }
+                });
+            }
+        });
+
+        $('.ajax_delete').on('click', function () {
+            if (confirm($(this).attr('data-confirm') || '确定删除该记录?')) {
+                var that = $(this);
+                RGX.get_json(that.attr('data-url'), function (d) {
+                    RGX.msg(d.msg);
+                    if (d.code == '0') {
+                        $(that.attr('data-target')).remove();
+                    }
+                });
+            }
+        });
+
+        $('.ajax_delete_all').on('click', function () {
+            var ids = get_ids();
+            if (ids.length == 0) {
+                RGX.msg('请至少选择一项');
+            }
+            else {
+                var url = $(this).attr('data-url') + encodeURIComponent(ids.join(','));
+                RGX.get_json(url, function (d) {
+                    if (d.code == '0') {
+                        location.href = location;
+                    }
+                    else {
+                        RGX.msg(d.msg);
+                    }
+                });
+            }
+        });
+
+        $('body').on('mouseleave', '.select_category_plugin', function () {
+            $(this).hide();
+        });
+
+        $('body').on('click', 'label.weui-check__label', function () {
+            if ($(this).find('input:checked').length == 0) {
+                $(this).find('input').prop('checked', true);
+            }
+            else {
+                $(this).find('input').prop('checked', false);
+            }
+        });
+
+        $('.filter_weui-select').each(function () {
+            _filter[$(this).attr('data-key')] = $(this).val();
+        });
+
+        $('.filter_weui-select').on('change', function () {
+            _filter[$(this).attr('data-key')] = $(this).val();
+        });
+    });
+
+</script>
+<script type="text/javascript" src="http://www.58wuji.com/application/home/view/public/js/gt.js"></script>
+<script>
+    if (top.location.href != location.href) {
+        top.location.href = location.href;
+    }
+
+    var cur_dialog = null,
+        verfiy_success = false,
+        handlerEmbed = function (captchaObj) {
+
+            captchaObj.appendTo("#embed-captcha");
+
+            captchaObj.onReady(function () {
+                $('#loading-text').hide();
+            });
+
+            captchaObj.onSuccess(function () {
+                var validate = captchaObj.getValidate();
+                $('#geetest_challenge').val(validate.geetest_challenge);
+                $('#geetest_validate').val(validate.geetest_validate);
+                $('#geetest_seccode').val(validate.geetest_seccode);
+
+                window.verfiy_success = true;
+                window.cur_dialog.close();
+                RGX.exec_post('#aform');
+            });
+        },
+        show_capcha = function () {
+            $.ajax({
+                url: "/misc/geetest?pf=1" + (new Date()).getTime(),
+                type: "get",
+                dataType: "json",
+                success: function (data) {
+                    window.cur_dialog = $.dialog({
+                        fixed: false,
+                        drag: false,
+                        cache: false,
+                        min: false,
+                        max: false,
+                        title: '完成下方验证, 以继续下一步',
+                        lock: false,
+                        fixed: true,
+                        padding: 0,
+                        width: '420px',
+                        height: '300px',
+                        content: '<div class="verify-code"><div id="loading-text">加载中 ...</div><div id="embed-captcha"></div></div>',
+                        skin: 'discuz'
+                    });
+                    initGeetest({
+                        gt: data.gt,
+                        challenge: data.challenge,
+                        product: "embed",
+                        offline: !data.success
+                    }, handlerEmbed);
+                }
+            });
+        };
+
+    $(function () {
+
+        $('#reg-agreement').on('click', function () {
+            $('#reg-modal').modal();
+        });
+
+        $('#login-btn').on('click', function () {
+            if (!$('#check_ok')[0].checked) {
+                RGX.msg('请先同意注册协议');
+            }
+            else if ($('#user_account').val() == '') {
+                RGX.tips('请输入账号', '#user_account');
+            }
+            else if ($('#user_passwd').val() == '') {
+                RGX.tips('请输入密码', '#user_passwd');
+            }
+            else if (!verfiy_success) {
+                show_capcha();
+            }
+            else {
+                RGX.exec_post('#aform');
+            }
+        });
+
+        $('#basic-addon2').on('click', function () {
+            if ($('#user_mobile').val().match(/^1\d{10}$/) == null) {
+                RGX.tips('请输入手机号码', '#user_mobile');
+            }
+            else {
+                RGX.get_json('http://pt.wujiruanjian.com/register/chk?v=' + $('#user_mobile').val(), function (d) {
+                    if (d.code == '0') {
+                        $('#verify-modal').modal();
+                    }
+                    else {
+                        RGX.msg(d.msg);
+                    }
+                });
+            }
+        });
+
+        $('#btn_send_sms').on('click', function () {
+            var code = $('#img_code').val();
+            if (code.match(/^\d{4}$/) == null) {
+                RGX.msg('请输入有效的图片验证码', function () {
+                    $('#img_code').focus();
+                });
+            }
+            else {
+                RGX.get_json(RGXLIB.url('misc-sendsms-mobile-%s-code-%d', $('#user_mobile').val(), code), function (d) {
+                    RGX.msg(d.msg, function () {
+                        if (d.code == '0') {
+                            $('#verify-modal').modal('hide');
+                            $('#user_verify').focus();
+                        }
+                    });
+                });
+            }
+        });
+
+        $('#get_vcode').click(function () {
+            $.ajax({
+                url: "/home/home/send_tel_verify_code.html",
+                data: {
+                    tel: $('#user_mobile').val()
+                },
+                type: 'post',
+                success: function(res){
+                    alert(res.content);
+                }
+            });
+        });
+    });
+</script>
+</body>
+
+</html>

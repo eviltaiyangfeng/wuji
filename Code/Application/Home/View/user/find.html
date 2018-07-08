@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <title>找回密码 - 无极软件后台管理系统</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="http://www.58wuji.com/application/home/view/public/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://www.58wuji.com/application/home/view/public/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://www.58wuji.com/application/home/view/public/css/wangjimima3.css" />
+    <script>
+        var DATA_URL = 'http://pt.wujiruanjian.com/data/',
+            STATIC_URL = 'http://pt.wujiruanjian.com/static/',
+            UPLOAD_URL = 'http://pt.wujiruanjian.com/data/attachment/',
+            _route = {
+                "def_mod": "index",
+                "def_act": "index",
+                "ma_sep": "\/",
+                "ap_sep": "?",
+                "pg_sep": "&",
+                "pp_sep": "=",
+                "suf": ".html",
+                "rewrite": 1,
+                "404_tpl": "404.tpl",
+                "scheme": "http",
+                "host": "pt.wujiruanjian.com",
+                "path": "\/",
+                "app_url": "http:\/\/pt.wujiruanjian.com\/",
+                "root_domain": ".wujiruanjian.com"
+            };
+        _url = 'getpwd-index',
+            _filter = null;
+    </script>
+</head>
+
+<body class="login box3">
+<h5 class="page-title">无极软件自助开卡系统</h5>
+<div class="page-form">
+    <form method="post" id="aform" class="form-horizontal" action="/home/user/find.html">
+        <!--<input type="hidden" id="geetest_challenge" name="geetest_challenge"    value="" />-->
+        <!--<input type="hidden" id="geetest_validate"  name="geetest_validate"     value="" />-->
+        <!--<input type="hidden" id="geetest_seccode"   name="geetest_seccode"      value="" />-->
+        <div class="form-body pal">
+            <div class="form-group">
+                            </div>
+            <div class="form-group">
+                <div class="input-icon right">
+                    <i class="fa fa-user"></i>
+                    <input id="adm_name" name="name" type="text" placeholder="请输入您的登录账号" class="form-control"/>
+                </div>
+                <br>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" id="login-btn">下一步</button>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-6 text-left" style="padding-left: 0">
+                    </div>
+                    <div class="col-md-6 text-right" style="padding-right: 0">
+                        <a href="/login.html" class="btn btn-link text-danger">返回登录</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="clear" id="right_nav">
+    <div class="down">
+        <ul>
+            <li class="p_b_color"><a class="a1" title="返回顶部" href="javascript:;"></a></li>
+            <li class="p_b_color"><a class="a3" title="联系客服" target="_blank"
+                                     href="http://wpa.qq.com/msgrd?v=3&amp;uin=2852266702&amp;site=qq&amp;menu=yes"></a>
+            </li>
+            <li><a class="a4" title="关注微信" href="javascript:;"></a>
+                <div class="p_cont a4_cont" style="display: none;">
+                    <img src="http://www.58wuji.com/application/home/view/public/imges/er.png">
+                    <span class="a4_right"></span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript" src="http://www.58wuji.com/application/home/view/public/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.58wuji.com/application/home/view/public/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://www.58wuji.com/application/home/view/public/js/lhgdialog.min.js"></script>
+<script type="text/javascript" src="http://www.58wuji.com/application/home/view/public/js/rgx.lib.min.js"></script>
+<script type="text/javascript" src="http://www.58wuji.com/application/home/view/public/js/rgx.js"></script>
+<script type="text/javascript" src="http://www.58wuji.com/application/home/view/public/js/laydate.js"></script>
+
+<script>
+
+    var
+        get_timestamp = function (s) {
+            return parseInt(Date.parse(new Date(s + " 0:0:0")) / 1000);
+        },
+        apply_filter = function () {
+            var params = [];
+
+            $('.search_type,.search_key').each(function () {
+                var val = $(this).attr('data-val');
+                if (this.tagName.toUpperCase() == 'INPUT' || this.tagName.toUpperCase() == 'TEXTAREA') {
+                    val = $(this).val();
+                }
+                if ($(this).hasClass('search_key')) {
+                    if ($(this).hasClass('date-picker') || $(this).hasClass('date-picker1')) {
+                        val = get_timestamp(val);
+                        val = isNaN(val) ? '0' : val;
+                    }
+                    else {
+                        val = encodeURIComponent(val);
+                    }
+                }
+
+                if (val != '' && val != '0') {
+                    _filter[$(this).attr('data-key')] = val;
+                }
+                else {
+                    _filter[$(this).attr('data-key')] = '';
+                }
+            });
+
+            for (var key in _filter) {
+                if (_filter.hasOwnProperty(key)) {
+                    if (_filter[key] != '0' && $.trim(_filter[key]) != '') {
+                        params.push(key + '-' + _filter[key]);
+                    }
+                }
+            }
+
+            location.href = RGXLIB.url(_url + '-' + params.join('-'));
+        };
+
+    $(function () {
+
+        $('#right_nav .a4').hover(
+            function () {
+                $('#right_nav .a4_cont').css('display', 'block')
+            },
+            function () {
+                $('#right_nav .a4_cont').css('display', 'none');
+            }
+        );
+
+        $("#right_nav .a1").click(function () {
+            $('body,html').animate({scrollTop: 0}, 300);
+        });
+
+        /**
+         * 分页跳转处理
+         */
+        $('body').on('click', '.pagination-atag', function (e) {
+            var url = $(this).attr('href'),
+                callback = $(this).parents('.paging').attr('data-callback');
+
+            if (!$(this).parents('li').hasClass('disabled')) {
+                // Btn Go
+                if ($(this).attr('data-url') != undefined) {
+                    var pn = parseInt($(this).parents('.input-group').find('.paging_pn').val());
+                    if (isNaN(pn)) {
+                        $(this).parents('.input-group').find('.paging_pn').focus();
+                        url = null;
+                    }
+                    else {
+                        url = $(this).attr('data-url') + pn;
+                    }
+                }
+
+                if (url != null && url != 'javascript:;') {
+                    if (typeof(callback) != 'undefined' && callback != "nil" && callback != "{nil}") {
+                        window[callback](url);
+                    }
+                    else {
+                        location.href = url;
+                    }
+                }
+            }
+
+            e.stopPropagation();
+            return false;
+        });
+
+        $('.dpm_opt').on('click', function () {
+            $($(this).attr('data-target')).attr('data-val', $(this).attr('data-val'));
+            $($(this).attr('data-target')).html($(this).text());
+            ;
+        });
+
+        $('.date-picker').on('click', function () {
+            laydate();
+        });
+
+        if ($('.dpm_opt').length > 0) {
+            $('.dpm_opt[data-val=""]').trigger('click');
+        }
+
+        $('.filter-opt').on('click', function () {
+            var key = $(this).attr('data-key'),
+                val = $(this).attr('data-val');
+            if ($.trim(val) != '' && val != '0') {
+                if ($(this).hasClass('active')) {
+                    _filter[key] = '';
+                }
+                else {
+                    _filter[key] = val;
+                }
+                apply_filter();
+            }
+        });
+
+        $('#filter_search_btn').on('click', function () {
+            apply_filter();
+        });
+
+        $('.filter-sort').on('click', function () {
+            // desc => null
+            if ($(this).hasClass('sort-desc')) {
+                _filter[$(this).attr('data-key')] = 1;
+            }
+            // asc => desc
+            else if ($(this).hasClass('sort-asc')) {
+                _filter[$(this).attr('data-key')] = 0;
+            }
+            // asc
+            else {
+                _filter[$(this).attr('data-key')] = 2;
+            }
+            apply_filter();
+        });
+
+
+        $('.modify_field').on('click', function () {
+            $(this).attr('data-val', $(this).text());
+            $(this).attr('contenteditable', true).addClass('modify_active');
+        });
+
+        $('.modify_field').on('keydown', function (e) {
+            if (e.keyCode == 13) {
+                $(this).trigger('blur');
+                e.stopPropagation();
+                return false;
+            }
+        });
+
+        $('.modify_field').on('blur', function () {
+            $(this).attr('contenteditable', false).removeClass('modify_active');
+            if ($(this).attr('data-val') != $(this).text()) {
+                RGX.get_json($(this).attr('data-url') + encodeURIComponent($(this).text()), function (d) {
+                    RGX.msg(d.msg);
+                });
+            }
+        });
+
+        $('.ajax_input').on('focus', function () {
+            $(this).attr('data-val', $(this).val());
+        });
+
+        $('.ajax_input').on('blur', function () {
+            if ($(this).val() != $(this).attr('data-val')) {
+                RGX.get_json($(this).attr('data-url') + encodeURIComponent($(this).val()), function (d) {
+                    if (d.code != '0') {
+                        RGX.msg(d.msg);
+                    }
+                });
+            }
+        });
+
+        $('.ajax_input').on('keydown', function (e) {
+            if (e.keyCode == 13) {
+                $(this).trigger('blur');
+            }
+        });
+
+        $('.check_all').on('click', function () {
+            var checked = this.checked;
+            $('.row_checkbox').each(function () {
+                this.checked = checked;
+            });
+        });
+
+        $('.ajax_update').on('click', function () {
+            RGX.get_json($(this).attr('data-url'), function (d) {
+                RGX.msg(d.msg);
+                if (d['url'] != undefined) {
+                    setTimeout(function () {
+                        location.href = d.url;
+                    }, 500);
+                }
+            });
+            return false;
+        });
+
+        $('.ajax_update_confirm').on('click', function () {
+            if (confirm($(this).attr('data-confirm') || '确定进行该操作?')) {
+                RGX.get_json($(this).attr('data-url'), function (d) {
+                    RGX.msg(d.msg);
+                    if (d['url'] != undefined) {
+                        setTimeout(function () {
+                            location.href = d.url;
+                        }, 500);
+                    }
+                });
+            }
+        });
+
+        $('.ajax_delete').on('click', function () {
+            if (confirm($(this).attr('data-confirm') || '确定删除该记录?')) {
+                var that = $(this);
+                RGX.get_json(that.attr('data-url'), function (d) {
+                    RGX.msg(d.msg);
+                    if (d.code == '0') {
+                        $(that.attr('data-target')).remove();
+                    }
+                });
+            }
+        });
+
+        $('.ajax_delete_all').on('click', function () {
+            var ids = get_ids();
+            if (ids.length == 0) {
+                RGX.msg('请至少选择一项');
+            }
+            else {
+                var url = $(this).attr('data-url') + encodeURIComponent(ids.join(','));
+                RGX.get_json(url, function (d) {
+                    if (d.code == '0') {
+                        location.href = location;
+                    }
+                    else {
+                        RGX.msg(d.msg);
+                    }
+                });
+            }
+        });
+
+        $('body').on('mouseleave', '.select_category_plugin', function () {
+            $(this).hide();
+        });
+
+        $('body').on('click', 'label.weui-check__label', function () {
+            if ($(this).find('input:checked').length == 0) {
+                $(this).find('input').prop('checked', true);
+            }
+            else {
+                $(this).find('input').prop('checked', false);
+            }
+        });
+
+        $('.filter_weui-select').each(function () {
+            _filter[$(this).attr('data-key')] = $(this).val();
+        });
+
+        $('.filter_weui-select').on('change', function () {
+            _filter[$(this).attr('data-key')] = $(this).val();
+        });
+    });
+
+</script>
+<script type="text/javascript" src="http://www.58wuji.com/application/home/view/public/js/gt.js"></script>
+<script>
+    if (top.location.href != location.href) {
+        top.location.href = location.href;
+    }
+
+    var cur_dialog = null,
+        verfiy_success = false,
+        handlerEmbed = function (captchaObj) {
+
+            captchaObj.appendTo("#embed-captcha");
+
+            captchaObj.onReady(function () {
+                $('#loading-text').hide();
+            });
+
+            captchaObj.onSuccess(function () {
+                var validate = captchaObj.getValidate();
+                $('#geetest_challenge').val(validate.geetest_challenge);
+                $('#geetest_validate').val(validate.geetest_validate);
+                $('#geetest_seccode').val(validate.geetest_seccode);
+
+                window.verfiy_success = true;
+                window.cur_dialog.close();
+                RGX.exec_post('#aform');
+            });
+        },
+        show_capcha = function () {
+            $.ajax({
+                url: "/misc/geetest?pf=1" + (new Date()).getTime(),
+                type: "get",
+                dataType: "json",
+                success: function (data) {
+                    window.cur_dialog = $.dialog({
+                        fixed: false,
+                        drag: false,
+                        cache: false,
+                        min: false,
+                        max: false,
+                        title: '完成下方验证, 以继续下一步',
+                        lock: false,
+                        fixed: true,
+                        padding: 0,
+                        width: '420px',
+                        height: '300px',
+                        content: '<div class="verify-code"><div id="loading-text">加载中 ...</div><div id="embed-captcha"></div></div>',
+                        skin: 'discuz'
+                    });
+                    initGeetest({
+                        gt: data.gt,
+                        challenge: data.challenge,
+                        product: "embed",
+                        offline: !data.success
+                    }, handlerEmbed);
+                }
+            });
+        };
+
+    $(function () {
+
+        $('#login-btn').on('click', function () {
+            if ($('#adm_name').val() == '') {
+                RGX.tips('请输入账号', '#adm_name');
+            }
+            else if (!verfiy_success) {
+                show_capcha();
+            }
+            else {
+                RGX.exec_post('#aform');
+            }
+        });
+    });
+</script>
+</body>
+
+</html>
