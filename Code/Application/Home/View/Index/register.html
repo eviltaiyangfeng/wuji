@@ -2,62 +2,59 @@
 <html lang="zh-cn">
 
 <head>
-    <title>会员注册 - 无极软件后台管理系统</title>
+    <title>会员注册 - {:C('SITE_INFO.SITE_NAME')}</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="http://www.58wuji.com/application/home/view/public/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="http://www.58wuji.com/application/home/view/public/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="http://www.58wuji.com/application/home/view/public/css/zhuce2.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/zhuce2.css" />
     <style>
         .right{
             position: relative;
         }
     </style>
-    
+
 </head>
 
 <body class="login1">
-<h5 class="page-title">无极软件自助开卡系统</h5>
+<h5 class="page-title">{:C('SITE_INFO.SITE_NAME')}</h5>
 <div class="page-form">
-    <form method="post" id="aform" autocomplete="off" class="form-horizontal" action="/register.html">
-        <!--<input type="hidden" id="geetest_challenge" name="geetest_challenge"    value="" />-->
-        <!--<input type="hidden" id="geetest_validate"  name="geetest_validate"     value="" />-->
-        <!--<input type="hidden" id="geetest_seccode"   name="geetest_seccode"      value="" />-->
+    <form method="post" id="aform" autocomplete="off" class="form-horizontal">
         <div class="form-body pal">
             <div class="form-group">
                             </div>
             <div class="form-group">
                 <div class="input-icon right">
                     <i class="fa fa-user"></i>
-                    <input id="user_account" name="name" type="text" placeholder="请输入登录账号" class="form-control"/>
+                    <input id="user_account" name="account" type="text" placeholder="请输入登录账号" class="form-control"/>
                 </div>
             </div>
             <div class="form-group">
                 <div class="input-icon right">
                     <i class="fa fa-lock"></i>
-                    <input id="user_passwd" name="pwd" type="password" placeholder="请输入登录密码" class="form-control"/>
+                    <input id="user_passwd" name="password" type="password" placeholder="请输入登录密码" class="form-control"/>
                 </div>
             </div>
             <div class="form-group">
                 <div class="input-icon right">
                     <i class="fa fa-mobile-phone"></i>
-                    <input id="user_mobile" name="tel" type="text" placeholder="手机号码(选填)" class="form-control"/>
+                    <input id="user_mobile" name="mobile" type="text" placeholder="手机号码(选填)" class="form-control"/>
                 </div>
             </div>
             <div class="form-group">
                 <div class="input-group">
                     <input id="user_verify" name="verify" type="text" placeholder="短信验证码" class="form-control"/>
-                    <span id="get_vcode" class="input-group-addon" id="basic-addon2">获取验证码</span>
+                    <span id="get_vcode" class="input-group-addon" id="basic-addon2">测试版本可以不获取验证码</span>
                 </div>
             </div>
             <div class="form-group">
                 <input type="checkbox" id="check_ok" checked/>
-                <small>我已同意《<a href="javascript:;" class="btn-link" id="reg-agreement">无极软件自助开卡平台服务隐私协议</a>》</small>
+                <small>我已同意《<a href="javascript:;" class="btn-link" id="reg-agreement">{:C('SITE_INFO.SITE_NAME')}服务隐私协议</a>》</small>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary" id="login-btn">我要注册</button>
-                <a href="/login.html" class="btn btn-link text-danger pull-right">已有账号? 去登录</a>
+                <button type="button" class="btn btn-primary" id="login-btn">我要注册</button>
+                <a href="{:('login')}" class="btn btn-link text-danger pull-right">已有账号? 去登录</a>
             </div>
         </div>
     </form>
@@ -68,7 +65,7 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
-                <h5 class="modal-title text-center">无极软件自助开卡平台服务以及隐私保护协议</h5>
+                <h5 class="modal-title text-center">{:C('SITE_INFO.SITE_NAME')}服务以及隐私保护协议</h5>
             </div>
             <div class="modal-body" id="reg-body">
                 <div style="padding: 5px 30px;text-align: left;font-size: 12px;">
@@ -157,11 +154,11 @@
         <ul>
             <li class="p_b_color"><a class="a1" title="返回顶部" href="javascript:;"></a></li>
             <li class="p_b_color"><a class="a3" title="联系客服" target="_blank"
-                                     href="http://wpa.qq.com/msgrd?v=3&amp;uin=2852266702&amp;site=qq&amp;menu=yes"></a>
+                                     href="http://wpa.qq.com/msgrd?v=3&amp;uin=346781123&amp;site=qq&amp;menu=yes"></a>
             </li>
             <li><a class="a4" title="关注微信" href="javascript:;"></a>
                 <div class="p_cont a4_cont" style="display: none;">
-                    <img src="http://www.58wuji.com/application/home/view/public/imges/er.png">
+                    <img src="__PUBLIC__/imges/er.png">
                     <span class="a4_right"></span>
                 </div>
             </li>
@@ -169,12 +166,12 @@
     </div>
 </div>
 
-<script type="text/javascript" src="http://www.58wuji.com/application/home/view/public/js/jquery.min.js"></script>
-<script type="text/javascript" src="http://www.58wuji.com/application/home/view/public/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="http://www.58wuji.com/application/home/view/public/js/lhgdialog.min.js"></script>
-<script type="text/javascript" src="http://www.58wuji.com/application/home/view/public/js/rgx.lib.min.js"></script>
-<script type="text/javascript" src="http://www.58wuji.com/application/home/view/public/js/rgx.js"></script>
-<script type="text/javascript" src="http://www.58wuji.com/application/home/view/public/js/laydate.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/lhgdialog.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/rgx.lib.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/rgx.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/laydate.js"></script>
 
 <script>
 
@@ -444,7 +441,7 @@
     });
 
 </script>
-<script type="text/javascript" src="http://www.58wuji.com/application/home/view/public/js/gt.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/gt.js"></script>
 <script>
     if (top.location.href != location.href) {
         top.location.href = location.href;
@@ -510,19 +507,35 @@
 
         $('#login-btn').on('click', function () {
             if (!$('#check_ok')[0].checked) {
-                RGX.msg('请先同意注册协议');
+                alert('请先同意注册协议');
             }
             else if ($('#user_account').val() == '') {
-                RGX.tips('请输入账号', '#user_account');
+                alert('请输入账号');
             }
             else if ($('#user_passwd').val() == '') {
-                RGX.tips('请输入密码', '#user_passwd');
+                alert('请输入密码');
             }
-            else if (!verfiy_success) {
-                show_capcha();
-            }
+            // else if (!verfiy_success) {
+            //     show_capcha();
+            // }
             else {
-                RGX.exec_post('#aform');
+                $.ajax({
+                    type        : "POST",
+                    url         : $("#aform").attr('action'),
+                    data        : $("#aform").serialize() + '&isajax=1',
+                    processData : false,
+                    dataType    : 'json',
+                    success     : function(data) {
+                        if (data.status) {
+                            alert(data.msg);
+                        }else{
+                            alert(data.msg);
+                        }
+                    },
+                    error       : function(data) {
+                        alert(data.msg);
+                    }
+                });
             }
         });
 
@@ -563,7 +576,7 @@
 
         $('#get_vcode').click(function () {
             $.ajax({
-                url: "/home/home/send_tel_verify_code.html",
+                url: "{:U('send_tel_verify_code')}",
                 data: {
                     tel: $('#user_mobile').val()
                 },

@@ -7,19 +7,19 @@
         <meta charset="utf-8"/>
         <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
         <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-        <link rel="stylesheet" type="text/css" href="http://www.58wuji.com/application/home/view/public/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.min.css" />
         </load>
-        <link rel="stylesheet" type="text/css" href="http://www.58wuji.com/application/home/view/public/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/font-awesome.min.css" />
         </load>
-        <link rel="stylesheet" type="text/css" href="http://www.58wuji.com/application/home/view/public/css/index.css" />
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index.css" />
         </load>
     </head>
     <body class="login box1">
         <h5 class="page-title">
-            无极软件自助开卡系统
+            {:C('SITE_INFO.SITE_NAME')}
         </h5>
         <div class="page-form">
-            <form action="/login.html" class="form-horizontal" id="aform" method="post">
+            <form action="{:U('login')}" class="form-horizontal" id="aform" method="post">
                 <!--<input type="hidden" id="geetest_challenge" name="geetest_challenge"    value="" />-->
                 <!--<input type="hidden" id="geetest_validate"  name="geetest_validate"     value="" />-->
                 <!--<input type="hidden" id="geetest_seccode"   name="geetest_seccode"      value="" />-->
@@ -103,9 +103,9 @@
         <div class="row">
             <div class="col-md-12">
                 <p class="text-center">
-                    Copyright © 2017 . 涞水县腾跃网络科技有限公司.
+                    Copyright © 2018 . {:C('SITE_INFO.COMPANY')}.
                     <a href="http://www.58wuji.com" style="color:#fff;font-size: 13px;">
-                        冀ICP备18015184号-1
+                        {:C('SITE_INFO.COPY_RIGHT')}
                     </a>
                 </p>
             </div>
@@ -125,7 +125,7 @@
                         <a class="a4" href="javascript:;" title="关注微信">
                         </a>
                         <div class="p_cont a4_cont" style="display: none;">
-                            <img alt="" src="http://www.58wuji.com/application/home/view/public/imges/er.png">
+                            <img alt="" src="__PUBLIC__/imges/er.png">
                                 <span class="a4_right">
                                 </span>
                             </img>
@@ -134,23 +134,25 @@
                 </ul>
             </div>
         </div>
-        <script type="text/javascript" src="http://www.58wuji.com/application/home/view/public/js/jquery.min.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
         </load>
-        <script type="text/javascript" src="http://www.58wuji.com/application/home/view/public/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/js/bootstrap.min.js"></script>
         </load>
-        <script type="text/javascript" src="http://www.58wuji.com/application/home/view/public/js/lhgdialog.min.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/js/lhgdialog.min.js"></script>
         </load>
-        <script type="text/javascript" src="http://www.58wuji.com/application/home/view/public/js/RGX.lib.min.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/js/RGX.lib.min.js"></script>
         </load>
-        <script type="text/javascript" src="http://www.58wuji.com/application/home/view/public/js/rgx.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/js/rgx.js"></script>
         </load>
-        <script type="text/javascript" src="http://www.58wuji.com/application/home/view/public/js/laydate.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/js/laydate.js"></script>
         </load>
         <script>
 
     $(function() {
 
         $('#login-btn').on('click', function() {
+            alert('功能即将上线!');
+            return false;
             if ($('#adm_name').val() == '') {
                 RGX.tips('请输入账号', '#adm_name');
             }

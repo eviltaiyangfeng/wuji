@@ -193,7 +193,7 @@
 
         'exec_post': function(id, pre, before, after) {
             RGX.formpost(id, function(d) {
-                if (d.code == '4') {
+                if (d.code == '0') {
                     RGX.msg(d.msg);
                 } 
                 else if (d.code != '0') {

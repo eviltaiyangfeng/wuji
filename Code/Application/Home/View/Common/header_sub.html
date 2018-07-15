@@ -1,0 +1,70 @@
+<div id="top_three">
+    <div class="cont clear">
+        <div class="fl logo">
+            <img src="http://www.58wuji.com/application/home/view/public/imges/logo_b.png">
+        </div>
+        <div class="fl">
+            <ul class="clear nav">
+                <volist name="menu" id="data">
+                    <li>
+                        <a href="{:U($data['url']) . '?menu=' .$data['id'] }">
+                            {$data.name}
+                        </a>
+                    </li>
+                </volist>
+            </ul>
+        </div>
+        <div class="fr">
+            <ul class="login">
+
+                <li>
+                    <a class="l_in" href="{:U('Index/login')}">
+                        登录
+                    </a>
+                </li>
+                <li>
+                    <a class="l_reg" href="{:U('Index/register')}">
+                        注册
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var menu= "{$active_menu}";
+    if(typeof(menu)==="undefined"||menu===""){
+        menu=0;
+    }
+    $("ul li").eq(menu-1).children("a").addClass("active");
+</script>
+<script>
+    $(function(){
+        var p_nav=true;
+        set_p_nav();
+
+        $(window).scroll(function(){
+            set_p_nav();
+        })
+
+        function set_p_nav(){
+            if($('#top_three').length>0){
+                if($(window).scrollTop()>400 && p_nav){
+                    p_nav=false;
+                    $('#top_three .logo img').animate({margin:'10px 0'});
+                    $('#top_three .nav a').animate({'line-height':'60px'});
+                    $('#top_three .login a').animate({margin:'15px 0'});
+                    $('#top_three').animate({height:'60px'});
+                }
+                if($(window).scrollTop()<400 && !p_nav){
+                    p_nav=true;
+                    $('#top_three .logo img').animate({margin:'20px 0'});
+                    $('#top_three .nav a').animate({'line-height':'80px'});
+                    $('#top_three .login a').animate({margin:'25px 0'});
+                    $('#top_three').animate({height:'80px'});
+
+                }
+            }
+        }
+    })
+</script>
