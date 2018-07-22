@@ -1,8 +1,59 @@
 <?php
 namespace Admin\Controller;
 use Think\Controller;
+use Think\Log;
+
+
 class IndexController extends Controller {
+
     public function index(){
-        $this->show('<style type="text/css">*{ padding: 0; margin: 0; } div{ padding: 4px 48px;} body{ background: #fff; font-family: "微软雅黑"; color: #333;font-size:24px} h1{ font-size: 100px; font-weight: normal; margin-bottom: 12px; } p{ line-height: 1.8em; font-size: 36px } a,a:hover{color:blue;}</style><div style="padding: 24px 48px;"> <h1>:)</h1><p>欢迎使用 <b>ThinkPHP</b>！</p><br/>版本 V{$Think.version}</div><script type="text/javascript" src="http://ad.topthink.com/Public/static/client.js"></script><thinkad id="ad_55e75dfae343f5a1"></thinkad><script type="text/javascript" src="http://tajs.qq.com/stats?sId=9347272" charset="UTF-8"></script>','utf-8');
+        if($this->is_login()){
+            $this->display();
+        }
+    }
+
+    /**
+     * 后台用户登录
+     * @author
+     */
+    public function login(){
+        if(IS_AJAX){
+            $model = D('SysUser');
+            $user = $model->where(array('account'=>$_REQUEST['name']))->find();
+            if(empty($user)){
+                $return['status'] = 0;
+                $return['msg'] = '用户名不正确';
+            }else if ($user['password'] == $_REQUEST['pwd']){
+                $return['status'] = 1;
+                $return['msg'] = '登录成功';
+                session('user_auth',$user);
+            }else{
+                $return['status'] = 0;
+                $return['msg'] = '用户名或密码不正确';
+            }
+            $this->ajaxReturn($return);
+        }else{
+            $this->display();
+        }
+    }
+
+    //退出
+    public function out(){
+        session('user_auth',null);
+        session('role',null);
+        $this->is_login();
+    }
+
+    //检测是否登录
+    public function is_login(){
+        $user_auth = session('user_auth');
+        if (!empty($user_auth)) {
+//            $this->redirect('Admin/Index/Index');
+            $this->display("index");
+        } else {
+            $num = rand(100000000000000, 999999999999999);
+            $this->assign("key", $num);
+            $this->display("login");
+        }
     }
 }

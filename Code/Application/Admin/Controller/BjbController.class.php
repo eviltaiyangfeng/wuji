@@ -14,6 +14,7 @@ class BjbController extends Controller {
     private $USER_RENEW_VPN =  "http://miosadmin.54nb.com/api/user/user_renew_vpn";
     private $USER_RENEW_BJB =  "http://miosadmin.54nb.com/api/user/user_renew_bjb";
     private $USER_REPASS =  "http://miosadmin.54nb.com/api/user/user_repass";
+    private $TEST_TOKEN = "6316c6f8cac13b31414b4c828ccca726a4ecfd4befabed0a7d9a3af421a1d2a4";
 
     private $ERROR_CODE = array(
         "10001" => "app_id不能为空",
@@ -69,4 +70,11 @@ class BjbController extends Controller {
 
     }
 
+    public function check_user(){
+        $username = I('username');
+        $post['username'] = $username;
+        $post['access_token'] = $this->TEST_TOKEN;
+        $return = curl_request($this->CHECK_USER,$post);
+        var_dump($return);
+    }
 }

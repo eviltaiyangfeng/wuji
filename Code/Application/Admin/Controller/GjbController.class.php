@@ -16,6 +16,7 @@ class GjbController extends Controller {
     private $GET_USER_INFO =  "http://vippadmin.54nb.com/api/user/get_user_info";
     private $USER_RENEW =  "http://vippadmin.54nb.com/api/user/user_renew";
     private $USER_REPASS =  "http://vippadmin.54nb.com/api/user/user_repass";
+    private $TEST_TOKEN = "18bcf015bd8f63836d3658710158e3d4017e8ff2d533c7ee7c76d78ce09c91bc";
 
     private $ERROR_CODE = array(
         "10001" => "app_id不能为空",
@@ -64,4 +65,36 @@ class GjbController extends Controller {
 
     }
 
+    public function check_user(){
+        $username = I('username');
+        $post['username'] = $username;
+        $post['access_token'] = $this->TEST_TOKEN;
+        $return = curl_request($this->CHECK_USER,$post);
+        var_dump($return);
+//        {
+//                    "ret": 10005,
+//            "msg": "access_token不正确",
+//            "data": ""
+//        }
+    }
+
+    public function app_list(){
+        $post['access_token'] = $this->TEST_TOKEN;
+        $return = curl_request($this->APP_LIST,$post);
+        var_dump($return);
+    }
+
+    public function region_list($branchID = null,$usernum = null){
+        $branchID = I('branchID');
+        $usernum = I('usernum');
+        if(empty($branchID) || empty($usernum)){
+            $return['status'] = 0;
+            $return['msg'] = 'branchID or usernum is null';
+        }else{
+            $post['access_token'] = $this->TEST_TOKEN;
+            $return = curl_request($this->APP_LIST,$post);
+        }
+
+        var_dump($return);
+    }
 }
