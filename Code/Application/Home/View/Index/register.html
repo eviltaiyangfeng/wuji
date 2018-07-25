@@ -6,9 +6,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/zhuce2.css" />
+    <link rel="stylesheet" type="text/css" href="__WUJI__/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="__WUJI__/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="__WUJI__/css/zhuce2.css" />
     <style>
         .right{
             position: relative;
@@ -158,7 +158,7 @@
             </li>
             <li><a class="a4" title="关注微信" href="javascript:;"></a>
                 <div class="p_cont a4_cont" style="display: none;">
-                    <img src="__PUBLIC__/imges/er.png">
+                    <img src="__WUJI__/imges/er.png">
                     <span class="a4_right"></span>
                 </div>
             </li>
@@ -166,12 +166,12 @@
     </div>
 </div>
 
-<script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/lhgdialog.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/rgx.lib.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/rgx.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/laydate.js"></script>
+<script type="text/javascript" src="__WUJI__/js/jquery.min.js"></script>
+<script type="text/javascript" src="__WUJI__/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="__WUJI__/js/lhgdialog.min.js"></script>
+<script type="text/javascript" src="__WUJI__/js/rgx.lib.min.js"></script>
+<script type="text/javascript" src="__WUJI__/js/rgx.js"></script>
+<script type="text/javascript" src="__WUJI__/js/laydate.js"></script>
 
 <script>
 
@@ -441,7 +441,7 @@
     });
 
 </script>
-<script type="text/javascript" src="__PUBLIC__/js/gt.js"></script>
+<script type="text/javascript" src="__WUJI__/js/gt.js"></script>
 <script>
     if (top.location.href != location.href) {
         top.location.href = location.href;
@@ -539,21 +539,21 @@
             }
         });
 
-        $('#basic-addon2').on('click', function () {
-            if ($('#user_mobile').val().match(/^1\d{10}$/) == null) {
-                RGX.tips('请输入手机号码', '#user_mobile');
-            }
-            else {
-                RGX.get_json('http://pt.wujiruanjian.com/register/chk?v=' + $('#user_mobile').val(), function (d) {
-                    if (d.code == '0') {
-                        $('#verify-modal').modal();
-                    }
-                    else {
-                        RGX.msg(d.msg);
-                    }
-                });
-            }
-        });
+        // $('#basic-addon2').on('click', function () {
+        //     if ($('#user_mobile').val().match(/^1\d{10}$/) == null) {
+        //         RGX.tips('请输入手机号码', '#user_mobile');
+        //     }
+        //     else {
+        //         RGX.get_json('http://pt.wujiruanjian.com/register/chk?v=' + $('#user_mobile').val(), function (d) {
+        //             if (d.code == '0') {
+        //                 $('#verify-modal').modal();
+        //             }
+        //             else {
+        //                 RGX.msg(d.msg);
+        //             }
+        //         });
+        //     }
+        // });
 
         $('#btn_send_sms').on('click', function () {
             var code = $('#img_code').val();

@@ -7,9 +7,7 @@ class IndexController extends CommonController{
     public function index(){
         $this->display();
     }
-    public function login(){
-        $this->display();
-    }
+
     public function register(){
         if(IS_AJAX){
             $model = D('SysUser');

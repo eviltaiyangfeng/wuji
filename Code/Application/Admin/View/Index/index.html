@@ -16,6 +16,12 @@
 				<div class="m-logo">
 				</div>
 				<ul class="layui-nav layui-nav-tree" lay-filter="leftNav">
+					<volist name="menu" id="vo">
+						<li class="layui-nav-item">
+							<a href="javascript:;" data-url="{:U($vo['url'])}" data-id='{$vo.id}' data-text="{$vo.name}"><i class="iconfont">&#xe604;</i>{$vo.name}</a>
+						</li>
+
+					</volist>
 				  <li class="layui-nav-item layui-nav-itemed">
 				    <a href="javascript:;"><i class="iconfont">&#xe607;</i>菜单管理</a>
 				    <dl class="layui-nav-child">
@@ -34,7 +40,7 @@
 				    <a href="javascript:;"><i class="iconfont">&#xe604;</i>推荐位管理</a>
 				  </li>
 				   <li class="layui-nav-item">
-				    <a href="javascript:;"><i class="iconfont">&#xe60c;</i>友情链接</a>
+				    <a href="javascript:;" data-url="http://www.baidu.com" data-id='8' data-text="百度tab"><i class="iconfont">&#xe60c;</i>友情链接</a>
 				  </li>
 				   <li class="layui-nav-item">
 				    <a href="javascript:;"><i class="iconfont">&#xe60a;</i>RBAC</a>

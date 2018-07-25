@@ -1,0 +1,414 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <title>
+        我要开卡-无极软件后台管理系统
+    </title>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="http://www.58wuji.com/application/home/view/public/css/discuz.css" id="lhgdialoglink" rel="stylesheet"/>
+    <link href="http://www.58wuji.com/application/home/view/public/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="http://www.58wuji.com/application/home/view/public/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="http://www.58wuji.com/application/home/view/public/css/style.css" rel="stylesheet"/>
+</head>
+<body class="right-body">
+<div class="row " style="margin:0; padding:5px 0; background: #f0f0f0;">
+    <div class="col-md-4">
+        <ol class="breadcrumb">
+            <li>
+                <a href="create6.html">
+                    <i class="fa fa-home">
+                    </i>
+                    首页
+                </a>
+            </li>
+            <li>
+                <a href="soft.html">
+                    软件市场
+                </a>
+            </li>
+            <li class="active">
+                无极普通版
+            </li>
+        </ol>
+    </div>
+    <div class="col-md-8">
+        <div class="btn-group-xs text-right" style="padding-top:3px;line-height: 28px;">
+        </div>
+    </div>
+</div>
+<div class="section" style="width:90%">
+    <form action="save.html" class="form-horizontal" id="sform">
+        <input name="order[goodid]" type="hidden" value="2"/>
+        <input name="order[goodtype]" type="hidden" value="2"/>
+        <input name="order[pricetype]" type="hidden" value="1"/>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label class="control-label col-md-3" for="type_label">
+                    用户名
+                </label>
+                <div class="col-md-9">
+                    <input class="form-control" id="order_account" maxlength="64" name="order[username]" placeholder="请输入用户名" type="text" value="">
+                    <small>
+                        字母,数字组合
+                    </small>
+                    </input>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="control-label col-md-3" for="type_label">
+                    密码
+                    <small>
+                    </small>
+                </label>
+                <div class="col-md-9">
+                    <input class="form-control" id="order_passwd" maxlength="64" name="order[userpass]" placeholder="请输入密码" type="text" value="">
+                    </input>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label class="control-label col-md-3" for="type_label">
+                    开卡时长
+                </label>
+                <div class="col-md-9">
+                    <select class="form-control" id="order_day" name="order[timetype]">
+                        <option value="30">
+                            30天卡
+                        </option>
+                        <option value="10">
+                            10天卡
+                        </option>
+                        <option value="1">
+                            1天卡
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label class="control-label col-md-3" for="type_label">
+                    授权数量
+                </label>
+                <div class="col-md-9">
+                    <input class="form-control" id="order_machines" max="999" maxlength="9999" min="5" name="order[num]" placeholder="请输入机器数量" step="1" type="number" value="5">
+                    <small>
+                        当前账户余额 :
+                        <span class="text-danger">
+                                        0点
+                                    </span>
+                    </small>
+                    </input>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="control-label col-md-3" for="type_label">
+                    QQ
+                </label>
+                <div class="col-md-9">
+                    <input class="form-control" id="order_qq" maxlength="64" name="order[qq]" placeholder="请输入QQ" type="text" value="">
+                    </input>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label class="control-label col-md-3" for="type_label">
+                    所属平台
+                </label>
+                <div class="col-md-9">
+                    <select class="form-control" id="extra_platform" name="order[type]">
+                        <option value="1">
+                            安卓
+                        </option>
+                        <option value="9">
+                            苹果
+                        </option>
+                    </select>
+                    <small>
+                    </small>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="control-label col-md-3" for="type_label">
+                    极速IP
+                </label>
+                <div class="col-md-9">
+                    <select class="form-control" id="extra_aztype" name="order[cardip]">
+                        <option selected="" value="0">
+                            普通
+                        </option>
+                        <option value="1">
+                            极速
+                        </option>
+                    </select>
+                    <small>
+                    </small>
+                </div>
+            </div>
+            <div class="form-group col-md-12" id="goodtype">
+                <label class="control-label col-md-1" for="type_label" style="width: 12.5%">
+                    版本类型
+                </label>
+                <div class="col-md-9" style="width: 87.5%">
+                    <select class="form-control" id="bind_zone" name="order[goodtype]">
+                        <option value="2">
+                            随机版
+                        </option>
+                        <option value="7">
+                            固定版
+                        </option>
+                    </select>
+                    <small>
+                    </small>
+                </div>
+            </div>
+            <div class="form-group col-md-12" id="divregionlist" style="display: none;">
+                <label class="control-label col-md-1" for="type_label" style="width: 12.5%">
+                    机房选择
+                </label>
+                <div class="col-md-11 regionlist" style="width: 87.5%">
+                </div>
+            </div>
+
+            <div class="form-group col-md-12">
+                <label class="control-label col-md-3" for="type_label" style="width: 12.5%">
+                    备注
+                </label>
+                <div class="col-md-9" style="width: 87.5%">
+                    <textarea class="form-control" id="order_memo" name="order[remark]" placeholder="(备注)" value=""></textarea>
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="control-label col-md-3" for="type_label" style="width: 12.5%">
+                </label>
+                <div class="col-md-9" style="width: 87.5%">
+                    <button class="btn btn-success" href="javascript:;" id="btn-submit" role="button" type="button">
+                        提交
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!--start确认购买提示框-->
+    <div class="modal fade" id="kaika_modal" role="dialog" tabindex="-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                <span aria-hidden="true">
+                                    ×
+                                </span>
+                    </button>
+                    <h4 class="modal-title">
+                        操作确认
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div style="width:90%;padding:10px 10px 50px 10px; margin: 0 auto;">
+                        <p>
+                            确定购买？
+                            <br/>
+                            <!-- 应付 1000=1张 x (1张天卡 x 5机器 x 200) -->
+                            应付
+                            <span id="cardmsg">
+                                    </span>
+                        </p>
+                        <div class="points_recharge" style="margin-top:15px;">
+                            <button class="btn btn-primary" href="javascript:;" id="kaika_yes" role="button" type="button">
+                                确认
+                            </button>
+                            <button class="btn btn-primary" href="javascript:;" id="kaika_no" role="button" type="button">
+                                取消
+                            </button>
+                            <div class="clearfix">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end确认购买提示框-->
+</div>
+<script src="http://www.58wuji.com/application/home/view/public/js/jquery.min.js">
+</script>
+<script src="http://www.58wuji.com/application/home/view/public/js/bootstrap.min.js">
+</script>
+<script src="http://www.58wuji.com/application/home/view/public/js/lhgdialog.min.js">
+</script>
+<script src="http://www.58wuji.com/application/home/view/public/js/RGX.lib.min.js">
+</script>
+<script src="http://www.58wuji.com/application/home/view/public/js/rgx.js">
+</script>
+<script src="http://www.58wuji.com/application/home/view/public/js/laydate.js">
+</script>
+<script>
+    $(function() {
+        $("#extra_platform").change(function(){
+            var platid=$(this).val();
+            if(platid==9){
+                $("#goodtype").hide();
+
+                $("#divregionlist").hide();
+                $(".regionlist").html("");
+            }else{
+                $("#goodtype").show();
+            }
+        });
+
+        $('#btn-submit').on('click', function () {
+            var account      = $('#order_account').val(),
+                amount      = parseInt($('#order_machines').val()),
+                machines    = parseInt($('#order_machines').val()),
+                days        = parseInt($('#order_day').val());
+            var ret = /^[A-Za-z0-9]+$/;
+            if (account== '') {
+                RGX.msg('请输用户名');
+                $('#order_account').focus();
+            }
+            else if(!ret.test(account)){
+                RGX.msg('用户名格式错误');
+                $('#order_account').focus();
+                $('#order_account').select();
+            }
+            else if ($('#order_passwd').val() == '') {
+                RGX.msg('请输入密码');
+                $('#order_passwd').focus();
+            }
+            else if (isNaN(amount)) {
+                RGX.msg('至少购买五个');
+                $('#order_machines').focus();
+            }
+            else if (isNaN(days)) {
+                RGX.msg('至少购买一天');
+                $('#order_day').focus();
+            }
+            else if (isNaN(machines)) {
+                RGX.msg('至少设置一台机器');
+                $('#order_machines').focus();
+            }
+            else {
+                queren();
+            }
+        });
+        //点击提交购买按钮
+        function queren(){
+            // $('#kaika_yes').on('click',function(){
+            $.ajax({
+                //提交数据的类型 POST GET
+                type:"POST",
+                //提交的网址
+                url:"/home/good/ifcard",
+                async:false,//同步：意思是当有返回值以后才会进行后面的js程序。
+                //提交的数据
+                data:$("form").serialize(),
+                //返回数据的格式
+                datatype: "json",//"xml", "html", "script", "json", "jsonp", "text".
+                //在请求之前调用的函数
+                // beforeSend:function(){$("#msg").html("logining");},
+                //成功返回之后调用的函数
+                success:function(data){
+                    // console.log(data);
+                    var dataObj=eval("("+data+")");//转换为json对象
+                    if(dataObj.ret==1){
+                        $("#cardmsg").text(dataObj.cardmsg);
+                        $("#kaika_modal").modal();
+                    }else{
+                        RGX.msg(dataObj.msg);
+                        $('#order_account').focus();
+                        $('#order_account').select();
+                    }
+                }
+            });
+            // });
+        }
+        //确认购买
+        $("#kaika_yes").click(function(){
+            subform();
+        });
+        //取消购买
+        $('#kaika_no').on('click',function(){
+            $('#pay_modal').modal();
+            $("#kaika_modal").modal("hide");
+        });
+        //提交form表单
+        function subform(){
+            $.ajax({
+                //提交数据的类型 POST GET
+                type:"POST",
+                //提交的网址
+                url:"/home/good/createwuji",
+                async:false,//同步：意思是当有返回值以后才会进行后面的js程序。
+                //提交的数据
+                data:$("form").serialize(),
+                //返回数据的格式
+                datatype: "json",//"xml", "html", "script", "json", "jsonp", "text".
+                //在请求之前调用的函数
+                // beforeSend:function(){$("#msg").html("logining");},
+                //成功返回之后调用的函数
+                success:function(data){
+                    console.log(data);
+                    var dataObj=eval("("+data+")");//转换为json对象
+                    RGX.msg(dataObj.msg);
+                    if(dataObj.ret==0){
+                        window.location.href = '/home/good/cardlist2';
+                    }else{
+                        RGX.msg(dataObj.msg);
+                    }
+                },
+                error: function(){
+                    //请求出错处理
+                }
+            });
+        }
+        //无极普通-固定版-绑定区域
+        $("#bind_zone").change(function(){
+            var slectid=$(this).val();
+            if(slectid==7){
+                $("#divregionlist").show();
+                $.ajax({
+                    //提交数据的类型 POST GET
+                    type:"POST",
+                    //提交的网址
+                    url:"/home/good/regionlist",
+                    async:false,//同步：意思是当有返回值以后才会进行后面的js程序。
+                    //提交的数据
+                    data:$("form").serialize(),
+                    //返回数据的格式
+                    datatype: "json",//"xml", "html", "script", "json", "jsonp", "text".
+                    //在请求之前调用的函数
+                    // beforeSend:function(){$("#msg").html("logining");},
+                    //成功返回之后调用的函数
+                    success:function(data){
+                        // console.log(data);
+                        var dataObj=eval("("+data+")");//转换为json对象
+                        if(dataObj.ret==0){
+                            $(".regionlist").html("");
+                            $.each(dataObj.data.region,function(idx,item){
+                                $(".regionlist").append("<label style='width: 280px;float: left;font-size: 12px;'><input data-num='505' name='order[regionidarr][]' type='checkbox' value='"+item.region_id+"&&"+item.region_name+"'>"+item.region_name+"</input></label>");
+                                // console.log("name:"+item.region_name+",value:"+item.region_id);
+                            });
+                        }else{
+                            RGX.msg(dataObj.msg);
+                            $('#order_account').focus();
+                            $('#order_account').select();
+                        }
+                    },
+                    error: function(){
+                        //请求出错处理
+                    }
+                });
+            }else{
+                $(".regionlist").html("");
+                $("#divregionlist").hide();
+            }
+        });
+    });
+</script>
+</body>
+</html>

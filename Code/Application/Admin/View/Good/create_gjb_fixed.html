@@ -1,0 +1,2273 @@
+
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://pt.wujiruanjian.com/order/create?id=5.html -->
+<html lang="zh-cn">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <title>
+        挂机宝固定版开卡 - 无极软件后台管理系统
+    </title>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="http://www.58wuji.com/application/home/view/public/css/discuz.css" id="lhgdialoglink" rel="stylesheet"/>
+    <link href="http://www.58wuji.com/application/home/view/public/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="http://www.58wuji.com/application/home/view/public/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="http://www.58wuji.com/application/home/view/public/css/style.css" rel="stylesheet"/>
+</head>
+<body class="right-body">
+<div class="row " style="margin:0; padding:5px 0; background: #f0f0f0;">
+    <div class="col-md-4">
+        <ol class="breadcrumb">
+            <li>
+                <a href="create5.html">
+                    <i class="fa fa-home">
+                    </i>
+                    首页
+                </a>
+            </li>
+            <li>
+                <a href="soft.html">
+                    软件市场
+                </a>
+            </li>
+            <li class="active">
+                挂机宝固定版开卡
+            </li>
+        </ol>
+    </div>
+    <div class="col-md-8">
+        <div class="btn-group-xs text-right" style="padding-top:3px;line-height: 28px;">
+        </div>
+    </div>
+</div>
+<div class="section" style="width:90%">
+    <form action="save.html" class="form-horizontal" id="sform">
+        <input name="order[goodid]" type="hidden" value="3"/>
+        <input name="order[goodtype]" type="hidden" value="5"/>
+        <input name="order[pricetype]" type="hidden" value="2"/>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label class="control-label col-md-3" for="type_label">
+                    用户名
+                </label>
+                <div class="col-md-9">
+                    <input class="form-control" id="order_account" maxlength="64" name="order[username]" placeholder="请输入用户名" type="text" value=""/>
+                    <small>
+                        字母,数字组合
+                    </small>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="control-label col-md-3" for="type_label">
+                    密码
+                    <small>
+                    </small>
+                </label>
+                <div class="col-md-9">
+                    <input class="form-control" id="order_passwd" maxlength="64" name="order[userpass]" placeholder="请输入密码" type="text" value=""/>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label class="control-label col-md-3" for="type_label">
+                    开卡时长
+                </label>
+                <div class="col-md-9">
+                    <select class="form-control" id="order_day" name="order[timetype]">
+                        <option value="30">
+                            30天卡
+                        </option>
+                        <option value="10">
+                            10天卡
+                        </option>
+                        <option value="1">
+                            1天卡
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label class="control-label col-md-3" for="type_label">
+                    授权数量
+                </label>
+                <div class="col-md-9">
+                    <input class="form-control" id="order_machines" max="999" maxlength="999" min="5" name="order[num]" placeholder="请输入机器数量" step="1" type="number" value="5"/>
+                    <small>
+                        当前账户余额 :
+                        <span class="text-danger">
+                                    0点
+                                </span>
+                    </small>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="control-label col-md-3" for="type_label">
+                    QQ
+                </label>
+                <div class="col-md-9">
+                    <input class="form-control" id="order_qq" maxlength="64" name="order[qq]" placeholder="请输入QQ" type="text" value=""/>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label class="control-label col-md-3" for="type_label">
+                    所属平台
+                </label>
+                <div class="col-md-9">
+                    <select class="form-control" id="extra_platform" name="order[type]">
+                        <option selected="" value="0">
+                            PC版
+                        </option>
+                    </select>
+                    <small>
+                    </small>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="control-label col-md-3" for="type_label">
+                    绑定游戏
+                </label>
+                <div class="col-md-9">
+                    <select class="form-control" id="extra_gameid" name="order[branchinfo]">
+                        <option value="0">
+                            请选择
+                        </option>
+                        <option value="460&&0[0199game]">
+                            0[0199game]                                    </option>
+                        <option value="349&&1[18乐游戏]">
+                            1[18乐游戏]                                    </option>
+                        <option value="176&&1[175浏览器]">
+                            1[175浏览器]                                    </option>
+                        <option value="192&&1[1908棋牌游戏]">
+                            1[1908棋牌游戏]                                    </option>
+                        <option value="338&&1[198电玩中心]">
+                            1[198电玩中心]                                    </option>
+                        <option value="651&&1[16米棋牌]">
+                            1[16米棋牌]                                    </option>
+                        <option value="381&&1[1891]">
+                            1[1891]                                    </option>
+                        <option value="451&&1[1819游戏]">
+                            1[1819游戏]                                    </option>
+                        <option value="464&&1[1816棋牌]">
+                            1[1816棋牌]                                    </option>
+                        <option value="504&&1[17175棋牌]">
+                            1[17175棋牌]                                    </option>
+                        <option value="520&&1[1680游戏]">
+                            1[1680游戏]                                    </option>
+                        <option value="657&&1[101PPT]">
+                            1[101PPT]                                    </option>
+                        <option value="742&&1[1378棋牌]">
+                            1[1378棋牌]                                    </option>
+                        <option value="768&&1[1918棋牌 手游]">
+                            1[1918棋牌 手游]                                    </option>
+                        <option value="47&&2[222注册器]">
+                            2[222注册器]                                    </option>
+                        <option value="427&&2[202棋牌]">
+                            2[202棋牌]                                    </option>
+                        <option value="350&&2[2QQ游戏中心]">
+                            2[2QQ游戏中心]                                    </option>
+                        <option value="362&&2[2278Game.exe]">
+                            2[2278Game.exe]                                    </option>
+                        <option value="403&&2[2050棋牌]">
+                            2[2050棋牌]                                    </option>
+                        <option value="404&&2[2978]">
+                            2[2978]                                    </option>
+                        <option value="448&&2[255game]">
+                            2[255game]                                    </option>
+                        <option value="467&&2[2080游戏]">
+                            2[2080游戏]                                    </option>
+                        <option value="824&&2[216游戏中心]">
+                            2[216游戏中心]                                    </option>
+                        <option value="593&&2[2345浏览器]">
+                            2[2345浏览器]                                    </option>
+                        <option value="641&&2[235游戏]">
+                            2[235游戏]                                    </option>
+                        <option value="198&&3[360Game]">
+                            3[360Game]                                    </option>
+                        <option value="705&&3[3099棋牌]">
+                            3[3099棋牌]                                    </option>
+                        <option value="188&&3[360安全浏览器]">
+                            3[360安全浏览器]                                    </option>
+                        <option value="364&&3[360急速浏览器]">
+                            3[360急速浏览器]                                    </option>
+                        <option value="806&&3[3386棋牌]">
+                            3[3386棋牌]                                    </option>
+                        <option value="177&&4[456游戏大厅]">
+                            4[456游戏大厅]                                    </option>
+                        <option value="217&&4[4056棋牌]">
+                            4[4056棋牌]                                    </option>
+                        <option value="255&&5[56y游戏中心]">
+                            5[56y游戏中心]                                    </option>
+                        <option value="272&&5[5PK传奇]">
+                            5[5PK传奇]                                    </option>
+                        <option value="202&&5[58管理器]">
+                            5[58管理器]                                    </option>
+                        <option value="256&&5[51新炫舞]">
+                            5[51新炫舞]                                    </option>
+                        <option value="341&&5[550棋牌]">
+                            5[550棋牌]                                    </option>
+                        <option value="355&&5[51PPK]">
+                            5[51PPK]                                    </option>
+                        <option value="529&&5[597游戏]">
+                            5[597游戏]                                    </option>
+                        <option value="654&&5[593游戏中心]">
+                            5[593游戏中心]                                    </option>
+                        <option value="673&&5[5188游戏中心]">
+                            5[5188游戏中心]                                    </option>
+                        <option value="780&&6[669]">
+                            6[669]                                    </option>
+                        <option value="853&&6[619游戏]">
+                            6[619游戏]                                    </option>
+                        <option value="72&&7[778游戏 棋牌]">
+                            7[778游戏 棋牌]                                    </option>
+                        <option value="779&&7[790棋牌 ]">
+                            7[790棋牌 ]                                    </option>
+                        <option value="140&&7[7luck]">
+                            7[7luck]                                    </option>
+                        <option value="335&&7[776棋牌]">
+                            7[776棋牌]                                    </option>
+                        <option value="431&&7[73豆 棋牌]">
+                            7[73豆 棋牌]                                    </option>
+                        <option value="447&&7[797棋牌]">
+                            7[797棋牌]                                    </option>
+                        <option value="545&&7[756棋牌 ]">
+                            7[756棋牌 ]                                    </option>
+                        <option value="609&&7[719游戏中心]">
+                            7[719游戏中心]                                    </option>
+                        <option value="391&&8[88369game]">
+                            8[88369game]                                    </option>
+                        <option value="498&&8[850棋牌游戏]">
+                            8[850棋牌游戏]                                    </option>
+                        <option value="474&&9[993游戏中心]">
+                            9[993游戏中心]                                    </option>
+                        <option value="64&&9[99电玩]">
+                            9[99电玩]                                    </option>
+                        <option value="115&&9[918棋牌]">
+                            9[918棋牌]                                    </option>
+                        <option value="229&&9[91Y]">
+                            9[91Y]                                    </option>
+                        <option value="132&&9[9158聊天室]">
+                            9[9158聊天室]                                    </option>
+                        <option value="151&&9[91棋牌]">
+                            9[91棋牌]                                    </option>
+                        <option value="323&&9[9游电玩]">
+                            9[9游电玩]                                    </option>
+                        <option value="475&&9[9A棋牌]">
+                            9[9A棋牌]                                    </option>
+                        <option value="633&&9[917棋牌]">
+                            9[917棋牌]                                    </option>
+                        <option value="667&&9[9x]">
+                            9[9x]                                    </option>
+                        <option value="699&&9[991游戏]">
+                            9[991游戏]                                    </option>
+                        <option value="740&&9[91Y捕鱼]">
+                            9[91Y捕鱼]                                    </option>
+                        <option value="20&&A[applerobot]">
+                            A[applerobot]                                    </option>
+                        <option value="86&&A[阿里旺旺]">
+                            A[阿里旺旺]                                    </option>
+                        <option value="324&&A[艾尔之光]">
+                            A[艾尔之光]                                    </option>
+                        <option value="154&&A[android]">
+                            A[android]                                    </option>
+                        <option value="164&&A[爱玩棋牌]">
+                            A[爱玩棋牌]                                    </option>
+                        <option value="583&&A[艾瑞克]">
+                            A[艾瑞克]                                    </option>
+                        <option value="218&&A[暗黑破坏神III]">
+                            A[暗黑破坏神III]                                    </option>
+                        <option value="430&&A[73豆 棋牌]">
+                            A[73豆 棋牌]                                    </option>
+                        <option value="469&&A[APP注册 手机]">
+                            A[APP注册 手机]                                    </option>
+                        <option value="561&&A[阿拉伯 手游]">
+                            A[阿拉伯 手游]                                    </option>
+                        <option value="660&&A[遨游浏览器]">
+                            A[遨游浏览器]                                    </option>
+                        <option value="646&&A[阿瓦隆之王 手游]">
+                            A[阿瓦隆之王 手游]                                    </option>
+                        <option value="844&&A[安全精灵]">
+                            A[安全精灵]                                    </option>
+                        <option value="10&&B[宝树贵金属交易软件]">
+                            B[宝树贵金属交易软件]                                    </option>
+                        <option value="18&&B[不灭OL]">
+                            B[不灭OL]                                    </option>
+                        <option value="225&&B[百度云同步盘]">
+                            B[百度云同步盘]                                    </option>
+                        <option value="789&&B[博彩]">
+                            B[博彩]                                    </option>
+                        <option value="271&&B[暴风电玩城]">
+                            B[暴风电玩城]                                    </option>
+                        <option value="219&&B[不败传说Online]">
+                            B[不败传说Online]                                    </option>
+                        <option value="130&&B[爆裂天空]">
+                            B[爆裂天空]                                    </option>
+                        <option value="736&&B[捕鱼高手]">
+                            B[捕鱼高手]                                    </option>
+                        <option value="167&&B[八闽游]">
+                            B[八闽游]                                    </option>
+                        <option value="171&&B[兵王2]">
+                            B[兵王2]                                    </option>
+                        <option value="826&&B[bangzhan1.3.6]">
+                            B[bangzhan1.3.6]                                    </option>
+                        <option value="228&&B[BlueStacks]">
+                            B[BlueStacks]                                    </option>
+                        <option value="237&&B[贝贝棋牌]">
+                            B[贝贝棋牌]                                    </option>
+                        <option value="261&&B[博睿不换IP挂机]">
+                            B[博睿不换IP挂机]                                    </option>
+                        <option value="818&&B[崩坏3]">
+                            B[崩坏3]                                    </option>
+                        <option value="392&&B[波大 手游]">
+                            B[波大 手游]                                    </option>
+                        <option value="374&&B[巴蜀游戏中心]">
+                            B[巴蜀游戏中心]                                    </option>
+                        <option value="435&&B[华人捕鱼]">
+                            B[华人捕鱼]                                    </option>
+                        <option value="445&&B[捕鱼世界]">
+                            B[捕鱼世界]                                    </option>
+                        <option value="462&&B[边锋 手游]">
+                            B[边锋 手游]                                    </option>
+                        <option value="465&&B[捕鱼17175]">
+                            B[捕鱼17175]                                    </option>
+                        <option value="536&&B[百度浏览器]">
+                            B[百度浏览器]                                    </option>
+                        <option value="817&&B[边锋游戏]">
+                            B[边锋游戏]                                    </option>
+                        <option value="575&&B[捕鱼来了 手游]">
+                            B[捕鱼来了 手游]                                    </option>
+                        <option value="716&&B[博雅棋牌  手游]">
+                            B[博雅棋牌  手游]                                    </option>
+                        <option value="731&&B[贝贝微助手]">
+                            B[贝贝微助手]                                    </option>
+                        <option value="750&&B[百姓网]">
+                            B[百姓网]                                    </option>
+                        <option value="784&&B[冰雪之城]">
+                            B[冰雪之城]                                    </option>
+                        <option value="842&&B[柏利棋牌]">
+                            B[柏利棋牌]                                    </option>
+                        <option value="854&&B[捕鱼达人3D]">
+                            B[捕鱼达人3D]                                    </option>
+                        <option value="714&&C[传奇  经典合击]">
+                            C[传奇  经典合击]                                    </option>
+                        <option value="280&&C[传奇私服_手游]">
+                            C[传奇私服_手游]                                    </option>
+                        <option value="21&&C[赤月传说]">
+                            C[赤月传说]                                    </option>
+                        <option value="33&&C[苍穹变]">
+                            C[苍穹变]                                    </option>
+                        <option value="35&&C[传奇世界]">
+                            C[传奇世界]                                    </option>
+                        <option value="52&&C[成吉思汗3]">
+                            C[成吉思汗3]                                    </option>
+                        <option value="65&&C[测试专用]">
+                            C[测试专用]                                    </option>
+                        <option value="210&&C[岑龙游戏中心]">
+                            C[岑龙游戏中心]                                    </option>
+                        <option value="92&&C[辰龙棋牌]">
+                            C[辰龙棋牌]                                    </option>
+                        <option value="706&&C[超快排]">
+                            C[超快排]                                    </option>
+                        <option value="382&&C[传奇盛世 图钉]">
+                            C[传奇盛世 图钉]                                    </option>
+                        <option value="703&&C[传奇 梁山复古]">
+                            C[传奇 梁山复古]                                    </option>
+                        <option value="220&&C[传奇霸业]">
+                            C[传奇霸业]                                    </option>
+                        <option value="508&&C[辰龙捕鱼 手游]">
+                            C[辰龙捕鱼 手游]                                    </option>
+                        <option value="126&&C[创世神话]">
+                            C[创世神话]                                    </option>
+                        <option value="221&&C[穿越火线]">
+                            C[穿越火线]                                    </option>
+                        <option value="301&&C[chrome]">
+                            C[chrome]                                    </option>
+                        <option value="390&&C[Ccproxy]">
+                            C[Ccproxy]                                    </option>
+                        <option value="340&&C[查询]">
+                            C[查询]                                    </option>
+                        <option value="388&&C[传奇永恒]">
+                            C[传奇永恒]                                    </option>
+                        <option value="421&&C[传说]">
+                            C[传说]                                    </option>
+                        <option value="486&&C[传奇3]">
+                            C[传奇3]                                    </option>
+                        <option value="495&&C[宠物小精灵]">
+                            C[宠物小精灵]                                    </option>
+                        <option value="595&&C[传奇世界 手游]">
+                            C[传奇世界 手游]                                    </option>
+                        <option value="648&&C[成吉思汗1]">
+                            C[成吉思汗1]                                    </option>
+                        <option value="679&&C[传奇 私服 龙珠合击]">
+                            C[传奇 私服 龙珠合击]                                    </option>
+                        <option value="678&&C[传奇私服神捕(冰雪）]">
+                            C[传奇私服神捕(冰雪）]                                    </option>
+                        <option value="677&&C[传奇私服霓裳道盾合击]">
+                            C[传奇私服霓裳道盾合击]                                    </option>
+                        <option value="680&&C[传奇私服豪侠黄泉]">
+                            C[传奇私服豪侠黄泉]                                    </option>
+                        <option value="687&&C[传奇归真版]">
+                            C[传奇归真版]                                    </option>
+                        <option value="694&&C[传奇归来]">
+                            C[传奇归来]                                    </option>
+                        <option value="735&&C[CP彩票 手机]">
+                            C[CP彩票 手机]                                    </option>
+                        <option value="702&&C[传奇 修仙大陆 私服]">
+                            C[传奇 修仙大陆 私服]                                    </option>
+                        <option value="713&&C[重返神州]">
+                            C[重返神州]                                    </option>
+                        <option value="720&&C[传奇世界杨家将小助手]">
+                            C[传奇世界杨家将小助手]                                    </option>
+                        <option value="722&&C[成吉思汗 手游]">
+                            C[成吉思汗 手游]                                    </option>
+                        <option value="733&&C[创世战车]">
+                            C[创世战车]                                    </option>
+                        <option value="738&&C[传奇 王子合击]">
+                            C[传奇 王子合击]                                    </option>
+                        <option value="739&&C[传奇私服 丽江合击]">
+                            C[传奇私服 丽江合击]                                    </option>
+                        <option value="746&&C[超快排升级版]">
+                            C[超快排升级版]                                    </option>
+                        <option value="765&&C[传奇盛世]">
+                            C[传奇盛世]                                    </option>
+                        <option value="770&&C[传奇-影子传说]">
+                            C[传奇-影子传说]                                    </option>
+                        <option value="797&&C[测试]">
+                            C[测试]                                    </option>
+                        <option value="862&&C[传奇私服吉祥玉兔]">
+                            C[传奇私服吉祥玉兔]                                    </option>
+                        <option value="888&&C[传奇私服梦幻第五季]">
+                            C[传奇私服梦幻第五季]                                    </option>
+                        <option value="877&&C[楚留香 手游]">
+                            C[楚留香 手游]                                    </option>
+                        <option value="887&&C[赤月传说2]">
+                            C[赤月传说2]                                    </option>
+                        <option value="5&&D[斗战神]">
+                            D[斗战神]                                    </option>
+                        <option value="13&&D[地下城与勇士.]">
+                            D[地下城与勇士.]                                    </option>
+                        <option value="24&&D[Dofus]">
+                            D[Dofus]                                    </option>
+                        <option value="45&&D[刀剑2]">
+                            D[刀剑2]                                    </option>
+                        <option value="347&&D[大话西游 手游]">
+                            D[大话西游 手游]                                    </option>
+                        <option value="63&&D[新大话西游2]">
+                            D[新大话西游2]                                    </option>
+                        <option value="489&&D[蛋蛋赚 手机]">
+                            D[蛋蛋赚 手机]                                    </option>
+                        <option value="71&&D[新大话西游2免费版]">
+                            D[新大话西游2免费版]                                    </option>
+                        <option value="74&&D[斗仙]">
+                            D[斗仙]                                    </option>
+                        <option value="106&&D[大唐无双2]">
+                            D[大唐无双2]                                    </option>
+                        <option value="129&&D[地下城与勇士]">
+                            D[地下城与勇士]                                    </option>
+                        <option value="134&&D[大天使之剑]">
+                            D[大天使之剑]                                    </option>
+                        <option value="785&&D[多多棋牌]">
+                            D[多多棋牌]                                    </option>
+                        <option value="786&&D[德友圈]">
+                            D[德友圈]                                    </option>
+                        <option value="162&&d[大话西游3]">
+                            d[大话西游3]                                    </option>
+                        <option value="172&&D[东方故事]">
+                            D[东方故事]                                    </option>
+                        <option value="178&&D[地城之光]">
+                            D[地城之光]                                    </option>
+                        <option value="245&&D[斗地主_手游]">
+                            D[斗地主_手游]                                    </option>
+                        <option value="278&&D[点评 手游]">
+                            D[点评 手游]                                    </option>
+                        <option value="292&&D[打鱼]">
+                            D[打鱼]                                    </option>
+                        <option value="313&&D[大圣捉妖记 手游]">
+                            D[大圣捉妖记 手游]                                    </option>
+                        <option value="319&&D[刀塔 手游]">
+                            D[刀塔 手游]                                    </option>
+                        <option value="318&&D[大众棋牌]">
+                            D[大众棋牌]                                    </option>
+                        <option value="346&&D[刀塔 手游]">
+                            D[刀塔 手游]                                    </option>
+                        <option value="534&&D[丢瓶子 手游]">
+                            D[丢瓶子 手游]                                    </option>
+                        <option value="535&&D[刀剑2_测试]">
+                            D[刀剑2_测试]                                    </option>
+                        <option value="574&&D[地下城与勇士 私服]">
+                            D[地下城与勇士 私服]                                    </option>
+                        <option value="616&&D[大话西游热血版 手游]">
+                            D[大话西游热血版 手游]                                    </option>
+                        <option value="663&&D[道王手游]">
+                            D[道王手游]                                    </option>
+                        <option value="721&&D[德扑圈]">
+                            D[德扑圈]                                    </option>
+                        <option value="773&&D[斗破苍穹 手游]">
+                            D[斗破苍穹 手游]                                    </option>
+                        <option value="754&&D[大众注册机]">
+                            D[大众注册机]                                    </option>
+                        <option value="755&&D[大唐无双零]">
+                            D[大唐无双零]                                    </option>
+                        <option value="757&&D[大航海 手游]">
+                            D[大航海 手游]                                    </option>
+                        <option value="838&&D[道无边 手游]">
+                            D[道无边 手游]                                    </option>
+                        <option value="847&&D[刀剑斗神传 手游]">
+                            D[刀剑斗神传 手游]                                    </option>
+                        <option value="849&&D[大玩家欢乐版]">
+                            D[大玩家欢乐版]                                    </option>
+                        <option value="850&&D[盗版管家]">
+                            D[盗版管家]                                    </option>
+                        <option value="879&&D[斗鱼绝世仙王]">
+                            D[斗鱼绝世仙王]                                    </option>
+                        <option value="903&&D[大众]">
+                            D[大众]                                    </option>
+                        <option value="911&&D[大众捕鱼 手游]">
+                            D[大众捕鱼 手游]                                    </option>
+                        <option value="88&&E[eve]">
+                            E[eve]                                    </option>
+                        <option value="14&&F[风云无双2]">
+                            F[风云无双2]                                    </option>
+                        <option value="67&&F[封神降魔]">
+                            F[封神降魔]                                    </option>
+                        <option value="99&&F[FiFaOnline[足球]]">
+                            F[FiFaOnline[足球]]                                    </option>
+                        <option value="264&&F[风暴英雄]">
+                            F[风暴英雄]                                    </option>
+                        <option value="708&&F[封印者 台服]">
+                            F[封印者 台服]                                    </option>
+                        <option value="214&&F[风雷游戏II]">
+                            F[风雷游戏II]                                    </option>
+                        <option value="305&&F[FIFA 手游]">
+                            F[FIFA 手游]                                    </option>
+                        <option value="380&&F[发帖软件]">
+                            F[发帖软件]                                    </option>
+                        <option value="402&&F[新反恐行动]">
+                            F[新反恐行动]                                    </option>
+                        <option value="493&&F[封包挂机]">
+                            F[封包挂机]                                    </option>
+                        <option value="560&&F[FGO-命运冠位   手游]">
+                            F[FGO-命运冠位   手游]                                    </option>
+                        <option value="562&&F[凤凰棋牌]">
+                            F[凤凰棋牌]                                    </option>
+                        <option value="586&&F[Ffxiv棋牌]">
+                            F[Ffxiv棋牌]                                    </option>
+                        <option value="670&&F[FIFA查封]">
+                            F[FIFA查封]                                    </option>
+                        <option value="718&&F[反恐精英1]">
+                            F[反恐精英1]                                    </option>
+                        <option value="727&&F[发发游戏]">
+                            F[发发游戏]                                    </option>
+                        <option value="776&&F[饭多多]">
+                            F[饭多多]                                    </option>
+                        <option value="895&&F[FIFAol4]">
+                            F[FIFAol4]                                    </option>
+                        <option value="36&&G[国际版本QQ]">
+                            G[国际版本QQ]                                    </option>
+                        <option value="57&&G[挂客宝]">
+                            G[挂客宝]                                    </option>
+                        <option value="82&&G[殇国小助手]">
+                            G[殇国小助手]                                    </option>
+                        <option value="200&&G[谷歌浏览器]">
+                            G[谷歌浏览器]                                    </option>
+                        <option value="213&&G[怪物猎人Online]">
+                            G[怪物猎人Online]                                    </option>
+                        <option value="247&&G[挂机端.exe]">
+                            G[挂机端.exe]                                    </option>
+                        <option value="303&&G[股票操盘]">
+                            G[股票操盘]                                    </option>
+                        <option value="320&&G[盖世豪侠]">
+                            G[盖世豪侠]                                    </option>
+                        <option value="368&&G[怪物猎人Online]">
+                            G[怪物猎人Online]                                    </option>
+                        <option value="501&&G[攻城管家]">
+                            G[攻城管家]                                    </option>
+                        <option value="507&&G[攻城略地]">
+                            G[攻城略地]                                    </option>
+                        <option value="658&&G[光明大陆 手游]">
+                            G[光明大陆 手游]                                    </option>
+                        <option value="707&&G[光明大陆 PC]">
+                            G[光明大陆 PC]                                    </option>
+                        <option value="815&&G[格罗亚传奇]">
+                            G[格罗亚传奇]                                    </option>
+                        <option value="396&&H[灰泡泡]">
+                            H[灰泡泡]                                    </option>
+                        <option value="32&&H[幻想神域]">
+                            H[幻想神域]                                    </option>
+                        <option value="512&&H[魂域]">
+                            H[魂域]                                    </option>
+                        <option value="76&&H[HH棋牌]">
+                            H[HH棋牌]                                    </option>
+                        <option value="105&&H[火狐]">
+                            H[火狐]                                    </option>
+                        <option value="704&&H[魂斗罗  手游]">
+                            H[魂斗罗  手游]                                    </option>
+                        <option value="150&&H[海绵宝宝]">
+                            H[海绵宝宝]                                    </option>
+                        <option value="291&&H[画皮世界2]">
+                            H[画皮世界2]                                    </option>
+                        <option value="709&&H[荒古微端]">
+                            H[荒古微端]                                    </option>
+                        <option value="211&&H[欢乐城堡]">
+                            H[欢乐城堡]                                    </option>
+                        <option value="265&&H[回忆传奇]">
+                            H[回忆传奇]                                    </option>
+                        <option value="283&&H[互点宝]">
+                            H[互点宝]                                    </option>
+                        <option value="310&&H[黑潮来袭 台服]">
+                            H[黑潮来袭 台服]                                    </option>
+                        <option value="379&&H[欢乐斗牛]">
+                            H[欢乐斗牛]                                    </option>
+                        <option value="377&&H[画江山]">
+                            H[画江山]                                    </option>
+                        <option value="394&&H[互点宝]">
+                            H[互点宝]                                    </option>
+                        <option value="531&&H[海马玩]">
+                            H[海马玩]                                    </option>
+                        <option value="449&&H[欢乐赢三张 手游]">
+                            H[欢乐赢三张 手游]                                    </option>
+                        <option value="450&&H[火拼麻将]">
+                            H[火拼麻将]                                    </option>
+                        <option value="461&&H[欢乐电玩城]">
+                            H[欢乐电玩城]                                    </option>
+                        <option value="477&&H[华景机器人]">
+                            H[华景机器人]                                    </option>
+                        <option value="514&&H[汗游天下]">
+                            H[汗游天下]                                    </option>
+                        <option value="541&&H[好好学习]">
+                            H[好好学习]                                    </option>
+                        <option value="549&&H[汉游棋牌]">
+                            H[汉游棋牌]                                    </option>
+                        <option value="828&&H[华夏嘟嘟]">
+                            H[华夏嘟嘟]                                    </option>
+                        <option value="665&&H[幻想三国 手游]">
+                            H[幻想三国 手游]                                    </option>
+                        <option value="640&&H[花田网页]">
+                            H[花田网页]                                    </option>
+                        <option value="588&&H[黑月浏览器]">
+                            H[黑月浏览器]                                    </option>
+                        <option value="589&&H[QQ幻想世界]">
+                            H[QQ幻想世界]                                    </option>
+                        <option value="591&&H[汇友统筹]">
+                            H[汇友统筹]                                    </option>
+                        <option value="630&&H[环宇浏览器]">
+                            H[环宇浏览器]                                    </option>
+                        <option value="683&&H[欢乐斗棋牌手游]">
+                            H[欢乐斗棋牌手游]                                    </option>
+                        <option value="743&&H[欢乐麻将]">
+                            H[欢乐麻将]                                    </option>
+                        <option value="761&&H[寰宇浏览器]">
+                            H[寰宇浏览器]                                    </option>
+                        <option value="774&&H[欢乐大乱斗]">
+                            H[欢乐大乱斗]                                    </option>
+                        <option value="808&&H[汉王的纷争 手游  ]">
+                            H[汉王的纷争 手游  ]                                    </option>
+                        <option value="829&&H[火枪纪元 手游]">
+                            H[火枪纪元 手游]                                    </option>
+                        <option value="846&&H[荒野行动]">
+                            H[荒野行动]                                    </option>
+                        <option value="870&&H[华夏手游 国服]">
+                            H[华夏手游 国服]                                    </option>
+                        <option value="878&&H[欢乐斗棋牌PC版]">
+                            H[欢乐斗棋牌PC版]                                    </option>
+                        <option value="909&&H[海之乐章]">
+                            H[海之乐章]                                    </option>
+                        <option value="62&&I[IEXPLORE]">
+                            I[IEXPLORE]                                    </option>
+                        <option value="70&&I[魂之猎手]">
+                            I[魂之猎手]                                    </option>
+                        <option value="254&&I[iTunes]">
+                            I[iTunes]                                    </option>
+                        <option value="813&&I[IOS数据转换]">
+                            I[IOS数据转换]                                    </option>
+                        <option value="399&&I[IE6测试]">
+                            I[IE6测试]                                    </option>
+                        <option value="627&&I[ITOOLS模拟器]">
+                            I[ITOOLS模拟器]                                    </option>
+                        <option value="659&&J[江南挂机]">
+                            J[江南挂机]                                    </option>
+                        <option value="681&&J[极光繁星抢币]">
+                            J[极光繁星抢币]                                    </option>
+                        <option value="19&&J[驾校学习软件]">
+                            J[驾校学习软件]                                    </option>
+                        <option value="30&&J[极光世界]">
+                            J[极光世界]                                    </option>
+                        <option value="548&&J[九阴真经 手游]">
+                            J[九阴真经 手游]                                    </option>
+                        <option value="69&&J[剑网三]">
+                            J[剑网三]                                    </option>
+                        <option value="83&&J[九妖千年私服]">
+                            J[九妖千年私服]                                    </option>
+                        <option value="85&&J[疾风之刃]">
+                            J[疾风之刃]                                    </option>
+                        <option value="87&&J[集结号棋牌]">
+                            J[集结号棋牌]                                    </option>
+                        <option value="631&&J[集客手机QQ打招呼关注]">
+                            J[集客手机QQ打招呼关注]                                    </option>
+                        <option value="104&&J[九阴真经]">
+                            J[九阴真经]                                    </option>
+                        <option value="690&&J[荆门茶馆]">
+                            J[荆门茶馆]                                    </option>
+                        <option value="117&&J[剑灵]">
+                            J[剑灵]                                    </option>
+                        <option value="119&&J[JJ比赛]">
+                            J[JJ比赛]                                    </option>
+                        <option value="139&&J[劲舞团2]">
+                            J[劲舞团2]                                    </option>
+                        <option value="209&&J[京东咚咚]">
+                            J[京东咚咚]                                    </option>
+                        <option value="145&&J[激战2]">
+                            J[激战2]                                    </option>
+                        <option value="155&&J[江湖]">
+                            J[江湖]                                    </option>
+                        <option value="161&&J[金冠软件]">
+                            J[金冠软件]                                    </option>
+                        <option value="168&&J[ 疾风之刃]">
+                            J[ 疾风之刃]                                    </option>
+                        <option value="290&&J[JJ比赛 手游]">
+                            J[JJ比赛 手游]                                    </option>
+                        <option value="174&&J[java]">
+                            J[java]                                    </option>
+                        <option value="183&&J[剑网三台服]">
+                            J[剑网三台服]                                    </option>
+                        <option value="199&&J[九乐棋牌]">
+                            J[九乐棋牌]                                    </option>
+                        <option value="239&&J[JxJyHacker]">
+                            J[JxJyHacker]                                    </option>
+                        <option value="250&&J[剑灵台服]">
+                            J[剑灵台服]                                    </option>
+                        <option value="322&&J[江南传奇盛世]">
+                            J[江南传奇盛世]                                    </option>
+                        <option value="370&&J[劲舞团私服]">
+                            J[劲舞团私服]                                    </option>
+                        <option value="395&&J[激战1]">
+                            J[激战1]                                    </option>
+                        <option value="378&&J[剑灵 美服]">
+                            J[剑灵 美服]                                    </option>
+                        <option value="432&&J[JK浏览器]">
+                            J[JK浏览器]                                    </option>
+                        <option value="459&&J[聚美APP]">
+                            J[聚美APP]                                    </option>
+                        <option value="470&&J[京东注册]">
+                            J[京东注册]                                    </option>
+                        <option value="481&&J[剑侠世界2]">
+                            J[剑侠世界2]                                    </option>
+                        <option value="483&&J[剑侠情缘 手游]">
+                            J[剑侠情缘 手游]                                    </option>
+                        <option value="569&&J[金球]">
+                            J[金球]                                    </option>
+                        <option value="570&&J[九阴真经台服 手游]">
+                            J[九阴真经台服 手游]                                    </option>
+                        <option value="579&&J[劲舞团 手游]">
+                            J[劲舞团 手游]                                    </option>
+                        <option value="604&&J[机器人]">
+                            J[机器人]                                    </option>
+                        <option value="601&&J[金博棋牌]">
+                            J[金博棋牌]                                    </option>
+                        <option value="619&&J[聚聚玩]">
+                            J[聚聚玩]                                    </option>
+                        <option value="637&&J[九天棋牌]">
+                            J[九天棋牌]                                    </option>
+                        <option value="664&&J[集结号 手游]">
+                            J[集结号 手游]                                    </option>
+                        <option value="715&&J[静观其变qq工具]">
+                            J[静观其变qq工具]                                    </option>
+                        <option value="728&&J[军哥8.8]">
+                            J[军哥8.8]                                    </option>
+                        <option value="737&&J[君临天下]">
+                            J[君临天下]                                    </option>
+                        <option value="771&&J[京东霹雳]">
+                            J[京东霹雳]                                    </option>
+                        <option value="791&&J[绝对武力 台服]">
+                            J[绝对武力 台服]                                    </option>
+                        <option value="859&&J[剑灵小红帽]">
+                            J[剑灵小红帽]                                    </option>
+                        <option value="914&&J[绝地求生]">
+                            J[绝地求生]                                    </option>
+                        <option value="107&&K[客栈]">
+                            K[客栈]                                    </option>
+                        <option value="342&&K[酷划 手游]">
+                            K[酷划 手游]                                    </option>
+                        <option value="499&&K[口袋妖怪]">
+                            K[口袋妖怪]                                    </option>
+                        <option value="505&&K[口袋德州]">
+                            K[口袋德州]                                    </option>
+                        <option value="582&&K[K7游戏中心]">
+                            K[K7游戏中心]                                    </option>
+                        <option value="634&&K[酷我注册]">
+                            K[酷我注册]                                    </option>
+                        <option value="719&&K[可园浏览器]">
+                            K[可园浏览器]                                    </option>
+                        <option value="760&&K[KK令牌工具]">
+                            K[KK令牌工具]                                    </option>
+                        <option value="863&&K[KK竞技]">
+                            K[KK竞技]                                    </option>
+                        <option value="1&&L[聊聊]">
+                            L[聊聊]                                    </option>
+                        <option value="414&&L[来电棋牌]">
+                            L[来电棋牌]                                    </option>
+                        <option value="27&&L[洛奇英雄传]">
+                            L[洛奇英雄传]                                    </option>
+                        <option value="29&&L[灵域]">
+                            L[灵域]                                    </option>
+                        <option value="34&&L[龙之谷]">
+                            L[龙之谷]                                    </option>
+                        <option value="39&&L[灵魂回响]">
+                            L[灵魂回响]                                    </option>
+                        <option value="452&&L[浏览器 手机]">
+                            L[浏览器 手机]                                    </option>
+                        <option value="880&&L[蓝天传奇]">
+                            L[蓝天传奇]                                    </option>
+                        <option value="537&&L[流放之路]">
+                            L[流放之路]                                    </option>
+                        <option value="287&&L[列王 手游]">
+                            L[列王 手游]                                    </option>
+                        <option value="80&&L[流亡黯道台服]">
+                            L[流亡黯道台服]                                    </option>
+                        <option value="600&&L[猎鱼达人]">
+                            L[猎鱼达人]                                    </option>
+                        <option value="143&&L[龙武]">
+                            L[龙武]                                    </option>
+                        <option value="148&&L[流量软件]">
+                            L[流量软件]                                    </option>
+                        <option value="158&&L[龙门虎将]">
+                            L[龙门虎将]                                    </option>
+                        <option value="293&&L[炉石传说]">
+                            L[炉石传说]                                    </option>
+                        <option value="231&&L[老K棋牌]">
+                            L[老K棋牌]                                    </option>
+                        <option value="186&&L[恋战]">
+                            L[恋战]                                    </option>
+                        <option value="195&&L[领卡器]">
+                            L[领卡器]                                    </option>
+                        <option value="712&&L[龙魂时刻]">
+                            L[龙魂时刻]                                    </option>
+                        <option value="269&&L[老回忆传奇]">
+                            L[老回忆传奇]                                    </option>
+                        <option value="321&&L[龍之傳奇]">
+                            L[龍之傳奇]                                    </option>
+                        <option value="376&&L[零点棋牌]">
+                            L[零点棋牌]                                    </option>
+                        <option value="476&&L[连环夺宝 手游]">
+                            L[连环夺宝 手游]                                    </option>
+                        <option value="516&&L[聊天平台]">
+                            L[聊天平台]                                    </option>
+                        <option value="517&&L[聊天平台]">
+                            L[聊天平台]                                    </option>
+                        <option value="518&&L[乐销宝注册器]">
+                            L[乐销宝注册器]                                    </option>
+                        <option value="556&&L[零纪元]">
+                            L[零纪元]                                    </option>
+                        <option value="603&&L[猎鱼达人 手游]">
+                            L[猎鱼达人 手游]                                    </option>
+                        <option value="573&&L[流放之路 美服]">
+                            L[流放之路 美服]                                    </option>
+                        <option value="599&&L[蓝月传奇]">
+                            L[蓝月传奇]                                    </option>
+                        <option value="612&&L[流放之路 欧服]">
+                            L[流放之路 欧服]                                    </option>
+                        <option value="613&&L[猎鱼达人3D]">
+                            L[猎鱼达人3D]                                    </option>
+                        <option value="617&&L[LOL 韩服]">
+                            L[LOL 韩服]                                    </option>
+                        <option value="639&&L[LOL引流]">
+                            L[LOL引流]                                    </option>
+                        <option value="661&&L[流量]">
+                            L[流量]                                    </option>
+                        <option value="662&&L[龙门山庄游戏中心]">
+                            L[龙门山庄游戏中心]                                    </option>
+                        <option value="675&&L[令牌改密]">
+                            L[令牌改密]                                    </option>
+                        <option value="700&&L[龙妹QQ全功能自动客户端]">
+                            L[龙妹QQ全功能自动客户端]                                    </option>
+                        <option value="701&&L[龙珠QQ全自动]">
+                            L[龙珠QQ全自动]                                    </option>
+                        <option value="741&&L[乱世王者 手游]">
+                            L[乱世王者 手游]                                    </option>
+                        <option value="775&&L[利剑标准版]">
+                            L[利剑标准版]                                    </option>
+                        <option value="764&&L[乐玩浏览器]">
+                            L[乐玩浏览器]                                    </option>
+                        <option value="769&&L[绿色浏览器]">
+                            L[绿色浏览器]                                    </option>
+                        <option value="782&&L[流放之路台服]">
+                            L[流放之路台服]                                    </option>
+                        <option value="792&&L[猎豹浏览器]">
+                            L[猎豹浏览器]                                    </option>
+                        <option value="790&&L[灵山奇缘]">
+                            L[灵山奇缘]                                    </option>
+                        <option value="800&&L[李逵劈鱼]">
+                            L[李逵劈鱼]                                    </option>
+                        <option value="837&&L[老K游戏]">
+                            L[老K游戏]                                    </option>
+                        <option value="843&&L[乐贝游戏]">
+                            L[乐贝游戏]                                    </option>
+                        <option value="857&&L[龙腾传世 手游]">
+                            L[龙腾传世 手游]                                    </option>
+                        <option value="881&&L[猎流-网店优化]">
+                            L[猎流-网店优化]                                    </option>
+                        <option value="7&&M[魔域]">
+                            M[魔域]                                    </option>
+                        <option value="883&&M[梦幻公益]">
+                            M[梦幻公益]                                    </option>
+                        <option value="22&&M[梦三国]">
+                            M[梦三国]                                    </option>
+                        <option value="216&&M[魔力宝贝]">
+                            M[魔力宝贝]                                    </option>
+                        <option value="41&&M[美服魔兽世界]">
+                            M[美服魔兽世界]                                    </option>
+                        <option value="43&&M[魔侠传]">
+                            M[魔侠传]                                    </option>
+                        <option value="44&&M[MY]">
+                            M[MY]                                    </option>
+                        <option value="59&&M[魔兽世界]">
+                            M[魔兽世界]                                    </option>
+                        <option value="81&&M[美服上古世纪]">
+                            M[美服上古世纪]                                    </option>
+                        <option value="910&&M[梦幻西游 手游 ]">
+                            M[梦幻西游 手游 ]                                    </option>
+                        <option value="101&&M[梦幻西游2]">
+                            M[梦幻西游2]                                    </option>
+                        <option value="111&&M[魔兽私服]">
+                            M[魔兽私服]                                    </option>
+                        <option value="118&&M[美服激战2]">
+                            M[美服激战2]                                    </option>
+                        <option value="156&&M[梦千年online]">
+                            M[梦千年online]                                    </option>
+                        <option value="572&&M[命运指定 手游]">
+                            M[命运指定 手游]                                    </option>
+                        <option value="300&&M[梦幻西游2 手游]">
+                            M[梦幻西游2 手游]                                    </option>
+                        <option value="331&&M[梦想世界]">
+                            M[梦想世界]                                    </option>
+                        <option value="343&&M[陌陌 手机]">
+                            M[陌陌 手机]                                    </option>
+                        <option value="415&&M[陌陌营销宝]">
+                            M[陌陌营销宝]                                    </option>
+                        <option value="417&&M[陌陌站街]">
+                            M[陌陌站街]                                    </option>
+                        <option value="444&&M[明朝时代]">
+                            M[明朝时代]                                    </option>
+                        <option value="485&&M[冒险岛私服]">
+                            M[冒险岛私服]                                    </option>
+                        <option value="494&&M[梦三国2]">
+                            M[梦三国2]                                    </option>
+                        <option value="503&&M[冒险岛online]">
+                            M[冒险岛online]                                    </option>
+                        <option value="538&&M[麻辣江湖OL]">
+                            M[麻辣江湖OL]                                    </option>
+                        <option value="542&&M[魔力宝贝私服 ]">
+                            M[魔力宝贝私服 ]                                    </option>
+                        <option value="543&&M[脉动棋牌]">
+                            M[脉动棋牌]                                    </option>
+                        <option value="546&&M[XY]">
+                            M[XY]                                    </option>
+                        <option value="550&&M[陌陌电脑版]">
+                            M[陌陌电脑版]                                    </option>
+                        <option value="566&&M[梦想浏览器]">
+                            M[梦想浏览器]                                    </option>
+                        <option value="621&&M[冒险岛2]">
+                            M[冒险岛2]                                    </option>
+                        <option value="691&&M[魔兽世界 欧服]">
+                            M[魔兽世界 欧服]                                    </option>
+                        <option value="745&&M[米乐汇]">
+                            M[米乐汇]                                    </option>
+                        <option value="766&&M[猫咪-手游]">
+                            M[猫咪-手游]                                    </option>
+                        <option value="802&&M[米聊]">
+                            M[米聊]                                    </option>
+                        <option value="839&&M[美丽约]">
+                            M[美丽约]                                    </option>
+                        <option value="852&&M[MG完美21点]">
+                            M[MG完美21点]                                    </option>
+                        <option value="900&&M[魔力宝贝 手游]">
+                            M[魔力宝贝 手游]                                    </option>
+                        <option value="16&&N[牛A绿色傲剑]">
+                            N[牛A绿色傲剑]                                    </option>
+                        <option value="243&&N[南京亚太]">
+                            N[南京亚太]                                    </option>
+                        <option value="78&&N[诺亚传说]">
+                            N[诺亚传说]                                    </option>
+                        <option value="131&&N[怒三国]">
+                            N[怒三国]                                    </option>
+                        <option value="208&&N[逆战]">
+                            N[逆战]                                    </option>
+                        <option value="334&&N[宁波游戏大厅]">
+                            N[宁波游戏大厅]                                    </option>
+                        <option value="812&&N[NOW注册]">
+                            N[NOW注册]                                    </option>
+                        <option value="816&&N[NBA 手游]">
+                            N[NBA 手游]                                    </option>
+                        <option value="901&&N[逆水寒]">
+                            N[逆水寒]                                    </option>
+                        <option value="309&&P[批量挂Q]">
+                            P[批量挂Q]                                    </option>
+                        <option value="336&&P[泡泡堂]">
+                            P[泡泡堂]                                    </option>
+                        <option value="652&&P[碰碰引流]">
+                            P[碰碰引流]                                    </option>
+                        <option value="685&&P[貔喜脉动棋牌 手游]">
+                            P[貔喜脉动棋牌 手游]                                    </option>
+                        <option value="124&&P[苹果抢购]">
+                            P[苹果抢购]                                    </option>
+                        <option value="867&&P[拼多多]">
+                            P[拼多多]                                    </option>
+                        <option value="236&&P[葡京棋牌]">
+                            P[葡京棋牌]                                    </option>
+                        <option value="308&&P[拍卖行]">
+                            P[拍卖行]                                    </option>
+                        <option value="408&&P[QQ捕鱼达人]">
+                            P[QQ捕鱼达人]                                    </option>
+                        <option value="472&&P[PHP网页浏览]">
+                            P[PHP网页浏览]                                    </option>
+                        <option value="496&&P[pokemon Go]">
+                            P[pokemon Go]                                    </option>
+                        <option value="509&&P[平台]">
+                            P[平台]                                    </option>
+                        <option value="522&&P[破天一剑]">
+                            P[破天一剑]                                    </option>
+                        <option value="814&&P[拼多多自动抢单]">
+                            P[拼多多自动抢单]                                    </option>
+                        <option value="623&&P[貔喜网络脉动棋牌]">
+                            P[貔喜网络脉动棋牌]                                    </option>
+                        <option value="833&&P[拍拍软件]">
+                            P[拍拍软件]                                    </option>
+                        <option value="866&&P[品多多]">
+                            P[品多多]                                    </option>
+                        <option value="401&&Q[QQ8]">
+                            Q[QQ8]                                    </option>
+                        <option value="6&&Q[期货交易]">
+                            Q[期货交易]                                    </option>
+                        <option value="409&&Q[QT助手]">
+                            Q[QT助手]                                    </option>
+                        <option value="28&&Q[qq仙灵]">
+                            Q[qq仙灵]                                    </option>
+                        <option value="31&&Q[QQ炫舞]">
+                            Q[QQ炫舞]                                    </option>
+                        <option value="38&&Q[QQ华夏]">
+                            Q[QQ华夏]                                    </option>
+                        <option value="51&&Q[qq游戏大厅]">
+                            Q[qq游戏大厅]                                    </option>
+                        <option value="56&&Q[QQ幻想]">
+                            Q[QQ幻想]                                    </option>
+                        <option value="810&&Q[青云决 手游 ]">
+                            Q[青云决 手游 ]                                    </option>
+                        <option value="61&&Q[QQ仙侠传.]">
+                            Q[QQ仙侠传.]                                    </option>
+                        <option value="295&&Q[QQ游戏大厅 手机版]">
+                            Q[QQ游戏大厅 手机版]                                    </option>
+                        <option value="68&&Q[QQ新寻仙]">
+                            Q[QQ新寻仙]                                    </option>
+                        <option value="77&&Q[倩女幽魂2Online]">
+                            Q[倩女幽魂2Online]                                    </option>
+                        <option value="84&&Q[QQ三国]">
+                            Q[QQ三国]                                    </option>
+                        <option value="912&&Q[QQ10]">
+                            Q[QQ10]                                    </option>
+                        <option value="805&&Q[七日之都 手游]">
+                            Q[七日之都 手游]                                    </option>
+                        <option value="689&&Q[QQ奇侠传 手游]">
+                            Q[QQ奇侠传 手游]                                    </option>
+                        <option value="93&&Q[QQ3]">
+                            Q[QQ3]                                    </option>
+                        <option value="226&&Q[腾讯QQ有保改保&amp;改密辅助]">
+                            Q[腾讯QQ有保改保&amp;改密辅助]                                    </option>
+                        <option value="103&&Q[奇迹MU]">
+                            Q[奇迹MU]                                    </option>
+                        <option value="110&&Q[QQ2]">
+                            Q[QQ2]                                    </option>
+                        <option value="113&&Q[QQ协议]">
+                            Q[QQ协议]                                    </option>
+                        <option value="638&&Q[齐齐协议]">
+                            Q[齐齐协议]                                    </option>
+                        <option value="666&&Q[QQ浏览器]">
+                            Q[QQ浏览器]                                    </option>
+                        <option value="179&&Q[QQ9]">
+                            Q[QQ9]                                    </option>
+                        <option value="212&&Q[腾讯QQ]">
+                            Q[腾讯QQ]                                    </option>
+                        <option value="142&&Q[QQ仙侠传]">
+                            Q[QQ仙侠传]                                    </option>
+                        <option value="428&&Q[QQ]">
+                            Q[QQ]                                    </option>
+                        <option value="286&&Q[奇迹MU 手游]">
+                            Q[奇迹MU 手游]                                    </option>
+                        <option value="184&&Q[骑士之心]">
+                            Q[骑士之心]                                    </option>
+                        <option value="187&&Q[亲朋棋牌]">
+                            Q[亲朋棋牌]                                    </option>
+                        <option value="230&&Q[强手夺宝岛助手]">
+                            Q[强手夺宝岛助手]                                    </option>
+                        <option value="234&&Q[抢码器]">
+                            Q[抢码器]                                    </option>
+                        <option value="479&&Q[倩女幽魂 手游]">
+                            Q[倩女幽魂 手游]                                    </option>
+                        <option value="242&&Q[QT]">
+                            Q[QT]                                    </option>
+                        <option value="296&&Q[QQ 手机版]">
+                            Q[QQ 手机版]                                    </option>
+                        <option value="298&&Q[QQ自由幻想]">
+                            Q[QQ自由幻想]                                    </option>
+                        <option value="273&&q[全民奇迹_台服_手游]">
+                            q[全民奇迹_台服_手游]                                    </option>
+                        <option value="882&&Q[奇迹公益]">
+                            Q[奇迹公益]                                    </option>
+                        <option value="275&&Q[全民小镇 手游]">
+                            Q[全民小镇 手游]                                    </option>
+                        <option value="299&&Q[千侠传]">
+                            Q[千侠传]                                    </option>
+                        <option value="307&&Q[QQ飞车]">
+                            Q[QQ飞车]                                    </option>
+                        <option value="328&&Q[QQ1]">
+                            Q[QQ1]                                    </option>
+                        <option value="822&&Q[奇迹觉醒 手游]">
+                            Q[奇迹觉醒 手游]                                    </option>
+                        <option value="330&&Q[QQ5]">
+                            Q[QQ5]                                    </option>
+                        <option value="333&&Q[TZ注册机]">
+                            Q[TZ注册机]                                    </option>
+                        <option value="344&&Q[QQ6]">
+                            Q[QQ6]                                    </option>
+                        <option value="345&&Q[QQ7]">
+                            Q[QQ7]                                    </option>
+                        <option value="353&&Q[奇迹战神]">
+                            Q[奇迹战神]                                    </option>
+                        <option value="365&&Q[奇易QQ安全助手]">
+                            Q[奇易QQ安全助手]                                    </option>
+                        <option value="366&&Q[QQ机器码人]">
+                            Q[QQ机器码人]                                    </option>
+                        <option value="369&&Q[全民奇迹_国服_手游]">
+                            Q[全民奇迹_国服_手游]                                    </option>
+                        <option value="383&&Q[企业QQ]">
+                            Q[企业QQ]                                    </option>
+                        <option value="393&&Q[全民无双 手游]">
+                            Q[全民无双 手游]                                    </option>
+                        <option value="413&&Q[奇游游戏]">
+                            Q[奇游游戏]                                    </option>
+                        <option value="420&&Q[抢奖牌]">
+                            Q[抢奖牌]                                    </option>
+                        <option value="436&&Q[奇奇群发]">
+                            Q[奇奇群发]                                    </option>
+                        <option value="473&&Q[全民奇迹 腾讯版 手机]">
+                            Q[全民奇迹 腾讯版 手机]                                    </option>
+                        <option value="471&&Q[QQ解封]">
+                            Q[QQ解封]                                    </option>
+                        <option value="497&&Q[抢红包软件]">
+                            Q[抢红包软件]                                    </option>
+                        <option value="513&&Q[权御天下]">
+                            Q[权御天下]                                    </option>
+                        <option value="584&&Q[抢红包]">
+                            Q[抢红包]                                    </option>
+                        <option value="653&&Q[QQ麻将]">
+                            Q[QQ麻将]                                    </option>
+                        <option value="580&&Q[QQ自挂]">
+                            Q[QQ自挂]                                    </option>
+                        <option value="622&&Q[QQ加好友安卓协议版]">
+                            Q[QQ加好友安卓协议版]                                    </option>
+                        <option value="628&&Q[QQ资料修改器]">
+                            Q[QQ资料修改器]                                    </option>
+                        <option value="632&&Q[全民奇迹 韩服 手游]">
+                            Q[全民奇迹 韩服 手游]                                    </option>
+                        <option value="671&&Q[QQ机器人]">
+                            Q[QQ机器人]                                    </option>
+                        <option value="684&&Q[全民K歌 手机]">
+                            Q[全民K歌 手机]                                    </option>
+                        <option value="697&&Q[QQ轻聊版]">
+                            Q[QQ轻聊版]                                    </option>
+                        <option value="695&&Q[齐齐乐棋牌 手游]">
+                            Q[齐齐乐棋牌 手游]                                    </option>
+                        <option value="726&&Q[亲朋之心]">
+                            Q[亲朋之心]                                    </option>
+                        <option value="758&&Q[QQ微博]">
+                            Q[QQ微博]                                    </option>
+                        <option value="868&&Q[奇迹世界2]">
+                            Q[奇迹世界2]                                    </option>
+                        <option value="869&&Q[奇易安卓挂Q工具]">
+                            Q[奇易安卓挂Q工具]                                    </option>
+                        <option value="897&&Q[QQ评论]">
+                            Q[QQ评论]                                    </option>
+                        <option value="899&&Q[趣鱼棋牌]">
+                            Q[趣鱼棋牌]                                    </option>
+                        <option value="913&&Q[QQ11]">
+                            Q[QQ11]                                    </option>
+                        <option value="3&&R[RS]">
+                            R[RS]                                    </option>
+                        <option value="49&&R[热血传奇]">
+                            R[热血传奇]                                    </option>
+                        <option value="241&&R[热血江湖]">
+                            R[热血江湖]                                    </option>
+                        <option value="122&&R[RMB程序]">
+                            R[RMB程序]                                    </option>
+                        <option value="149&&R[RuneScape]">
+                            R[RuneScape]                                    </option>
+                        <option value="194&&R[R2]">
+                            R[R2]                                    </option>
+                        <option value="281&&R[热血传奇 手游]">
+                            R[热血传奇 手游]                                    </option>
+                        <option value="316&&R[R2 台服]">
+                            R[R2 台服]                                    </option>
+                        <option value="367&&R[热血传奇\关羽传奇]">
+                            R[热血传奇\关羽传奇]                                    </option>
+                        <option value="585&&R[RO]">
+                            R[RO]                                    </option>
+                        <option value="672&&R[热血江湖 手游]">
+                            R[热血江湖 手游]                                    </option>
+                        <option value="861&&R[R2 私服]">
+                            R[R2 私服]                                    </option>
+                        <option value="9&&S[射雕ZERO]">
+                            S[射雕ZERO]                                    </option>
+                        <option value="858&&S[三国群英霸王大陆 手游]">
+                            S[三国群英霸王大陆 手游]                                    </option>
+                        <option value="26&&S[上古世纪]">
+                            S[上古世纪]                                    </option>
+                        <option value="54&&S[神途]">
+                            S[神途]                                    </option>
+                        <option value="58&&S[蜀门]">
+                            S[蜀门]                                    </option>
+                        <option value="811&&S[上古世纪 台服]">
+                            S[上古世纪 台服]                                    </option>
+                        <option value="896&&S[少店群软件]">
+                            S[少店群软件]                                    </option>
+                        <option value="79&&S[神雕侠侣]">
+                            S[神雕侠侣]                                    </option>
+                        <option value="244&&S[神魔大陆2]">
+                            S[神魔大陆2]                                    </option>
+                        <option value="100&&S[神雕OL]">
+                            S[神雕OL]                                    </option>
+                        <option value="871&&S[十二战纪  手游]">
+                            S[十二战纪  手游]                                    </option>
+                        <option value="203&&S[超级石器]">
+                            S[超级石器]                                    </option>
+                        <option value="175&&S[世界之窗]">
+                            S[世界之窗]                                    </option>
+                        <option value="238&&S[石器时代私服]">
+                            S[石器时代私服]                                    </option>
+                        <option value="191&&S[神器传说]">
+                            S[神器传说]                                    </option>
+                        <option value="201&&S[搜狗]">
+                            S[搜狗]                                    </option>
+                        <option value="246&&S[石器时代]">
+                            S[石器时代]                                    </option>
+                        <option value="248&&S[神武2]">
+                            S[神武2]                                    </option>
+                        <option value="262&&S[狩龙战纪]">
+                            S[狩龙战纪]                                    </option>
+                        <option value="317&&S[速刷快手]">
+                            S[速刷快手]                                    </option>
+                        <option value="326&&S[双赢网]">
+                            S[双赢网]                                    </option>
+                        <option value="363&&S[手机]">
+                            S[手机]                                    </option>
+                        <option value="384&&S[刷词]">
+                            S[刷词]                                    </option>
+                        <option value="387&&S[沙巴克传奇 手游]">
+                            S[沙巴克传奇 手游]                                    </option>
+                        <option value="389&&S[SD-X]">
+                            S[SD-X]                                    </option>
+                        <option value="885&&S[石器EE]">
+                            S[石器EE]                                    </option>
+                        <option value="423&&S[速8电玩]">
+                            S[速8电玩]                                    </option>
+                        <option value="468&&S[三国乱世]">
+                            S[三国乱世]                                    </option>
+                        <option value="491&&S[散人金猴]">
+                            S[散人金猴]                                    </option>
+                        <option value="519&&S[视频软件]">
+                            S[视频软件]                                    </option>
+                        <option value="500&&S[丧尸之战 手游]">
+                            S[丧尸之战 手游]                                    </option>
+                        <option value="521&&S[手机端口]">
+                            S[手机端口]                                    </option>
+                        <option value="571&&S[双赢网抢任务软件]">
+                            S[双赢网抢任务软件]                                    </option>
+                        <option value="597&&S[steam机器人]">
+                            S[steam机器人]                                    </option>
+                        <option value="594&&S[神途 私服]">
+                            S[神途 私服]                                    </option>
+                        <option value="629&&S[手机QQ陌生人点赞软件]">
+                            S[手机QQ陌生人点赞软件]                                    </option>
+                        <option value="753&&S[蜀门 手游]">
+                            S[蜀门 手游]                                    </option>
+                        <option value="777&&S[山山客 大话西游手游]">
+                            S[山山客 大话西游手游]                                    </option>
+                        <option value="804&&S[三国如龙传]">
+                            S[三国如龙传]                                    </option>
+                        <option value="781&&S[商务助手]">
+                            S[商务助手]                                    </option>
+                        <option value="801&&S[三国志登录工具]">
+                            S[三国志登录工具]                                    </option>
+                        <option value="807&&S[神武3]">
+                            S[神武3]                                    </option>
+                        <option value="834&&S[神武3 手游]">
+                            S[神武3 手游]                                    </option>
+                        <option value="856&&S[石器时代精灵王传说 手游]">
+                            S[石器时代精灵王传说 手游]                                    </option>
+                        <option value="864&&S[刷阅读]">
+                            S[刷阅读]                                    </option>
+                        <option value="717&&T[Terminal]">
+                            T[Terminal]                                    </option>
+                        <option value="711&&T[涂游游戏 手游]">
+                            T[涂游游戏 手游]                                    </option>
+                        <option value="25&&T[天下3]">
+                            T[天下3]                                    </option>
+                        <option value="53&&T[桃花源记]">
+                            T[桃花源记]                                    </option>
+                        <option value="787&&T[天下三分台服]">
+                            T[天下三分台服]                                    </option>
+                        <option value="60&&T[吞噬苍穹]">
+                            T[吞噬苍穹]                                    </option>
+                        <option value="109&&T[天涯明月刀]">
+                            T[天涯明月刀]                                    </option>
+                        <option value="114&&T[天龙八部]">
+                            T[天龙八部]                                    </option>
+                        <option value="120&&T[TMQQ]">
+                            T[TMQQ]                                    </option>
+                        <option value="135&&T[TGP]">
+                            T[TGP]                                    </option>
+                        <option value="144&&T[天之禁Online]">
+                            T[天之禁Online]                                    </option>
+                        <option value="232&&T[天书世界]">
+                            T[天书世界]                                    </option>
+                        <option value="160&&T[TERA]">
+                            T[TERA]                                    </option>
+                        <option value="166&&T[天谕]">
+                            T[天谕]                                    </option>
+                        <option value="223&&T[糖果浏览器]">
+                            T[糖果浏览器]                                    </option>
+                        <option value="224&&T[突击英雄]">
+                            T[突击英雄]                                    </option>
+                        <option value="778&&T[途牛游戏手游]">
+                            T[途牛游戏手游]                                    </option>
+                        <option value="277&&T[淘宝助理]">
+                            T[淘宝助理]                                    </option>
+                        <option value="259&&T[天空之城]">
+                            T[天空之城]                                    </option>
+                        <option value="821&&T[天堂2 私服]">
+                            T[天堂2 私服]                                    </option>
+                        <option value="304&&T[新天下无双]">
+                            T[新天下无双]                                    </option>
+                        <option value="306&&T[天天德州 手游]">
+                            T[天天德州 手游]                                    </option>
+                        <option value="315&&T[淘宝互联]">
+                            T[淘宝互联]                                    </option>
+                        <option value="325&&T[投票 手机]">
+                            T[投票 手机]                                    </option>
+                        <option value="337&&T[土豪赢三张 手游]">
+                            T[土豪赢三张 手游]                                    </option>
+                        <option value="356&&T[铁蛋微博]">
+                            T[铁蛋微博]                                    </option>
+                        <option value="458&&T[同城游]">
+                            T[同城游]                                    </option>
+                        <option value="406&&T[天子剑]">
+                            T[天子剑]                                    </option>
+                        <option value="418&&T[淘宝页游]">
+                            T[淘宝页游]                                    </option>
+                        <option value="434&&T[风云之通天之路]">
+                            T[风云之通天之路]                                    </option>
+                        <option value="480&&T[淘宝 手机]">
+                            T[淘宝 手机]                                    </option>
+                        <option value="506&&T[太阳浏览器]">
+                            T[太阳浏览器]                                    </option>
+                        <option value="524&&T[天山童姥]">
+                            T[天山童姥]                                    </option>
+                        <option value="539&&T[天下 手游]">
+                            T[天下 手游]                                    </option>
+                        <option value="526&&T[天天电玩城]">
+                            T[天天电玩城]                                    </option>
+                        <option value="551&&T[天堂]">
+                            T[天堂]                                    </option>
+                        <option value="553&&T[腾龙传说]">
+                            T[腾龙传说]                                    </option>
+                        <option value="559&&T[天堂2]">
+                            T[天堂2]                                    </option>
+                        <option value="611&&T[天地棋牌]">
+                            T[天地棋牌]                                    </option>
+                        <option value="596&&T[坦克世界]">
+                            T[坦克世界]                                    </option>
+                        <option value="650&&T[淘宝流量]">
+                            T[淘宝流量]                                    </option>
+                        <option value="698&&T[天堂2  台服  手游]">
+                            T[天堂2  台服  手游]                                    </option>
+                        <option value="682&&T[天龙八部 手游]">
+                            T[天龙八部 手游]                                    </option>
+                        <option value="688&&T[泰州游戏中心]">
+                            T[泰州游戏中心]                                    </option>
+                        <option value="686&&T[泰亚史诗]">
+                            T[泰亚史诗]                                    </option>
+                        <option value="723&&T[途游 手游]">
+                            T[途游 手游]                                    </option>
+                        <option value="845&&T[天使纪元]">
+                            T[天使纪元]                                    </option>
+                        <option value="747&&T[Tempwb]">
+                            T[Tempwb]                                    </option>
+                        <option value="752&&T[天涯明月刀不走安全中心]">
+                            T[天涯明月刀不走安全中心]                                    </option>
+                        <option value="831&&T[腾讯助手]">
+                            T[腾讯助手]                                    </option>
+                        <option value="827&&T[TT棋牌]">
+                            T[TT棋牌]                                    </option>
+                        <option value="835&&T[天龙八部 私服 ]">
+                            T[天龙八部 私服 ]                                    </option>
+                        <option value="840&&T[探探]">
+                            T[探探]                                    </option>
+                        <option value="848&&T[天命西游]">
+                            T[天命西游]                                    </option>
+                        <option value="860&&T[天天大赢家 手游]">
+                            T[天天大赢家 手游]                                    </option>
+                        <option value="889&&T[天天sa ]">
+                            T[天天sa ]                                    </option>
+                        <option value="873&&T[天龙八部手游 台服]">
+                            T[天龙八部手游 台服]                                    </option>
+                        <option value="890&&T[弹幕助手]">
+                            T[弹幕助手]                                    </option>
+                        <option value="898&&T[投票注册软件]">
+                            T[投票注册软件]                                    </option>
+                        <option value="905&&T[太古神王]">
+                            T[太古神王]                                    </option>
+                        <option value="907&&T[TOOL]">
+                            T[TOOL]                                    </option>
+                        <option value="502&&U[优站宝]">
+                            U[优站宝]                                    </option>
+                        <option value="693&&U[UC浏览器]">
+                            U[UC浏览器]                                    </option>
+                        <option value="554&&V[VM]">
+                            V[VM]                                    </option>
+                        <option value="8&&W[网易邮箱注册机]">
+                            W[网易邮箱注册机]                                    </option>
+                        <option value="312&&W[王者荣耀 手机]">
+                            W[王者荣耀 手机]                                    </option>
+                        <option value="15&&W[网易CC]">
+                            W[网易CC]                                    </option>
+                        <option value="40&&W[武易传奇]">
+                            W[武易传奇]                                    </option>
+                        <option value="42&&W[旺宝]">
+                            W[旺宝]                                    </option>
+                        <option value="95&&W[网页连点器]">
+                            W[网页连点器]                                    </option>
+                        <option value="98&&W[微博软件]">
+                            W[微博软件]                                    </option>
+                        <option value="112&&W[王中王棋牌]">
+                            W[王中王棋牌]                                    </option>
+                        <option value="121&&W[沃土]">
+                            W[沃土]                                    </option>
+                        <option value="125&&W[问道]">
+                            W[问道]                                    </option>
+                        <option value="886&&W[我的王朝 手游]">
+                            W[我的王朝 手游]                                    </option>
+                        <option value="215&&w[文卓爷]">
+                            w[文卓爷]                                    </option>
+                        <option value="222&&W[武魂2]">
+                            W[武魂2]                                    </option>
+                        <option value="297&&W[微信pc版]">
+                            W[微信pc版]                                    </option>
+                        <option value="311&&W[挖矿]">
+                            W[挖矿]                                    </option>
+                        <option value="332&&W[挖矿赚钱]">
+                            W[挖矿赚钱]                                    </option>
+                        <option value="351&&W[武神2]">
+                            W[武神2]                                    </option>
+                        <option value="352&&W[武神2]">
+                            W[武神2]                                    </option>
+                        <option value="422&&W[我欲封天 手游]">
+                            W[我欲封天 手游]                                    </option>
+                        <option value="425&&W[问道 手游]">
+                            W[问道 手游]                                    </option>
+                        <option value="426&&W[微信]">
+                            W[微信]                                    </option>
+                        <option value="433&&W[无双浏览器]">
+                            W[无双浏览器]                                    </option>
+                        <option value="437&&W[万能微信群发器]">
+                            W[万能微信群发器]                                    </option>
+                        <option value="482&&W[无尽战区]">
+                            W[无尽战区]                                    </option>
+                        <option value="490&&W[万能营销群发]">
+                            W[万能营销群发]                                    </option>
+                        <option value="488&&W[我叫MT3 手游]">
+                            W[我叫MT3 手游]                                    </option>
+                        <option value="610&&W[WoZhuan]">
+                            W[WoZhuan]                                    </option>
+                        <option value="618&&W[外汇软件]">
+                            W[外汇软件]                                    </option>
+                        <option value="626&&W[微小宝多平台客户端]">
+                            W[微小宝多平台客户端]                                    </option>
+                        <option value="674&&W[网页点击]">
+                            W[网页点击]                                    </option>
+                        <option value="730&&W[王国纪元 手游]">
+                            W[王国纪元 手游]                                    </option>
+                        <option value="756&&W[完美世界国际版2]">
+                            W[完美世界国际版2]                                    </option>
+                        <option value="865&&W[网赚点赞]">
+                            W[网赚点赞]                                    </option>
+                        <option value="908&&W[焚天决 手游]">
+                            W[焚天决 手游]                                    </option>
+                        <option value="2&&X[侠客无双]">
+                            X[侠客无双]                                    </option>
+                        <option value="894&&X[小鸭淘客助手]">
+                            X[小鸭淘客助手]                                    </option>
+                        <option value="17&&X[襄阳同城游戏]">
+                            X[襄阳同城游戏]                                    </option>
+                        <option value="289&&X[新墨香]">
+                            X[新墨香]                                    </option>
+                        <option value="37&&X[新飞飞]">
+                            X[新飞飞]                                    </option>
+                        <option value="855&&X[心悦]">
+                            X[心悦]                                    </option>
+                        <option value="55&&X[迅游vip出租改密]">
+                            X[迅游vip出租改密]                                    </option>
+                        <option value="108&&X[x战国]">
+                            X[x战国]                                    </option>
+                        <option value="748&&X[星球部落]">
+                            X[星球部落]                                    </option>
+                        <option value="123&&X[轩辕传奇]">
+                            X[轩辕传奇]                                    </option>
+                        <option value="128&&X[笑傲江湖OL]">
+                            X[笑傲江湖OL]                                    </option>
+                        <option value="189&&X[新浪正版独立SHOW]">
+                            X[新浪正版独立SHOW]                                    </option>
+                        <option value="267&&X[轩辕传奇私服]">
+                            X[轩辕传奇私服]                                    </option>
+                        <option value="302&&X[行易通 手机]">
+                            X[行易通 手机]                                    </option>
+                        <option value="314&&X[西楚霸王Online]">
+                            X[西楚霸王Online]                                    </option>
+                        <option value="339&&X[喜乐棋牌]">
+                            X[喜乐棋牌]                                    </option>
+                        <option value="360&&X[新浪页游助手]">
+                            X[新浪页游助手]                                    </option>
+                        <option value="407&&X[逍遥霸气]">
+                            X[逍遥霸气]                                    </option>
+                        <option value="454&&X[新建娱乐]">
+                            X[新建娱乐]                                    </option>
+                        <option value="453&&X[小牛游戏]">
+                            X[小牛游戏]                                    </option>
+                        <option value="568&&X[仙剑3D 手游]">
+                            X[仙剑3D 手游]                                    </option>
+                        <option value="625&&X[新神兽]">
+                            X[新神兽]                                    </option>
+                        <option value="725&&X[轩辕传奇 手游]">
+                            X[轩辕传奇 手游]                                    </option>
+                        <option value="744&&X[新挑战]">
+                            X[新挑战]                                    </option>
+                        <option value="749&&X[寻仙 手游]">
+                            X[寻仙 手游]                                    </option>
+                        <option value="799&&X[星星游戏]">
+                            X[星星游戏]                                    </option>
+                        <option value="762&&X[仙侠世界2]">
+                            X[仙侠世界2]                                    </option>
+                        <option value="830&&X[闲鱼app]">
+                            X[闲鱼app]                                    </option>
+                        <option value="876&&X[轩辕火龙]">
+                            X[轩辕火龙]                                    </option>
+                        <option value="884&&X[小火花]">
+                            X[小火花]                                    </option>
+                        <option value="875&&X[新龙捕鱼  手游   ]">
+                            X[新龙捕鱼  手游   ]                                    </option>
+                        <option value="902&&X[小小妖怪 手游]">
+                            X[小小妖怪 手游]                                    </option>
+                        <option value="4&&Y[云海棋牌]">
+                            Y[云海棋牌]                                    </option>
+                        <option value="11&&Y[优易淘宝应用平台]">
+                            Y[优易淘宝应用平台]                                    </option>
+                        <option value="294&&Y[英雄联盟LOL]">
+                            Y[英雄联盟LOL]                                    </option>
+                        <option value="547&&Y[御龙在天  手游]">
+                            Y[御龙在天  手游]                                    </option>
+                        <option value="48&&Y[亿酷棋牌]">
+                            Y[亿酷棋牌]                                    </option>
+                        <option value="73&&Y[御龙在天]">
+                            Y[御龙在天]                                    </option>
+                        <option value="252&&Y[御龙过安全]">
+                            Y[御龙过安全]                                    </option>
+                        <option value="89&&Y[英雄联盟LOL]">
+                            Y[英雄联盟LOL]                                    </option>
+                        <option value="397&&Y[游戏账号注册 手游]">
+                            Y[游戏账号注册 手游]                                    </option>
+                        <option value="94&&Y[yy]">
+                            Y[yy]                                    </option>
+                        <option value="133&&Y[yqf棋牌]">
+                            Y[yqf棋牌]                                    </option>
+                        <option value="136&&Y[远征2]">
+                            Y[远征2]                                    </option>
+                        <option value="137&&Y[亚太交易]">
+                            Y[亚太交易]                                    </option>
+                        <option value="138&&Y[永恒之塔]">
+                            Y[永恒之塔]                                    </option>
+                        <option value="141&&Y[易通挂机]">
+                            Y[易通挂机]                                    </option>
+                        <option value="456&&Y[易语言注册]">
+                            Y[易语言注册]                                    </option>
+                        <option value="285&&Y[原始传奇]">
+                            Y[原始传奇]                                    </option>
+                        <option value="193&&Y[营销qq]">
+                            Y[营销qq]                                    </option>
+                        <option value="196&&Y[YY领卡神器]">
+                            Y[YY领卡神器]                                    </option>
+                        <option value="204&&Y[游戏茶苑]">
+                            Y[游戏茶苑]                                    </option>
+                        <option value="227&&Y[野人辅助9.82.exe]">
+                            Y[野人辅助9.82.exe]                                    </option>
+                        <option value="276&&Y[御龍合击传奇私服]">
+                            Y[御龍合击传奇私服]                                    </option>
+                        <option value="354&&Y[御剑红尘]">
+                            Y[御剑红尘]                                    </option>
+                        <option value="441&&Y[易网页]">
+                            Y[易网页]                                    </option>
+                        <option value="385&&Y[YY游戏大厅]">
+                            Y[YY游戏大厅]                                    </option>
+                        <option value="398&&Y[云海游戏]">
+                            Y[云海游戏]                                    </option>
+                        <option value="400&&Y[悠洋棋牌]">
+                            Y[悠洋棋牌]                                    </option>
+                        <option value="412&&Y[悠扬棋牌]">
+                            Y[悠扬棋牌]                                    </option>
+                        <option value="416&&Y[英雄联盟 美服]">
+                            Y[英雄联盟 美服]                                    </option>
+                        <option value="424&&Y[YN]">
+                            Y[YN]                                    </option>
+                        <option value="429&&Y[御龙传奇]">
+                            Y[御龙传奇]                                    </option>
+                        <option value="440&&Y[易生活]">
+                            Y[易生活]                                    </option>
+                        <option value="455&&Y[页游浏览器]">
+                            Y[页游浏览器]                                    </option>
+                        <option value="442&&Y[易网页2]">
+                            Y[易网页2]                                    </option>
+                        <option value="443&&Y[易网页1]">
+                            Y[易网页1]                                    </option>
+                        <option value="515&&Y[勇者大冒险]">
+                            Y[勇者大冒险]                                    </option>
+                        <option value="532&&Y[游戏客户专用QQ]">
+                            Y[游戏客户专用QQ]                                    </option>
+                        <option value="525&&Y[阴阳师 手游]">
+                            Y[阴阳师 手游]                                    </option>
+                        <option value="544&&Y[御龙在天 经典版]">
+                            Y[御龙在天 经典版]                                    </option>
+                        <option value="558&&Y[勇者斗恶龙]">
+                            Y[勇者斗恶龙]                                    </option>
+                        <option value="563&&Y[邮币申购]">
+                            Y[邮币申购]                                    </option>
+                        <option value="587&&Y[阳光在线]">
+                            Y[阳光在线]                                    </option>
+                        <option value="605&&Y[英雄联盟LOL 欧服]">
+                            Y[英雄联盟LOL 欧服]                                    </option>
+                        <option value="607&&Y[悠悠娱乐中心]">
+                            Y[悠悠娱乐中心]                                    </option>
+                        <option value="608&&Y[YEWEI]">
+                            Y[YEWEI]                                    </option>
+                        <option value="620&&Y[英雄3]">
+                            Y[英雄3]                                    </option>
+                        <option value="635&&Y[YY浏览器]">
+                            Y[YY浏览器]                                    </option>
+                        <option value="649&&Y[杨家将神仙劫]">
+                            Y[杨家将神仙劫]                                    </option>
+                        <option value="656&&Y[游戏蜗牛]">
+                            Y[游戏蜗牛]                                    </option>
+                        <option value="724&&Y[夜游神棋牌]">
+                            Y[夜游神棋牌]                                    </option>
+                        <option value="820&&y[野火网赚   ]">
+                            y[野火网赚   ]                                    </option>
+                        <option value="759&&Y[永恒奇迹]">
+                            Y[永恒奇迹]                                    </option>
+                        <option value="819&&y[野火新浪]">
+                            y[野火新浪]                                    </option>
+                        <option value="783&&Y[一点浏览器]">
+                            Y[一点浏览器]                                    </option>
+                        <option value="809&&Y[永远的七日之都  手游]">
+                            Y[永远的七日之都  手游]                                    </option>
+                        <option value="874&&Y[永恒纪元手游]">
+                            Y[永恒纪元手游]                                    </option>
+                        <option value="906&&Y[游戏监控]">
+                            Y[游戏监控]                                    </option>
+                        <option value="624&&Z[猪来了 手游]">
+                            Z[猪来了 手游]                                    </option>
+                        <option value="696&&Z[紫月神途]">
+                            Z[紫月神途]                                    </option>
+                        <option value="46&&Z[至尊传奇私服]">
+                            Z[至尊传奇私服]                                    </option>
+                        <option value="348&&Z[斩千军]">
+                            Z[斩千军]                                    </option>
+                        <option value="361&&Z[掌上棋牌]">
+                            Z[掌上棋牌]                                    </option>
+                        <option value="157&&Z[未知游戏]">
+                            Z[未知游戏]                                    </option>
+                        <option value="91&&Z[征途经典版]">
+                            Z[征途经典版]                                    </option>
+                        <option value="578&&Z[卓越之剑繁体版]">
+                            Z[卓越之剑繁体版]                                    </option>
+                        <option value="96&&Z[诛仙3]">
+                            Z[诛仙3]                                    </option>
+                        <option value="102&&Z[最终幻想XIV]">
+                            Z[最终幻想XIV]                                    </option>
+                        <option value="270&&Z[1.80战国合击.exe]">
+                            Z[1.80战国合击.exe]                                    </option>
+                        <option value="207&&Z[镇魔曲]">
+                            Z[镇魔曲]                                    </option>
+                        <option value="146&&Z[昨日黄花]">
+                            Z[昨日黄花]                                    </option>
+                        <option value="147&&Z[征三国]">
+                            Z[征三国]                                    </option>
+                        <option value="190&&Z[战国破坏神]">
+                            Z[战国破坏神]                                    </option>
+                        <option value="233&&z[战西游]">
+                            z[战西游]                                    </option>
+                        <option value="284&&Z[征途2动作版]">
+                            Z[征途2动作版]                                    </option>
+                        <option value="655&&Z[注册工具]">
+                            Z[注册工具]                                    </option>
+                        <option value="375&&Z[支付宝解绑]">
+                            Z[支付宝解绑]                                    </option>
+                        <option value="410&&Z[中天快递]">
+                            Z[中天快递]                                    </option>
+                        <option value="419&&Z[醉逍遥]">
+                            Z[醉逍遥]                                    </option>
+                        <option value="457&&Z[足球经理]">
+                            Z[足球经理]                                    </option>
+                        <option value="438&&Z[战地风爆 手游]">
+                            Z[战地风爆 手游]                                    </option>
+                        <option value="484&&Z[征途 手游]">
+                            Z[征途 手游]                                    </option>
+                        <option value="487&&Z[子墨助手]">
+                            Z[子墨助手]                                    </option>
+                        <option value="510&&Z[峥嵘神猴]">
+                            Z[峥嵘神猴]                                    </option>
+                        <option value="523&&Z[诛仙 手游]">
+                            Z[诛仙 手游]                                    </option>
+                        <option value="527&&Z[足打]">
+                            Z[足打]                                    </option>
+                        <option value="528&&Z[卓越之剑]">
+                            Z[卓越之剑]                                    </option>
+                        <option value="540&&Z[征途2夺宝完整版]">
+                            Z[征途2夺宝完整版]                                    </option>
+                        <option value="581&&Z[直通车助手]">
+                            Z[直通车助手]                                    </option>
+                        <option value="590&&Z[镇魔曲 手游]">
+                            Z[镇魔曲 手游]                                    </option>
+                        <option value="614&&Z[支付宝]">
+                            Z[支付宝]                                    </option>
+                        <option value="615&&Z[支付宝]">
+                            Z[支付宝]                                    </option>
+                        <option value="647&&Z[赚钱宝]">
+                            Z[赚钱宝]                                    </option>
+                        <option value="729&&Z[择天记 手游]">
+                            Z[择天记 手游]                                    </option>
+                        <option value="751&&Z[之王]">
+                            Z[之王]                                    </option>
+                        <option value="767&&Z[战将合击]">
+                            Z[战将合击]                                    </option>
+                        <option value="851&&Z[真龙霸业 手游]">
+                            Z[真龙霸业 手游]                                    </option>
+                        <option value="891&&Z[卓越之剑私服]">
+                            Z[卓越之剑私服]                                    </option>
+                        <option value="893&&Z[战国志]">
+                            Z[战国志]                                    </option>
+                        <option value="904&&Z[自由幻想 手游]">
+                            Z[自由幻想 手游]                                    </option>
+                    </select>
+                    <small>
+                    </small>
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="control-label col-md-1" for="type_label" style="width: 12.5%">
+                    机房选择
+                </label>
+                <div class="col-md-11 regionlist" style="width: 87.5%">
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="control-label col-md-3" for="type_label">
+                    真实姓名
+                </label>
+                <div class="col-md-9">
+                    <input class="form-control" id="extra_realname" name="order[realname]" placeholder="请输入真实姓名" type="text" value=""/>
+                    <small>
+                        <b style="color:red">
+                            *
+                        </b>
+                        选择的是QQ必填-其它可不写
+                    </small>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="control-label col-md-3" for="type_label">
+                    身份证号
+                </label>
+                <div class="col-md-9">
+                    <input class="form-control" id="extra_idnumber" name="order[cardid]" placeholder="请输入身份证号" type="text" value=""/>
+                    <small>
+                        <b style="color:red">
+                            *
+                        </b>
+                        选择的是QQ必填-其它可不写
+                    </small>
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="control-label col-md-3" for="type_label" style="width: 12.5%">
+                    备注
+                </label>
+                <div class="col-md-9" style="width: 87.5%">
+                    <textarea class="form-control" id="order_memo" name="order[remark]" placeholder="( 备注 )" value=""></textarea>
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="control-label col-md-3" for="type_label" style="width: 12.5%">
+                </label>
+                <div class="col-md-9" style="width: 87.5%">
+                    <button class="btn btn-success" href="javascript:;" id="btn-submit" role="button" type="button">
+                        提交
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!--start确认购买提示框-->
+    <div class="modal fade" id="kaika_modal" role="dialog" tabindex="-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                <span aria-hidden="true">
+                                    ×
+                                </span>
+                    </button>
+                    <h4 class="modal-title">
+                        操作确认
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div style="width:90%;padding:10px 10px 50px 10px; margin: 0 auto;">
+                        <p>
+                            确定购买？<br/>
+                            <!-- 应付 1000=1张 x (1张天卡 x 5机器 x 200) -->
+                            应付 <span id="cardmsg"></span>
+                        </p>
+                        <div class="points_recharge" style="margin-top:15px;">
+                            <button class="btn btn-primary" href="javascript:;" id="kaika_yes" role="button" type="button">
+                                确认
+                            </button>
+                            <button class="btn btn-primary" href="javascript:;" id="kaika_no" role="button" type="button">
+                                取消
+                            </button>
+                            <div class="clearfix">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end确认购买提示框-->
+</div>
+<script src="http://www.58wuji.com/application/home/view/public/js/jquery.min.js">
+</script>
+<script src="http://www.58wuji.com/application/home/view/public/js/bootstrap.min.js">
+</script>
+<script src="http://www.58wuji.com/application/home/view/public/js/lhgdialog.min.js">
+</script>
+<script src="http://www.58wuji.com/application/home/view/public/js/RGX.lib.min.js">
+</script>
+<script src="http://www.58wuji.com/application/home/view/public/js/rgx.js">
+</script>
+<script src="http://www.58wuji.com/application/home/view/public/js/laydate.js">
+</script>
+<script>
+    $(function() {
+        //游戏列表选择
+        $("#extra_gameid").change(function(){
+            var branchID=$(this).val(),
+                usernum=$("#order_machines").val();//游戏id
+
+            $.ajax({
+                //提交数据的类型 POST GET
+                type:"POST",
+                //提交的网址
+                url:"/home/good/roomlist",
+                async:false,//同步：意思是当有返回值以后才会进行后面的js程序。
+                //提交的数据
+                data:{branchID:branchID,usernum:usernum},
+                //返回数据的格式
+                datatype: "json",//"xml", "html", "script", "json", "jsonp", "text".
+                //在请求之前调用的函数
+                // beforeSend:function(){$("#msg").html("logining");},
+                //成功返回之后调用的函数
+                success:function(backdata){
+                    // console.log(backdata);
+                    var dataObj=eval("("+backdata+")");//转换为json对象
+                    if(dataObj.ret==0){
+                        $(".regionlist").html("");
+                        $.each(dataObj.data.region,function(idx,item){
+                            $(".regionlist").append("<label style='width: 280px;float: left;font-size: 12px;'><input data-num='505' name='order[regionidarr][]' type='checkbox' value='"+item.region_id+"&&"+item.region_name+"'>"+item.region_name+"</input></label>");
+                            // console.log("name:"+item.region_name+",value:"+item.region_id);
+                        });
+                    }else{
+                        RGX.msg(dataObj.msg);
+                        $('#order_account').focus();
+                        $('#order_account').select();
+                    }
+                },
+                error: function(){
+                    //请求出错处理
+                }
+            });
+        });
+
+        //form表单提交
+        $('#btn-submit').on('click', function () {
+            var account      = $('#order_account').val(),
+                machines    = parseInt($('#order_machines').val()),
+                days        = parseInt($('#order_day').val()),
+                qq          = $('#order_qq').val(),
+                gameid      = $('#extra_gameid').val(),
+                realname    = $('#extra_realname').val(),
+                cardid      = $('#extra_idnumber').val();
+            var ret = /^[A-Za-z0-9]+$/,
+                retqq=/^[1-9]\d*$/,
+                zhongw=/^[\u4e00-\u9fa5]{0,}$/,
+                shenfz=/^\d{15}|\d{18}$/;
+            if (account == '') {
+                RGX.msg('请输入用户名');
+                $('#order_account').focus();
+            }
+            else if(!ret.test(account)){
+                RGX.msg('用户名格式错误');
+                $('#order_account').focus();
+                $('#order_account').select();
+            }
+            else if ($('#order_passwd').val() == '') {
+                RGX.msg('请输入密码');
+                $('#order_passwd').focus();
+            }
+            else if (isNaN(days)) {
+                RGX.msg('至少购买一天');
+                $('#order_day').focus();
+            }
+            else if (isNaN(machines)) {
+                RGX.msg('至少设置一台机器');
+                $('#order_machines').focus();
+            }
+            else if(qq= ''||!retqq.test(qq)){
+                RGX.msg('请正确填写qq号码');
+                $('#order_qq').focus();
+                $('#order_qq').select();
+            }
+            // else if(gameid==0){
+            //     RGX.msg('请选择绑定游戏');
+            //     $('#extra_gameid').focus();
+            // }
+            else if(realname==''||!zhongw.test(realname)){
+                RGX.msg('请正确填写真实姓名');
+                $('#extra_realname').focus();
+                $('#extra_realname').select();
+            }
+            else if(cardid==''||!shenfz.test(cardid)){
+                RGX.msg('请正确填写身份证号码');
+                $('#extra_idnumber').focus();
+                $('#extra_idnumber').select();
+            }
+            // else if(parseInt($('input[type=checkbox]:checked').length)<=0){
+            //     RGX.msg('请选择机房');
+            // }
+            else {
+                queren();
+
+            }
+        });
+        //点击提交购买按钮
+        function queren(){
+            // $('#kaika_yes').on('click',function(){
+            $.ajax({
+                //提交数据的类型 POST GET
+                type:"POST",
+                //提交的网址
+                url:"/home/good/ifcard",
+                async:false,//同步：意思是当有返回值以后才会进行后面的js程序。
+                //提交的数据
+                data:$("form").serialize(),
+                //返回数据的格式
+                datatype: "json",//"xml", "html", "script", "json", "jsonp", "text".
+                //在请求之前调用的函数
+                // beforeSend:function(){$("#msg").html("logining");},
+                //成功返回之后调用的函数
+                success:function(data){
+                    console.log(data);
+                    var dataObj=eval("("+data+")");//转换为json对象
+                    if(dataObj.ret==1){
+                        $("#cardmsg").text(dataObj.cardmsg);
+                        $("#kaika_modal").modal();
+                    }else{
+                        RGX.msg(dataObj.msg);
+                        $('#order_account').focus();
+                        $('#order_account').select();
+                    }
+                }
+            });
+            // });
+        }
+        //确认购买
+        $("#kaika_yes").click(function(){
+            subform();
+        });
+        //取消购买
+        $('#kaika_no').on('click',function(){
+            $('#pay_modal').modal();
+            $("#kaika_modal").modal("hide");
+        });
+        //提交form表单
+        function subform(){
+            $.ajax({
+                //提交数据的类型 POST GET
+                type:"POST",
+                //提交的网址
+                url:"/home/good/creategjb2",
+                async:false,//同步：意思是当有返回值以后才会进行后面的js程序。
+                //提交的数据
+                data:$("form").serialize(),
+                //返回数据的格式
+                datatype: "json",//"xml", "html", "script", "json", "jsonp", "text".
+                //在请求之前调用的函数
+                // beforeSend:function(){$("#msg").html("logining");},
+                //成功返回之后调用的函数
+                success:function(data){
+                    console.log(data);
+                    var dataObj=eval("("+data+")");//转换为json对象
+                    RGX.msg(dataObj.msg);
+                    if(dataObj.ret==0){
+
+                        window.location.href = '/home/good/cardlist5';
+                    }else{
+                        RGX.msg(dataObj.msg);
+                        $('#order_account').focus();
+                        $('#order_account').select();
+                    }
+                },
+                error: function(){
+                    //请求出错处理
+                }
+            });
+        }
+    });
+</script>
+<script>
+    var
+        get_timestamp = function (s) {
+            return parseInt(Date.parse(new Date(s + " 0:0:0")) / 1000);
+        },
+        apply_filter = function () {
+            var params = [];
+
+            $('.search_type,.search_key').each(function () {
+                var val = $(this).attr('data-val');
+                if (this.tagName.toUpperCase() == 'INPUT' || this.tagName.toUpperCase() == 'TEXTAREA') {
+                    val = $(this).val();
+                }
+                if ($(this).hasClass('search_key')) {
+                    if ($(this).hasClass('date-picker') || $(this).hasClass('date-picker1')) {
+                        val = get_timestamp(val);
+                        val = isNaN(val) ? '0' : val;
+                    }
+                    else {
+                        val = encodeURIComponent(val);
+                    }
+                }
+
+                if (val != '' && val != '0') {
+                    _filter[$(this).attr('data-key')] = val;
+                }
+                else {
+                    _filter[$(this).attr('data-key')] = '';
+                }
+            });
+
+            for (var key in _filter) {
+                if (_filter.hasOwnProperty(key)) {
+                    if (_filter[key] != '0' && $.trim(_filter[key]) != '') {
+                        params.push(key + '-' + _filter[key]);
+                    }
+                }
+            }
+
+            location.href = RGXLIB.url(_url + '-' + params.join('-'));
+        };
+
+    $(function () {
+        $('.dpm_opt').on('click', function () {
+            $($(this).attr('data-target')).attr('data-val', $(this).attr('data-val'));
+            $($(this).attr('data-target')).html($(this).text());;
+        });
+
+        $('.date-picker').on('click', function () {
+            laydate();
+        });
+
+        if ($('.dpm_opt').length > 0) {
+            $('.dpm_opt[data-val=""]').trigger('click');
+        }
+
+        $('.filter-opt').on('click', function () {
+            var key = $(this).attr('data-key'),
+                val = $(this).attr('data-val');
+            if ($.trim(val) != '' && val != '0') {
+                if ($(this).hasClass('active')) {
+                    _filter[key] = '';
+                }
+                else {
+                    _filter[key] = val;
+                }
+                apply_filter();
+            }
+        });
+
+        $('#filter_search_btn').on('click', function () {
+            apply_filter();
+        });
+
+        $('.filter-sort').on('click', function () {
+            // desc => null
+            if ($(this).hasClass('sort-desc')) {
+                _filter[$(this).attr('data-key')] = 1;
+            }
+            // asc => desc
+            else if ($(this).hasClass('sort-asc')) {
+                _filter[$(this).attr('data-key')] = 0;
+            }
+            // asc
+            else {
+                _filter[$(this).attr('data-key')] = 2;
+            }
+            apply_filter();
+        });
+
+
+        $('.modify_field').on('click', function () {
+            $(this).attr('data-val', $(this).text());
+            $(this).attr('contenteditable', true).addClass('modify_active');
+        });
+
+        $('.modify_field').on('keydown', function (e) {
+            if (e.keyCode == 13) {
+                $(this).trigger('blur');
+                e.stopPropagation();
+                return false;
+            }
+        });
+
+        $('.modify_field').on('blur', function () {
+            $(this).attr('contenteditable', false).removeClass('modify_active');
+            if ($(this).attr('data-val') != $(this).text()) {
+                RGX.get_json($(this).attr('data-url') + encodeURIComponent($(this).text()), function (d) {
+                    RGX.msg(d.msg);
+                });
+            }
+        });
+
+        $('.ajax_input').on('focus', function () {
+            $(this).attr('data-val', $(this).val());
+        });
+
+        $('.ajax_input').on('blur', function () {
+            if ($(this).val() != $(this).attr('data-val')) {
+                RGX.get_json($(this).attr('data-url') + encodeURIComponent($(this).val()), function (d) {
+                    if (d.code != '0') {
+                        RGX.msg(d.msg);
+                    }
+                });
+            }
+        });
+
+        $('.ajax_input').on('keydown', function (e) {
+            if (e.keyCode == 13) {
+                $(this).trigger('blur');
+            }
+        });
+
+        $('.check_all').on('click', function () {
+            var checked = this.checked;
+            $('.row_checkbox').each(function () {
+                this.checked = checked;
+            });
+        });
+
+        $('.ajax_update').on('click', function () {
+            RGX.get_json($(this).attr('data-url'), function (d) {
+                RGX.msg(d.msg);
+                if (d['url'] != undefined) {
+                    setTimeout(function () {
+                        location.href = d.url;
+                    }, 500);
+                }
+            });
+            return false;
+        });
+
+        $('.ajax_update_confirm').on('click', function () {
+            if (confirm($(this).attr('data-confirm') || '确定进行该操作?')) {
+                RGX.get_json($(this).attr('data-url'), function (d) {
+                    RGX.msg(d.msg);
+                    if (d['url'] != undefined) {
+                        setTimeout(function () {
+                            location.href = d.url;
+                        }, 500);
+                    }
+                });
+            }
+        });
+
+        $('.ajax_delete').on('click', function () {
+            if (confirm($(this).attr('data-confirm') || '确定删除该记录?')) {
+                var that = $(this);
+                RGX.get_json(that.attr('data-url'), function (d) {
+                    RGX.msg(d.msg);
+                    if (d.code == '0') {
+                        $(that.attr('data-target')).remove();
+                    }
+                });
+            }
+        });
+
+        $('.ajax_delete_all').on('click', function () {
+            var ids = get_ids();
+            if (ids.length == 0) {
+                RGX.msg('请至少选择一项');
+            }
+            else {
+                var url = $(this).attr('data-url') + encodeURIComponent(ids.join(','));
+                RGX.get_json(url, function (d) {
+                    if (d.code == '0') {
+                        location.href = location;
+                    }
+                    else {
+                        RGX.msg(d.msg);
+                    }
+                });
+            }
+        });
+
+        $('body').on('mouseleave', '.select_category_plugin', function () {
+            $(this).hide();
+        });
+
+        $('body').on('click', 'label.weui-check__label', function () {
+            if ($(this).find('input:checked').length == 0) {
+                $(this).find('input').prop('checked', true);
+            }
+            else {
+                $(this).find('input').prop('checked', false);
+            }
+        });
+
+        $('.filter_weui-select').each(function () {
+            _filter[$(this).attr('data-key')] = $(this).val();
+        });
+
+        $('.filter_weui-select').on('change', function () {
+            _filter[$(this).attr('data-key')] = $(this).val();
+        });
+    });
+</script>
+</body>
+</html>

@@ -11,7 +11,9 @@ class CommonController extends Controller {
     }
 
     public function getMenu(){
-        $menu = D('SysMenu')->select();
+        $where['type'] = 'front';
+        $where['status'] = 1;
+        $menu = D('SysMenu')->where($where)->select();
         $this->assign('menu',$menu);
     }
     public function setMenu($id){

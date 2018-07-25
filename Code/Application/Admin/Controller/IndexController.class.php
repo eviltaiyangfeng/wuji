@@ -48,12 +48,16 @@ class IndexController extends Controller {
     public function is_login(){
         $user_auth = session('user_auth');
         if (!empty($user_auth)) {
-//            $this->redirect('Admin/Index/Index');
+            $this->assign('menu',$this->getMenu($user_auth));
             $this->display("index");
         } else {
             $num = rand(100000000000000, 999999999999999);
             $this->assign("key", $num);
             $this->display("login");
         }
+    }
+
+    public function getMenu($user_auth){
+        return   D('SysMenu')->getMenu($user_auth['id']);
     }
 }

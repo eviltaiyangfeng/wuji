@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>
+        变机宝开卡 - 无极软件后台管理系统
+    </title>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <link href="http://www.58wuji.com/application/home/view/public/css/discuz.css" id="lhgdialoglink" rel="stylesheet"/>
+    <link href="http://www.58wuji.com/application/home/view/public/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="http://www.58wuji.com/application/home/view/public/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="http://www.58wuji.com/application/home/view/public/css/style.css" rel="stylesheet"/>
+</head>
+<body class="right-body">
+<div class="row " style="margin:0; padding:5px 0; background: #f0f0f0;">
+    <div class="col-md-4">
+        <ol class="breadcrumb">
+            <li>
+                <a href="create4.html">
+                    <i class="fa fa-home">
+                    </i>
+                    首页
+                </a>
+            </li>
+            <li>
+                <a href="http://pt.wujiruanjian.com/order/soft.html">
+                    软件市场
+                </a>
+            </li>
+            <li class="active">
+                变机宝开卡
+            </li>
+        </ol>
+    </div>
+    <div class="col-md-8">
+        <div class="btn-group-xs text-right" style="padding-top:3px;line-height: 28px;">
+        </div>
+    </div>
+</div>
+<div class="section" style="width:90%">
+    <form action="save.html" class="form-horizontal" id="sform">
+        <input name="order[goodid]" type="hidden" value="5"/>
+        <input name="order[goodtype]" type="hidden" value="6"/>
+        <input name="order[pricetype]" type="hidden" value="5"/>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label class="control-label col-md-3" for="type_label">
+                    用户名
+                </label>
+                <div class="col-md-9">
+                    <input class="form-control" id="order_account" maxlength="64" name="order[username]" placeholder="请输入用户名" type="text" value="">
+                    <small>
+                        字母,数字组合
+                    </small>
+                    </input>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="control-label col-md-3" for="type_label">
+                    密码
+                    <small>
+                    </small>
+                </label>
+                <div class="col-md-9">
+                    <input class="form-control" id="order_passwd" maxlength="64" name="order[userpass]" placeholder="请输入密码" type="text" value="">
+                    </input>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label class="control-label col-md-3" for="type_label">
+                    开卡时长
+                </label>
+                <div class="col-md-9">
+                    <select class="form-control" id="order_day" name="order[timetype]">
+                        <option value="30">
+                            30天卡
+                        </option>
+                        <option value="7">
+                            7天卡
+                        </option>
+                        <option value="1">
+                            1天卡
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <!-- <div class="form-group col-md-6 hide">
+                <label class="control-label col-md-3" for="type_label">
+                    开卡数量
+                </label>
+                <div class="col-md-9">
+                    <input class="form-control" id="order_amount" max="999" maxlength="3" min="1" name="order[num]" placeholder="请输入开卡数量" step="1" type="number" value="1"/>
+                    <small>
+                        当大于1时表示批量开卡, 用户名为账号前缀
+                    </small>
+                </div>
+            </div> -->
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label class="control-label col-md-3" for="type_label">
+                    开卡数量
+                </label>
+                <div class="col-md-9">
+                    <input class="form-control" id="order_amount" max="999" maxlength="3" min="1" name="order[num]" placeholder="请输入开卡数量" step="1" type="number" value="1"/>
+                    <small>
+                        当前账户余额 :
+                        <span class="text-danger">
+                                    0点
+                                </span>
+                    </small>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="control-label col-md-3" for="type_label">
+                    QQ
+                </label>
+                <div class="col-md-9">
+                    <input class="form-control" id="order_qq" maxlength="64" name="order[qq]" placeholder="请输入QQ" type="text" value=""/>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label class="control-label col-md-3" for="type_label">
+                    所属平台
+                </label>
+                <div class="col-md-9">
+                    <select class="form-control" id="extra_platform" name="order[type]">
+                        <option value="3">
+                            安卓
+                        </option>
+                        <option value="4">
+                            苹果
+                        </option>
+                    </select>
+                    <small>
+                    </small>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="control-label col-md-3" for="type_label">
+                    虚拟硬件
+                </label>
+                <div class="col-md-9">
+                    <select class="form-control" id="extra_v_hard" name="order[v_hard]">
+                        <option selected="" value="1">
+                            开
+                        </option>
+                        <option value="0">
+                            关
+                        </option>
+                    </select>
+                    <small>
+                    </small>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="control-label col-md-3" for="type_label">
+                    虚拟IP
+                </label>
+                <div class="col-md-9">
+                    <select class="form-control" id="extra_v_ip" name="order[v_ip]">
+
+                        <option  value="6">
+                            关
+                        </option>
+                        <option value="5">
+                            开
+                        </option>
+                    </select>
+                    <small>
+                    </small>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="control-label col-md-3" for="type_label">
+                    IP类型
+                </label>
+                <div class="col-md-9">
+                    <select class="form-control" id="extra_ip_type" name="order[ip_type]">
+                        <option value="1">
+                            无限IP
+                        </option>
+                    </select>
+                    <small>
+                    </small>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="control-label col-md-3" for="type_label">
+                    IP区域
+                </label>
+                <div class="col-md-9">
+                    <select class="form-control" id="extra_ip_range" name="order[ip_range]">
+                        <option selected="" value="1">
+                            全国随机分配
+                        </option>
+                    </select>
+                    <small>
+                    </small>
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="control-label col-md-3" for="type_label" style="width: 12.5%">
+                    备注
+                </label>
+                <div class="col-md-9" style="width: 87.5%">
+                    <textarea class="form-control" id="order_memo" name="order[remark]" placeholder="( 备注 )" value=""></textarea>
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="control-label col-md-3" for="type_label" style="width: 12.5%">
+                </label>
+                <div class="col-md-9" style="width: 87.5%">
+                    <button class="btn btn-success" href="javascript:;" id="btn-submit" role="button" type="button">
+                        提交
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!--start确认购买提示框-->
+    <div class="modal fade" id="kaika_modal" role="dialog" tabindex="-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                <span aria-hidden="true">
+                                    ×
+                                </span>
+                    </button>
+                    <h4 class="modal-title">
+                        操作确认
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div style="width:90%;padding:10px 10px 50px 10px; margin: 0 auto;">
+                        <p>
+                            确定购买？<br/>
+                            <!-- 应付 1000=1张 x (1张天卡 x 5机器 x 200) -->
+                            应付 <span id="cardmsg"></span>
+                        </p>
+                        <div class="points_recharge" style="margin-top:15px;">
+                            <button class="btn btn-primary" href="javascript:;" id="kaika_yes" role="button" type="button">
+                                确认
+                            </button>
+                            <button class="btn btn-primary" href="javascript:;" id="kaika_no" role="button" type="button">
+                                取消
+                            </button>
+                            <div class="clearfix">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end确认购买提示框-->
+</div>
+<script src="http://www.58wuji.com/application/home/view/public/js/jquery.min.js">
+</script>
+<script src="http://www.58wuji.com/application/home/view/public/js/bootstrap.min.js">
+</script>
+<script src="http://www.58wuji.com/application/home/view/public/js/lhgdialog.min.js">
+</script>
+<script src="http://www.58wuji.com/application/home/view/public/js/RGX.lib.min.js">
+</script>
+<script src="http://www.58wuji.com/application/home/view/public/js/rgx.js">
+</script>
+<script src="http://www.58wuji.com/application/home/view/public/js/laydate.js">
+</script>
+<script>
+    $(function() {
+        $('#btn-submit').on('click', function () {
+            var account     =$('#order_account').val();
+            amount      = parseInt($('#order_amount').val()),
+                qq=$('#order_qq').val();
+            days        = parseInt($('#order_day').val());
+            //用户名，开卡数量，开卡时长
+            var ret = /^[A-Za-z0-9]+$/,retqq=/^[1-9]\d*$/;
+
+            if (account == '') {
+                RGX.msg('请输入用户名');
+                $('#order_account').focus();
+            }
+            else if(!ret.test(account)){
+                RGX.msg('用户名只能是字母,数字');
+                $('#order_account').focus();
+                $('#order_account').select();
+            }
+            else if ($('#order_passwd').val() == '') {
+                RGX.msg('请输入密码');
+                $('#order_passwd').focus();
+            }
+            else if (isNaN(amount)) {
+                RGX.msg('至少购买一个');
+                $('#order_amount').focus();
+            }
+            else if(qq= ''||!retqq.test(qq)){
+                RGX.msg('请正确填写qq号码');
+                $('#order_qq').focus();
+                $('#order_qq').select();
+            }else{
+                queren();
+
+            }
+        });
+        //点击提交购买按钮
+        function queren(){
+            // $('#kaika_yes').on('click',function(){
+            $.ajax({
+                //提交数据的类型 POST GET
+                type:"POST",
+                //提交的网址
+                url:"/home/good/ifcard",
+                async:false,//同步：意思是当有返回值以后才会进行后面的js程序。
+                //提交的数据
+                data:$("form").serialize(),
+                //返回数据的格式
+                datatype: "json",//"xml", "html", "script", "json", "jsonp", "text".
+                //在请求之前调用的函数
+                // beforeSend:function(){$("#msg").html("logining");},
+                //成功返回之后调用的函数
+                success:function(data){
+                    console.log(data);
+                    var dataObj=eval("("+data+")");//转换为json对象
+                    if(dataObj.ret==1){
+                        $("#cardmsg").text(dataObj.cardmsg);
+                        $("#kaika_modal").modal();
+                    }else{
+                        RGX.msg(dataObj.msg);
+                        $('#order_account').focus();
+                        $('#order_account').select();
+                    }
+                }
+            });
+            // });
+        }
+        //确认购买
+        $("#kaika_yes").click(function(){
+            subform();
+        });
+        //取消购买
+        $('#kaika_no').on('click',function(){
+            $('#pay_modal').modal();
+            $("#kaika_modal").modal("hide");
+        });
+        //提交form表单
+        function subform(){
+            $.ajax({
+                //提交数据的类型 POST GET
+                type:"POST",
+                //提交的网址
+                url:"/home/good/createbjb",
+                async:false,//同步：意思是当有返回值以后才会进行后面的js程序。
+                //提交的数据
+                data:$("form").serialize(),
+                //返回数据的格式
+                datatype: "json",//"xml", "html", "script", "json", "jsonp", "text".
+                //在请求之前调用的函数
+                // beforeSend:function(){$("#msg").html("logining");},
+                //成功返回之后调用的函数
+                success:function(data){
+                    console.log(data);
+                    var dataObj=eval("("+data+")");//转换为json对象
+                    RGX.msg(dataObj.msg);
+                    if(dataObj.ret==0){
+                        window.location.href = '/home/good/cardlist6';
+                    }else{
+                        RGX.msg(dataObj.msg);
+                        $('#order_account').focus();
+                        $('#order_account').select();
+                    }
+                },
+                error: function(){
+                    //请求出错处理
+                }
+            });
+        }
+    });
+</script>
+</body>
+</html>

@@ -7,11 +7,11 @@
         <meta charset="utf-8"/>
         <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
         <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="__WUJI__/css/bootstrap.min.css" />
         </load>
-        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="__WUJI__/css/font-awesome.min.css" />
         </load>
-        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index.css" />
+        <link rel="stylesheet" type="text/css" href="__WUJI__/css/index.css" />
         </load>
     </head>
     <body class="login box1">
@@ -19,7 +19,7 @@
             {:C('SITE_INFO.SITE_NAME')}
         </h5>
         <div class="page-form">
-            <form action="{:U('login')}" class="form-horizontal" id="aform" method="post">
+            <form class="form-horizontal" id="aform" method="post">
                 <!--<input type="hidden" id="geetest_challenge" name="geetest_challenge"    value="" />-->
                 <!--<input type="hidden" id="geetest_validate"  name="geetest_validate"     value="" />-->
                 <!--<input type="hidden" id="geetest_seccode"   name="geetest_seccode"      value="" />-->
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-primary" id="login-btn" type="submit">
+                        <button class="btn btn-primary" id="login-btn" type="button">
                             登录
                         </button>
                     </div>
@@ -125,7 +125,7 @@
                         <a class="a4" href="javascript:;" title="关注微信">
                         </a>
                         <div class="p_cont a4_cont" style="display: none;">
-                            <img alt="" src="__PUBLIC__/imges/er.png">
+                            <img alt="" src="__WUJI__/imges/er.png">
                                 <span class="a4_right">
                                 </span>
                             </img>
@@ -134,36 +134,51 @@
                 </ul>
             </div>
         </div>
-        <script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
+        <script type="text/javascript" src="__WUJI__/js/jquery.min.js"></script>
         </load>
-        <script type="text/javascript" src="__PUBLIC__/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="__WUJI__/js/bootstrap.min.js"></script>
         </load>
-        <script type="text/javascript" src="__PUBLIC__/js/lhgdialog.min.js"></script>
+        <script type="text/javascript" src="__WUJI__/js/lhgdialog.min.js"></script>
         </load>
-        <script type="text/javascript" src="__PUBLIC__/js/RGX.lib.min.js"></script>
+        <script type="text/javascript" src="__WUJI__/js/RGX.lib.min.js"></script>
         </load>
-        <script type="text/javascript" src="__PUBLIC__/js/rgx.js"></script>
+        <script type="text/javascript" src="__WUJI__/js/rgx.js"></script>
         </load>
-        <script type="text/javascript" src="__PUBLIC__/js/laydate.js"></script>
+        <script type="text/javascript" src="__WUJI__/js/laydate.js"></script>
         </load>
         <script>
 
     $(function() {
 
         $('#login-btn').on('click', function() {
-            alert('功能即将上线!');
-            return false;
             if ($('#adm_name').val() == '') {
                 RGX.tips('请输入账号', '#adm_name');
             }
             else if ($('#adm_passwd').val() == '') {
                 RGX.tips('请输入密码', '#adm_passwd');
             }
-            else if (!verfiy_success) {
-                show_capcha();
-            }
+            // else if (!verfiy_success) {
+            //     show_capcha();
+            // }
             else {
-                RGX.exec_post('#aform');
+                // RGX.exec_post('#aform');
+                $.ajax({
+                    type        : "POST",
+                    url         : "{:U('Admin/Index/login')}",
+                    data        : $("#aform").serialize() + '&isajax=1',
+                    dataType    : 'json',
+                    success     : function(data) {
+                        if (data.status) {
+                            alert(data.msg);
+                            window.location.href = "{:U('Admin/Index/Index')}";
+                        }else{
+                            alert(data.msg);
+                        }
+                    },
+                    error       : function(data) {
+                        alert(data.msg);
+                    }
+                });
             }
         });
     });
