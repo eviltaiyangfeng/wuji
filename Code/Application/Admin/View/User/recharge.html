@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>
+        我要充值 - 无极软件后台管理系统
+    </title>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="http://58wuji.com/application/home/view/public/css/discuz.css" id="lhgdialoglink" rel="stylesheet"/>
+    <link href="http://58wuji.com/application/home/view/public/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="http://58wuji.com/application/home/view/public/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="http://58wuji.com/application/home/view/public/css/style.css" rel="stylesheet"/>
+    </meta>
+</head>
+<body class="right-body">
+<div class="row " style="margin:0; padding:5px 0; background: #f0f0f0;">
+    <div class="col-md-4">
+        <ol class="breadcrumb">
+            <li>
+                <a href="recharge.html">
+                    <i class="fa fa-home">
+                    </i>
+                    首页
+                </a>
+            </li>
+            <li class="active">
+                在线充值
+            </li>
+        </ol>
+    </div>
+    <div class="col-md-8">
+        <div class="btn-group-xs text-right" style="padding-top:3px;line-height: 28px;">
+        </div>
+    </div>
+</div>
+<div class="section" style="width:50%">
+    <form action="/home/user/alipay" method="post" name="alipayment" target="_blank">
+        <div class="form-group">
+            <label class="control-label" style="font-weight: normal;">
+                充值金额
+                <small>
+                    <code>
+                        1元 = 100点
+                    </code>
+                    , 至少充值
+                    <code>
+                        10元
+                    </code>
+                </small>
+            </label>
+            <input class="form-control" id="amount" maxlength="64" name="amount" placeholder="请输入充值金额 (元)" type="text" value="10"/>
+        </div>
+        <button class="btn btn-primary" href="javascript:;" id="btn-submit" role="button" type="button">
+            提交
+        </button>
+    </form>
+</div>
+<div class="modal fade" id="pay_modal" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                            <span aria-hidden="true">
+                                ×
+                            </span>
+                </button>
+                <h4 class="modal-title">
+                    扫码支付
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div style="width:90%;padding:10px 10px 50px 10px; margin: 0 auto;">
+                    <p>
+                        您需要支付
+                        <span style="font-size: 14px;">
+                                    ￥
+                                    <b class="pay_cny" style="color:#d9534f;font-size: 16px;">
+                                    </b>
+                                    元
+                                </span>
+                        , 请选择支付方式
+                    </p>
+                    <div class="points_recharge" style="margin-top:15px;">
+                        <div class="points_payment" data-label="支付宝" data-value="1">
+                            <img alt="" src="http://58wuji.com/application/home/view/public/imges/aliweb.png"/>
+                        </div>
+                        <div class="points_payment" data-label="微信" data-value="2">
+                            <img alt="" src="http://58wuji.com/application/home/view/public/imges/wxpay.png"/>
+                        </div>
+                        <div class="clearfix">
+                        </div>
+                    </div>
+                    <div id="pay_wrap" style="margin-top:25px;height:160px;width: 160px;display: none;">
+                        <img alt="微信扫码支付" id="paycode" src="" style="width:100%">
+                        <input id="ordernum" type="hidden" value="">
+                        <!-- <iframe allowtransparency="yes" border="0" frameborder="no" id="qr-iframe" marginheight="0" marginwidth="0" scrolling="no" src="" style="height:160px;width:160px;border:none;overflow:hidden;">
+                </iframe> -->
+                        </input>
+                        </img>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="alipay_modal" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                            <span aria-hidden="true">
+                                ×
+                            </span>
+                </button>
+                <h4 class="modal-title">
+                    支付提示
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div style="width:90%;padding:10px 10px 50px 10px; margin: 0 auto;">
+                    <p>
+                        请根据支付结果选择
+                    </p>
+                    <div class="points_recharge" style="margin-top:15px;">
+                        <button class="btn btn-primary" href="javascript:;" id="alipay_success" role="button" type="button">支付成功</button>
+                        <button class="btn btn-primary" href="javascript:;" id="alipay_false" role="button" type="button">支付失败</button>
+                        <div class="clearfix">
+                        </div>
+                    </div>
+                    <div id="pay_wrap" style="margin-top:25px;height:160px;width: 160px;display: none;">
+                        <img alt="微信扫码支付" id="paycode" src="" style="width:100%">
+                        <input id="ordernum" type="hidden" value="">
+                        <!-- <iframe allowtransparency="yes" border="0" frameborder="no" id="qr-iframe" marginheight="0" marginwidth="0" scrolling="no" src="" style="height:160px;width:160px;border:none;overflow:hidden;">
+                </iframe> -->
+                        </input>
+                        </img>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="http://58wuji.com/application/home/view/public/js/jquery.min.js">
+</script>
+<script src="http://58wuji.com/application/home/view/public/js/bootstrap.min.js">
+</script>
+<script src="http://58wuji.com/application/home/view/public/js/lhgdialog.min.js">
+</script>
+<script src="http://58wuji.com/application/home/view/public/js/RGX.lib.min.js">
+</script>
+<script src="http://58wuji.com/application/home/view/public/js/rgx.js">
+</script>
+<script src="http://58wuji.com/application/home/view/public/js/laydate.js">
+</script>
+<script>
+    $(function() {
+        //支付宝支付跳转-成功跳转
+        $('#alipay_success').on('click',function(){
+            parent.location.href="/center";
+        });
+        //支付宝支付跳转-失败跳转
+        $('#alipay_false').on('click',function(){
+            $('#pay_modal').modal();
+            $("#alipay_modal").modal("hide");
+        });
+        $('#btn-submit').on('click', function() {
+            var amount = $('#amount').val();
+            var amount = parseInt($('#amount').val());
+            if (isNaN(amount) || amount < 10) {
+                $('#amount').focus();
+                $('#amount').select();
+                RGX.msg('请输入有效的充值金额，并且最低为10元');
+            }
+            else {
+                $('.pay_cny').html(amount);
+                $('#qr-iframe').removeAttr('src');
+                $('.points_payment.active').removeClass('active');
+                $('#pay_wrap').hide();
+                $('#pay_modal').modal();
+            }
+        });
+        //点击支付功能
+        $('.points_payment').on('click', function () {
+            var amount = parseInt($('#amount').val());
+            var index=$(this).index();//0支付宝；1微信支付
+            if(index==0){
+                //支付宝支付-支付跳转
+                $('#pay_modal').modal("hide");
+                $("#alipay_modal").modal();
+                $("form").submit();return;
+            }else{
+                //微信支付
+                $.ajax({
+                    //提交数据的类型 POST GET
+                    type:"POST",
+                    //提交的网址
+                    url:"/home/user/wxpay",
+                    async:false,//同步：意思是当有返回值以后才会进行后面的js程序。
+                    //提交的数据
+                    data:$("form").serialize(),
+                    //返回数据的格式
+                    datatype: "json",//"xml", "html", "script", "json", "jsonp", "text".
+                    //在请求之前调用的函数
+                    // beforeSend:function(){$("#msg").html("logining");},
+                    //成功返回之后调用的函数
+                    success:function(resdata){
+                        console.log(resdata);
+                        var dataObj=eval("("+resdata+")");//转换为json对象
+
+                        $("#paycode").attr("src","/home/user/qrcode?data="+dataObj.url);
+                        $("#ordernum").val(dataObj.out_trade_no);
+                    }
+                });
+                $('#pay_wrap').show();
+            }
+        });
+
+    });
+    //微信支付成功轮训js函数
+    function pay_status(){
+        var order_id = $("#ordernum").val();
+        $.ajax({
+            url:'/home/user/pay_status_check',
+            dataType:'json',
+            type:'post',
+            data:{'order_id':order_id},
+            success:function(data){
+                if(data == '1' ){
+                    window.clearInterval(int); //销毁定时器
+                    setTimeout(function(){
+                        //跳转到结果页面，并传递状态
+                        RGX.msg('充值成功');
+                        parent.location.href="/center";
+                    },2000)
+                }
+            }
+        });
+    }
+    //启动定时器
+    var int=self.setInterval(function(){pay_status()},2000);
+</script>
+</body>
+</html>

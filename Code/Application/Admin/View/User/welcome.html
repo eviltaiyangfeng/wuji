@@ -34,14 +34,13 @@
 					<div class="layui-input-inline">
 						<input type="text" name="money" required  lay-verify="required" placeholder="" autocomplete="off" class="layui-input" value="{$Think.session.user_auth.money|default=0}">
 					</div>
-					<button class="layui-btn">充值</button><div class="layui-form-mid layui-word-aux">1元=100点</div>
+					<div class="layui-form-mid layui-word-aux">1元=100点<a href="{:U('recharge')}">充值</a></div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">绑定手机：</label>
 					<div class="layui-input-inline">
 						<input type="text" name="mobile" required  lay-verify="required" placeholder="请输入手机号" autocomplete="off" class="layui-input" value="">
 					</div>
-					<button class="layui-btn">绑定</button>
 				</div>
 				<div class="layui-form-item layui-form-text">
 					<label class="layui-form-label">备注：</label>
@@ -55,11 +54,13 @@
 					</div>
 				</div>
 			</form>
+			<button class="layui-btn layui-btn-normal function_button" data-type="tabChange" data-url="{:U('recharge')}">百搭按钮</button>
 		</div>
 
 	</div>
 </div>
 <script src="__ADMIN__layui/layui.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WUJI__js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 <script>
     //Demo
     layui.use(['form','element'], function(){
@@ -68,15 +69,52 @@
         form.render();
         //监听信息提交
         form.on('submit(adminInfo)', function(data){
-            layer.msg(JSON.stringify(data.field));
+            $.ajax({
+                url         : "{:U('Admin/Index/save')}",
+                data        : data.field,
+                dataType    : 'json',
+                success     : function(data) {
+                    if (data.status) {
+                        layer.alert(data.msg, {
+                            title: '提示'
+                        })
+                        window.location.reload();
+                    }else{
+                        layer.alert(data.msg, {
+                            title: '提示'
+                        })
+                    }
+                },
+                error       : function(data) {
+                    layer.alert(data.msg, {
+                        title: '提示'
+                    })
+                }
+            });
             return false;
         });
-        //监听密码提交
-        form.on('submit(adminPassword)', function(data){
-            layer.msg(JSON.stringify(data.field));
-            return false;
+
+        var active = {
+            redirect:function () {
+                //切换到指定Tab项
+                element.tabChange('leftNav', 4); //切换到：用户管理
+//				window.location.href = $(this).data('url');
+            },
+            tabChange: function(){
+                //切换到指定Tab项
+                element.tabChange('leftNav', 4); //切换到：用户管理
+            }
+
+        };
+
+        $('.function_button').on('click', function(){
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
         });
+
     });
+
+
 </script>
 </body>
 </html>

@@ -16,14 +16,30 @@
 				<div class="m-logo">
 				</div>
 				<ul class="layui-nav layui-nav-tree" lay-filter="leftNav">
-					<volist name="menu" id="vo">
-						<li class="layui-nav-item">
-							<a href="javascript:;" data-url="{:U($vo['url'])}" data-id='{$vo.id}' data-text="{$vo.name}"><i class="iconfont">&#xe604;</i>{$vo.name}</a>
-						</li>
-
+					<volist name="Think.session.user_auth.menu" id="vo">
+						<empty name="vo.sub">
+							<li class="layui-nav-item">
+								<a href="javascript:;" data-url="{:U($vo['url'])}" data-id='{$vo.id}' data-text="{$vo.name}">
+									<i class="iconfont">{$vo.iconfont}</i>{$vo.name}
+								</a>
+							</li>
+							<else/>
+							<li class="layui-nav-item ">
+								<a href="javascript:;">
+									<i class="iconfont">{$vo.iconfont}</i>{$vo.name}
+								</a>
+								<dl class="layui-nav-child">
+									<volist name="vo.sub" id="sub">
+										<dd><a href="javascript:;" data-url="{:U($sub['url'])}" data-id='{$sub.id}' data-text="{$sub.name}"><span class="l-line"></span>{$sub.name}</a></dd>
+									</volist>
+								</dl>
+							</li>
+						</empty>
 					</volist>
-				  <li class="layui-nav-item layui-nav-itemed">
-				    <a href="javascript:;"><i class="iconfont">&#xe607;</i>菜单管理</a>
+				  <li class="layui-nav-item ">
+				    <a href="javascript:;">
+						<i class="iconfont">&#xe607;</i>菜单管理
+					</a>
 				    <dl class="layui-nav-child">
 				      <dd><a href="javascript:;" data-url="menu1.html" data-id='1' data-text="后台菜单"><span class="l-line"></span>后台菜单</a></dd>
 				      <dd><a href="javascript:;" data-url="menu2.html" data-id='2' data-text="前台菜单"><span class="l-line"></span>前台菜单</a></dd>
@@ -76,7 +92,7 @@
 					  <li class="layui-nav-item">
 					    <a href="javascript:;" data-url="admin-info.html" data-id='5' data-text="个人信息">超级管理员</a>
 					  </li>
-					  <li class="layui-nav-item"><a href="javascript:;">退出</a></li>
+					  <li class="layui-nav-item"><a href="{:U('Index/login_out')}">退出</a></li>
 					</ul>
 				</div>
 				<!--主体内容-->

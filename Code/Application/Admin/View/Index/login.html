@@ -16,19 +16,19 @@
         <div class="m-login-warp">
             <form class="layui-form">
                 <div class="layui-form-item">
-                    <input type="text" name="title" required lay-verify="required" placeholder="用户名" autocomplete="off" class="layui-input">
+                    <input type="text" name="account" required lay-verify="required" placeholder="用户名" autocomplete="off" class="layui-input">
                 </div>
                 <div class="layui-form-item">
-                    <input type="text" name="password" required lay-verify="required" placeholder="密码" autocomplete="off" class="layui-input">
+                    <input type="password" name="password" required lay-verify="required" placeholder="密码" autocomplete="off" class="layui-input">
                 </div>
-                <div class="layui-form-item">
-                    <div class="layui-inline">
-                        <input type="text" name="verity" required lay-verify="required" placeholder="验证码" autocomplete="off" class="layui-input">
-                    </div>
-                    <div class="layui-inline">
-                        <img class="verifyImg" onclick="this.src=this.src+'?c='+Math.random();" src="__ADMIN__images/login/yzm.jpg" />
-                    </div>
-                </div>
+                <!--<div class="layui-form-item">-->
+                    <!--<div class="layui-inline">-->
+                        <!--<input type="text" name="verity" required lay-verify="required" placeholder="验证码" autocomplete="off" class="layui-input">-->
+                    <!--</div>-->
+                    <!--<div class="layui-inline">-->
+                        <!--<img class="verifyImg" onclick="this.src=this.src+'?c='+Math.random();" src="__ADMIN__images/login/yzm.jpg" />-->
+                    <!--</div>-->
+                <!--</div>-->
                 <div class="layui-form-item m-login-btn">
                     <div class="layui-inline">
                         <button class="layui-btn layui-btn-normal" lay-submit lay-filter="login">登录</button>
@@ -43,6 +43,7 @@
     </div>
 </div>
 <script src="__ADMIN__layui/layui.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WUJI__js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 <script>
     layui.use(['form', 'layedit', 'laydate'], function() {
         var form = layui.form(),
@@ -64,9 +65,31 @@
 
         //监听提交
         form.on('submit(login)', function(data) {
-            layer.alert(JSON.stringify(data.field), {
-                title: '最终的提交信息'
-            })
+            $.ajax({
+                url         : "{:U('Admin/Index/login')}",
+                data        : data.field,
+                dataType    : 'json',
+                success     : function(data) {
+                    if (data.status) {
+                        layer.alert(JSON.stringify(data.msg), {
+                            title: '登录提示'
+                        })
+                        window.location.href = "{:U('Admin/Index/Index')}";
+                    }else{
+                        layer.alert(JSON.stringify(data.msg), {
+                            title: '登录提示'
+                        })
+                    }
+                },
+                error       : function(data) {
+                    layer.alert(JSON.stringify(data.msg), {
+                        title: '登录提示'
+                    })
+                }
+            });
+//            layer.alert(JSON.stringify(data.field), {
+//                title: '最终的提交信息'
+//            })
             return false;
         });
 

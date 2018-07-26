@@ -1,0 +1,456 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <link href="http://58wuji.com/application/home/view/public/css/discuz.css" id="lhgdialoglink" rel="stylesheet"/>
+    <title>
+        我的订单 - 无极软件后台管理系统
+    </title>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="http://58wuji.com/application/home/view/public/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="http://58wuji.com/application/home/view/public/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="http://58wuji.com/application/home/view/public/css/style.css" rel="stylesheet"/>
+</head>
+<body class="right-body">
+<div class="container">
+    <div class="row " style="margin:0; padding:5px 0; background: #f0f0f0;">
+        <div class="col-md-4">
+            <ol class="breadcrumb">
+                <li>
+                    <a href="order.html">
+                        <i class="fa fa-home">
+                        </i>
+                        首页
+                    </a>
+                </li>
+                <li>
+                    <a href="order.html">
+                        订单记录
+                    </a>
+                </li>
+                <li class="active">
+                    订单列表
+                </li>
+            </ol>
+        </div>
+        <!-- <div class="col-md-8">
+            <div class="btn-group-xs text-right" style="padding-top:3px;line-height: 28px;">
+                <a class="btn btn-success" href="order.html">
+                    全部记录
+                </a>
+                <a class="btn btn-primary" href="order.html">
+                    待开卡
+                </a>
+                <a class="btn btn-primary" href="order.html">
+                    已开卡
+                </a>
+                <a class="btn btn-primary" href="order.html">
+                    已取消
+                </a>
+            </div>
+        </div> -->
+    </div>
+    <div class="container" style="background-color: #fff;padding-top: 7px;">
+        <div class="section">
+            <div class="row" id="filter_bar">
+                <form action="" class="form-horizontal" id="sform" method="post">
+                    <div class="filter_select_input">
+                        <div class="input-group">
+                            <div class="input-group-btn">
+                                <button aria-expanded="false" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
+                                            <span class="search_type" data-key="stype" data-val="uid" id="stype_label">
+                                                会员账号
+                                            </span>
+                                    <span class="caret">
+                                            </span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dpm_opt" data-target="#stype_label" data-val="uid" href="javascript:;">
+                                            会员账号
+                                        </a>
+                                    </li>
+                                    <!-- <li>
+                                    <a class="dpm_opt" data-target="#stype_label" data-val="oid" href="javascript:;">
+                                        订单号
+                                    </a>
+                                </li> -->
+                                    <li>
+                                        <a class="dpm_opt" data-target="#stype_label" data-val="cid" href="javascript:;">
+                                            开卡用户ID
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <input class="form-control search_key" data-key="skey" id="keyword" name="keyword" placeholder="请输入关键字" type="text" value=""/>
+                        </div>
+                    </div>
+                    <div class="filter_select">
+                        <div class="input-group">
+                            <button aria-expanded="false" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
+                                        <span class="search_type" data-key="soft" data-val="0" id="soft_label">
+                                            所有软件                                        </span>
+                                <span class="caret">
+                                        </span>
+                                <input type="hidden" value="0" name="goodtype" id="goodtype">
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dpm_opt" data-target="#soft_label" data-val="0" href="javascript:;">
+                                        所有软件
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dpm_opt" data-target="#soft_label" data-val="1" href="javascript:;">
+                                        硬件大师
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dpm_opt" data-target="#soft_label" data-val="2" href="javascript:;">
+                                        无极普通版专业
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dpm_opt" data-target="#soft_label" data-val="3" href="javascript:;">
+                                        无极独享版
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dpm_opt" data-target="#soft_label" data-val="4" href="javascript:;">
+                                        挂机宝随机版
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dpm_opt" data-target="#soft_label" data-val="5" href="javascript:;">
+                                        挂机宝固定版
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dpm_opt" data-target="#soft_label" data-val="6" href="javascript:;">
+                                        变机宝
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="filter_date">
+                        <div class="input-group">
+                                    <span class="input-group-addon">
+                                        时间段
+                                    </span>
+                            <div class="data-input-group">
+                                <input class="form-control date-picker search_key" data-key="stime" id="stime" name="stime" placeholder="开始时间" type="text" value=""/>
+                                <span class="form-control-text">
+                                            至
+                                        </span>
+                                <input class="form-control date-picker search_key" data-key="etime" id="etime" name="etime" placeholder="结束时间" type="text" value=""/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter_options">
+                        <a href="javascript:;" id="filter_search_btn">
+                            搜索
+                        </a>
+                    </div>
+                    <div class="clearfix">
+                    </div>
+                </form>
+            </div>
+            <div class="clearfix">
+            </div>
+        </div>
+        </else>
+        暂无订单
+    </div>
+</div>
+<script src="http://58wuji.com/application/home/view/public/js/jquery.min.js">
+</script>
+<script src="http://58wuji.com/application/home/view/public/js/bootstrap.min.js">
+</script>
+<script src="http://58wuji.com/application/home/view/public/js/lhgdialog.min.js">
+</script>
+<script src="http://58wuji.com/application/home/view/public/js/RGX.lib.min.js">
+</script>
+<script src="http://58wuji.com/application/home/view/public/js/laydate.js">
+</script>
+<script>
+    $(function(){
+        $('.dpm_opt').on('click', function () {
+            $($(this).attr('data-target')).attr('data-val', $(this).attr('data-val'));
+
+            $($(this).attr('data-target')).html($(this).text());
+            var str=$(this).attr('data-val');
+            if(str!='uid'&&str!='cid'){
+                $("#goodtype").val(str);
+            }
+
+
+        });
+
+        $('.date-picker').on('click', function () {
+            laydate();
+        });
+
+        if ($('.dpm_opt').length > 0) {
+            $('.dpm_opt[data-val="uid"]').trigger('click');
+        }
+    });
+    //搜索按钮
+    $('#filter_search_btn').on('click', function () {
+        $("form").submit();
+
+    });
+    var
+        get_timestamp = function (s) {
+            return parseInt(Date.parse(new Date(s + " 0:0:0")) / 1000);
+        },
+        apply_filter = function () {
+            var params = [];
+
+            $('.search_type,.search_key').each(function () {
+                var val = $(this).attr('data-val');
+                if (this.tagName.toUpperCase() == 'INPUT' || this.tagName.toUpperCase() == 'TEXTAREA') {
+                    val = $(this).val();
+                }
+                if ($(this).hasClass('search_key')) {
+                    if ($(this).hasClass('date-picker') || $(this).hasClass('date-picker1')) {
+                        val = get_timestamp(val);
+                        val = isNaN(val) ? '0' : val;
+                    }
+                    else {
+                        val = encodeURIComponent(val);
+                    }
+                }
+
+                if (val != '' && val != '0') {
+                    _filter[$(this).attr('data-key')] = val;
+                }
+                else {
+                    _filter[$(this).attr('data-key')] = '';
+                }
+            });
+
+            for (var key in _filter) {
+                if (_filter.hasOwnProperty(key)) {
+                    if (_filter[key] != '0' && $.trim(_filter[key]) != '') {
+                        params.push(key + '-' + _filter[key]);
+                    }
+                }
+            }
+
+            location.href = RGXLIB.url(_url + '-' + params.join('-'));
+        };
+
+    $(function () {
+
+        $('#right_nav .a4').hover(
+            function(){
+                $('#right_nav .a4_cont').css('display','block')
+            },
+            function(){
+                $('#right_nav .a4_cont').css('display','none');
+            }
+        );
+
+        $("#right_nav .a1").click(function(){
+            $('body,html').animate({scrollTop:0},300);
+        });
+
+        /**
+         * 分页跳转处理
+         */
+        $('body').on('click', '.pagination-atag', function (e) {
+            var url = $(this).attr('href'),
+                callback = $(this).parents('.paging').attr('data-callback');
+
+            if (!$(this).parents('li').hasClass('disabled')) {
+                // Btn Go
+                if ($(this).attr('data-url') != undefined) {
+                    var pn  = parseInt($(this).parents('.input-group').find('.paging_pn').val());
+                    if (isNaN(pn)) {
+                        $(this).parents('.input-group').find('.paging_pn').focus();
+                        url = null;
+                    }
+                    else {
+                        url = $(this).attr('data-url') + pn;
+                    }
+                }
+
+                if (url != null && url != 'javascript:;') {
+                    if (typeof(callback) != 'undefined' && callback != "nil" && callback != "{nil}") {
+                        window[callback](url);
+                    }
+                    else {
+                        location.href = url;
+                    }
+                }
+            }
+
+            e.stopPropagation();
+            return false;
+        });
+
+
+        $('.filter-opt').on('click', function () {
+            var key = $(this).attr('data-key'),
+                val = $(this).attr('data-val');
+            if ($.trim(val) != '' && val != '0') {
+                if ($(this).hasClass('active')) {
+                    _filter[key] = '';
+                }
+                else {
+                    _filter[key] = val;
+                }
+                apply_filter();
+            }
+        });
+
+
+
+        $('.filter-sort').on('click', function () {
+            // desc => null
+            if ($(this).hasClass('sort-desc')) {
+                _filter[$(this).attr('data-key')] = 1;
+            }
+            // asc => desc
+            else if ($(this).hasClass('sort-asc')) {
+                _filter[$(this).attr('data-key')] = 0;
+            }
+            // asc
+            else {
+                _filter[$(this).attr('data-key')] = 2;
+            }
+            apply_filter();
+        });
+
+
+        $('.modify_field').on('click', function () {
+            $(this).attr('data-val', $(this).text());
+            $(this).attr('contenteditable', true).addClass('modify_active');
+        });
+
+        $('.modify_field').on('keydown', function (e) {
+            if (e.keyCode == 13) {
+                $(this).trigger('blur');
+                e.stopPropagation();
+                return false;
+            }
+        });
+
+        $('.modify_field').on('blur', function () {
+            $(this).attr('contenteditable', false).removeClass('modify_active');
+            if ($(this).attr('data-val') != $(this).text()) {
+                RGX.get_json($(this).attr('data-url') + encodeURIComponent($(this).text()), function (d) {
+                    RGX.msg(d.msg);
+                });
+            }
+        });
+
+        $('.ajax_input').on('focus', function () {
+            $(this).attr('data-val', $(this).val());
+        });
+
+        $('.ajax_input').on('blur', function () {
+            if ($(this).val() != $(this).attr('data-val')) {
+                RGX.get_json($(this).attr('data-url') + encodeURIComponent($(this).val()), function (d) {
+                    if (d.code != '0') {
+                        RGX.msg(d.msg);
+                    }
+                });
+            }
+        });
+
+        $('.ajax_input').on('keydown', function (e) {
+            if (e.keyCode == 13) {
+                $(this).trigger('blur');
+            }
+        });
+
+        $('.check_all').on('click', function () {
+            var checked = this.checked;
+            $('.row_checkbox').each(function () {
+                this.checked = checked;
+            });
+        });
+
+        $('.ajax_update').on('click', function () {
+            RGX.get_json($(this).attr('data-url'), function (d) {
+                RGX.msg(d.msg);
+                if (d['url'] != undefined) {
+                    setTimeout(function () {
+                        location.href = d.url;
+                    }, 500);
+                }
+            });
+            return false;
+        });
+
+        $('.ajax_update_confirm').on('click', function () {
+            if (confirm($(this).attr('data-confirm') || '确定进行该操作?')) {
+                RGX.get_json($(this).attr('data-url'), function (d) {
+                    RGX.msg(d.msg);
+                    if (d['url'] != undefined) {
+                        setTimeout(function () {
+                            location.href = d.url;
+                        }, 500);
+                    }
+                });
+            }
+        });
+
+        $('.ajax_delete').on('click', function () {
+            if (confirm($(this).attr('data-confirm') || '确定删除该记录?')) {
+                var that = $(this);
+                RGX.get_json(that.attr('data-url'), function (d) {
+                    RGX.msg(d.msg);
+                    if (d.code == '0') {
+                        $(that.attr('data-target')).remove();
+                    }
+                });
+            }
+        });
+
+        $('.ajax_delete_all').on('click', function () {
+            var ids = get_ids();
+            if (ids.length == 0) {
+                RGX.msg('请至少选择一项');
+            }
+            else {
+                var url = $(this).attr('data-url') + encodeURIComponent(ids.join(','));
+                RGX.get_json(url, function (d) {
+                    if (d.code == '0') {
+                        location.href = location;
+                    }
+                    else {
+                        RGX.msg(d.msg);
+                    }
+                });
+            }
+        });
+
+        $('body').on('mouseleave', '.select_category_plugin', function () {
+            $(this).hide();
+        });
+
+        $('body').on('click', 'label.weui-check__label', function () {
+            if ($(this).find('input:checked').length == 0) {
+                $(this).find('input').prop('checked', true);
+            }
+            else {
+                $(this).find('input').prop('checked', false);
+            }
+        });
+
+        $('.filter_weui-select').each(function () {
+            _filter[$(this).attr('data-key')] = $(this).val();
+        });
+
+        $('.filter_weui-select').on('change', function () {
+            _filter[$(this).attr('data-key')] = $(this).val();
+        });
+    });
+</script>
+</body>
+</html>
