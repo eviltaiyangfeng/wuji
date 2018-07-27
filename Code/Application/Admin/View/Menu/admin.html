@@ -16,7 +16,7 @@
 					<form class="layui-form" action="">
 						<div class="layui-form-item">
 							<div class="layui-inline tool-btn">
-								<button class="layui-btn layui-btn-small layui-btn-normal addBtn hidden-xs" data-url="menu-add.html"><i class="layui-icon">&#xe654;</i></button>
+								<button class="layui-btn layui-btn-small layui-btn-normal addBtn hidden-xs" data-url="{:U('menu/add')}"><i class="layui-icon">&#xe654;</i></button>
 								<button class="layui-btn layui-btn-small layui-btn-warm listOrderBtn hidden-xs" data-url="menu-add.html"><i class="iconfont">&#xe656;</i></button>
 							</div>
 							<div class="layui-inline">
@@ -58,13 +58,15 @@
 
 
 
-							<tr id='node-1' class="parent collapsed">
+							<tr id='node-all' class="parent collapsed">
 									<td><input type="checkbox" name="" lay-skin="primary" data-id="1"></td>
-									<td class="hidden-xs">1</td>
-									<td class="hidden-xs"><input type="text" name="title" autocomplete="off" class="layui-input" value="0" data-id="1"></td>
-									<td class="hidden-xs">Admin</td>
+									<td class="hidden-xs">0</td>
+									<td class="hidden-xs">
+										<input type="text" name="title" autocomplete="off" class="layui-input" value="0" data-id="1">
+									</td>
+									<td class="hidden-xs">MenuManager</td>
 									<td>菜单管理
-										<a class="layui-btn layui-btn-mini layui-btn-normal showSubBtn" data-id='1'>+</a>
+										<a class="layui-btn layui-btn-mini layui-btn-normal showSubBtn" data-id='all'>+</a>
 									</td>
 									<td><button class="layui-btn layui-btn-mini layui-btn-normal table-list-status">显示 </button></td>
 									<td>
@@ -76,13 +78,17 @@
 									</td>
 								</tr>
 
-								<tr id='node-2' class="child-node-1 parent collapsed" style="display:none ;" parentid="1">
-									<td><input type="checkbox" name="" lay-skin="primary" data-id="2"></td>
-									<td class="hidden-xs">2</td>
-									<td class="hidden-xs"><input type="text" name="title" autocomplete="off" class="layui-input" value="0" data-id="2"></td>
+								<tr id='node-admin' class="child-node-all parent collapsed" style="display:none ;" parentid="1">
+									<td>
+										<input type="checkbox" name="" lay-skin="primary" data-id="2">
+									</td>
+									<td class="hidden-xs">0</td>
+									<td class="hidden-xs">
+										<input type="text" name="title" autocomplete="off" class="layui-input" value="0" data-id="2">
+									</td>
 									<td class="hidden-xs">Admin</td>
 									<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─后台菜单
-										<a class="layui-btn layui-btn-mini layui-btn-normal showSubBtn" data-id='2'>+</a>
+										<a class="layui-btn layui-btn-mini layui-btn-normal showSubBtn" data-id='admin'>+</a>
 									</td>
 									<td><button class="layui-btn layui-btn-mini layui-btn-normal table-list-status">显示 </button></td>
 									<td>
@@ -94,76 +100,34 @@
 									</td>
 								</tr>
 								<volist name="menu.admin" id="item">
-										<tr id='node-3' class="child-node-2 parent collapsed" style="display: none;" parentid="1">
+										<tr id='node-{$item.id}' class="child-node-admin parent collapsed" style="display: none;" parentid="1" data-id="{$item.id}">
 											<td><input type="checkbox" name="" lay-skin="primary" data-id="{$item.id}"></td>
-											<td class="hidden-xs">3</td>
-											<td class="hidden-xs"><input type="text" name="title" autocomplete="off" class="layui-input" value="0" data-id="3"></td>
+											<td class="hidden-xs">{$item.id}</td>
+											<td class="hidden-xs">
+												<input type="text" name="title" autocomplete="off" class="layui-input" value="{$item.order_index}" data-id="{$item.id}">
+												</td>
 											<td class="hidden-xs">{$item.url}</td>
 											<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─{$item.name}</td>
-											<td><button class="layui-btn layui-btn-mini layui-btn-normal table-list-status">显示 </button></td>
+											<td><button class="layui-btn layui-btn-mini layui-btn-normal table-list-status" data-status="{$item.viewable}">显示 </button></td>
 											<td>
 												<div class="layui-inline">
-													<button class="layui-btn layui-btn-mini layui-btn-normal  add-btn" data-id="1" data-url="menu-add.html"><i class="layui-icon">&#xe654;</i></button>
-													<button class="layui-btn layui-btn-mini layui-btn-normal  edit-btn" data-id="3" data-url="menu-add.html"><i class="layui-icon">&#xe642;</i></button>
-													<button class="layui-btn layui-btn-mini layui-btn-danger del-btn" data-id="3" data-url="menu-add.html"><i class="layui-icon">&#xe640;</i></button>
+													<button class="layui-btn layui-btn-mini layui-btn-normal  add-btn" data-id="{$item.id}" data-url="{:U('add',array('parent_id'=>$item['id']))}"><i class="layui-icon">&#xe654;</i></button>
+													<button class="layui-btn layui-btn-mini layui-btn-normal  edit-btn" data-id="{$item.id}" data-url="menu-add.html"><i class="layui-icon">&#xe642;</i></button>
+													<button class="layui-btn layui-btn-mini layui-btn-danger del-btn" data-id="{$item.id}" data-url="menu-add.html"><i class="layui-icon">&#xe640;</i></button>
 												</div>
 											</td>
 										</tr>
 								</volist>
-								<tr id='node-3' class="child-node-2 parent collapsed" style="display: none;" parentid="1">
-									<td><input type="checkbox" name="" lay-skin="primary" data-id="3"></td>
-									<td class="hidden-xs">3</td>
-									<td class="hidden-xs"><input type="text" name="title" autocomplete="off" class="layui-input" value="0" data-id="3"></td>
-									<td class="hidden-xs">Admin</td>
-									<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─菜单列表</td>
-									<td><button class="layui-btn layui-btn-mini layui-btn-normal table-list-status">显示 </button></td>
-									<td>
-										<div class="layui-inline">
-											<button class="layui-btn layui-btn-mini layui-btn-normal  add-btn" data-id="1" data-url="menu-add.html"><i class="layui-icon">&#xe654;</i></button>
-											<button class="layui-btn layui-btn-mini layui-btn-normal  edit-btn" data-id="3" data-url="menu-add.html"><i class="layui-icon">&#xe642;</i></button>
-											<button class="layui-btn layui-btn-mini layui-btn-danger del-btn" data-id="3" data-url="menu-add.html"><i class="layui-icon">&#xe640;</i></button>
-										</div>
-									</td>
-								</tr>
 
-
-								<tr id='node-4' class="child-node-2 parent collapsed" style="display: none;" parentid="1">
-									<td><input type="checkbox" name="" lay-skin="primary" data-id="4"></td>
-									<td class="hidden-xs">4</td>
-									<td class="hidden-xs"><input type="text" name="title" autocomplete="off" class="layui-input" value="0" data-id="4"></td>
-									<td class="hidden-xs">Admin</td>
-									<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─添加菜单</td>
-									<td><button class="layui-btn layui-btn-mini layui-btn-normal table-list-status">显示 </button></td>
-									<td>
-										<div class="layui-inline">
-											<button class="layui-btn layui-btn-mini layui-btn-normal  add-btn" data-id="1" data-url="menu-add.html"><i class="layui-icon">&#xe654;</i></button>
-											<button class="layui-btn layui-btn-mini layui-btn-normal  edit-btn" data-id="4" data-url="menu-add.html"> <i class="layui-icon">&#xe642;</i></button>
-											<button class="layui-btn layui-btn-mini layui-btn-danger del-btn" data-id="4" data-url="menu-add.html"><i class="layui-icon">&#xe640;</i></button>
-										</div>
-									</td>
-								</tr>
-								<tr id='node-4' class="child-node-2 parent collapsed" style="display: none;" parentid="1">
-									<td><input type="checkbox" name="" lay-skin="primary" data-id="4"></td>
-									<td class="hidden-xs">4</td>
-									<td class="hidden-xs"><input type="text" name="title" autocomplete="off" class="layui-input" value="0" data-id="4"></td>
-									<td class="hidden-xs">Admin</td>
-									<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─添加菜单</td>
-									<td><button class="layui-btn layui-btn-mini layui-btn-normal table-list-status">显示 </button></td>
-									<td>
-										<div class="layui-inline">
-											<button class="layui-btn layui-btn-mini layui-btn-normal  add-btn" data-id="1" data-url="menu-add.html"><i class="layui-icon">&#xe654;</i></button>
-											<button class="layui-btn layui-btn-mini layui-btn-normal  edit-btn" data-id="4" data-url="menu-add.html"><i class="layui-icon">&#xe642;</i></button>
-											<button class="layui-btn layui-btn-mini layui-btn-danger del-btn" data-id="4" data-url="menu-add.html"><i class="layui-icon">&#xe640;</i></button>
-										</div>
-									</td>
-								</tr>
-								<tr id='node-5' class="child-node-1 parent collapsed" style="display: none;" parentid="1">
+								<tr id='node-front' class="child-node-all parent collapsed" style="display: none;" parentid="1">
 									<td><input type="checkbox" name="" lay-skin="primary" data-id="5"></td>
-									<td class="hidden-xs">5</td>
-									<td class="hidden-xs"><input type="text" name="title" autocomplete="off" class="layui-input" value="0" data-id="5"></td>
-									<td class="hidden-xs">Admin</td>
+									<td class="hidden-xs">0</td>
+									<td class="hidden-xs">
+										<input type="text" name="title" autocomplete="off" class="layui-input" value="0" data-id="front">
+									</td>
+									<td class="hidden-xs">Front</td>
 									<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─前台菜单
-										<a class="layui-btn layui-btn-mini layui-btn-normal showSubBtn" data-id='5'>+</a>
+										<a class="layui-btn layui-btn-mini layui-btn-normal showSubBtn" data-id='front'>+</a>
 									</td>
 									<td><button class="layui-btn layui-btn-mini layui-btn-warm table-list-status">隐藏</button></td>
 									<td>
@@ -175,53 +139,26 @@
 									</td>
 								</tr>
 								<volist name="menu.front" id="item">
-									<tr id='node-3' class="child-node-5 parent collapsed" style="display: none;" parentid="1">
+									<tr id='node-{$item.id}' class="child-node-front parent collapsed" style="display: none;" parentid="1" data-id="{$item.id}">
 										<td><input type="checkbox" name="" lay-skin="primary" data-id="{$item.id}"></td>
 										<td class="hidden-xs">3</td>
 										<td class="hidden-xs"><input type="text" name="title" autocomplete="off" class="layui-input" value="0" data-id="3"></td>
 										<td class="hidden-xs">{$item.url}</td>
 										<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─{$item.name}</td>
-										<td><button class="layui-btn layui-btn-mini layui-btn-normal table-list-status">显示 </button></td>
+										<td>
+											<button class="layui-btn layui-btn-mini layui-btn-normal table-list-status" data-status="{$item.viewable}">显示 </button>
+										</td>
 										<td>
 											<div class="layui-inline">
-												<button class="layui-btn layui-btn-mini layui-btn-normal  add-btn" data-id="1" data-url="menu-add.html"><i class="layui-icon">&#xe654;</i></button>
-												<button class="layui-btn layui-btn-mini layui-btn-normal  edit-btn" data-id="3" data-url="menu-add.html"><i class="layui-icon">&#xe642;</i></button>
-												<button class="layui-btn layui-btn-mini layui-btn-danger del-btn" data-id="3" data-url="menu-add.html"><i class="layui-icon">&#xe640;</i></button>
+												<button class="layui-btn layui-btn-mini layui-btn-normal  add-btn" data-id="{$item.id}" data-url="menu-add.html"><i class="layui-icon">&#xe654;</i></button>
+												<button class="layui-btn layui-btn-mini layui-btn-normal  edit-btn" data-id="{$item.id}" data-url="menu-add.html"><i class="layui-icon">&#xe642;</i></button>
+												<button class="layui-btn layui-btn-mini layui-btn-danger del-btn" data-id="{$item.id}" data-url="menu-add.html"><i class="layui-icon">&#xe640;</i></button>
 											</div>
 										</td>
 									</tr>
 								</volist>
-								<tr id='node-6' class="child-node-5 parent collapsed" style="display: none;" parentid="1">
-									<td><input type="checkbox" name="" lay-skin="primary" data-id="3"></td>
-									<td class="hidden-xs">6</td>
-									<td class="hidden-xs"><input type="text" name="title" autocomplete="off" class="layui-input" value="0" data-id="6"></td>
-									<td class="hidden-xs">Admin</td>
-									<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─菜单列表</td>
-									<td><button class="layui-btn layui-btn-mini layui-btn-normal table-list-status">显示 </button></td>
-									<td>
-										<div class="layui-inline">
-											<button class="layui-btn layui-btn-mini layui-btn-normal  add-btn" data-id="1" data-url="menu-add.html"><i class="layui-icon">&#xe654;</i></button>
-											<button class="layui-btn layui-btn-mini layui-btn-normal  edit-btn" data-id="6" data-url="menu-add.html"><i class="layui-icon">&#xe642;</i></button>
-											<button class="layui-btn layui-btn-mini layui-btn-danger del-btn" data-id="6" data-url="menu-add.html"><i class="layui-icon">&#xe640;</i></button>
-										</div>
-									</td>
-								</tr>
-								<tr id='node-7' class="child-node-5 parent collapsed" style="display: none;" parentid="1">
-									<td><input type="checkbox" name="" lay-skin="primary" data-id="5"></td>
-									<td class="hidden-xs">7</td>
-									<td class="hidden-xs"><input type="text" name="title" autocomplete="off" class="layui-input" value="0" data-id="7"></td>
-									<td class="hidden-xs">Admin</td>
-									<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─添加菜单</td>
-									<td><button class="layui-btn layui-btn-mini layui-btn-normal table-list-status">显示 </button></td>
-									<td>
-										<div class="layui-inline">
-											<button class="layui-btn layui-btn-mini layui-btn-normal  add-btn" data-id="1" data-url="menu-add.html"><i class="layui-icon">&#xe654;</i></button>
-											<button class="layui-btn layui-btn-mini layui-btn-normal  edit-btn" data-id="7" data-url="menu-add.html"><i class="layui-icon">&#xe642;</i></button>
-											<button class="layui-btn layui-btn-mini layui-btn-danger del-btn" data-id="7" data-url="menu-add.html"><i class="layui-icon">&#xe640;</i></button>
-										</div>
-									</td>
-								</tr>
 							</tbody>
+
 						</table>
 					</div>
 		</div>
