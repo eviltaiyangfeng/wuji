@@ -5,14 +5,14 @@ class SysUserModel extends Model {
     /* 用户模型自动验证 */
     protected $_validate = array(
         /* 验证用户名 */
-        array('account', '3,30', '账号长度在3-30个字符', self::EXISTS_VALIDATE, 'length'), //用户名长度不合法
+        array('account', '6,20', '账号长度在6-15个字符', self::EXISTS_VALIDATE, 'length'), //用户名长度不合法
         array('account','','账号已经存在！',0,'unique',1),
 //        /* 验证密码 */
-        array('password', '1,30', "密码长度不正确", self::EXISTS_VALIDATE, 'length'), //密码长度不合法
+        array('password', '6,15', "密码长度不正确", self::EXISTS_VALIDATE, 'length'), //密码长度不合法
 
 
         /* 验证手机号码 */
-//        array('mobile', '//', '手机格式不正确', self::EXISTS_VALIDATE), //手机格式不正确 TODO:
+        array('mobile', '', '手机格式不正确', self::EXISTS_VALIDATE,'length'), //手机格式不正确
         array('mobile','','手机号码已经存在！',0,'unique',1),//有逻辑删除,判断是否存在用程序判断
     );
 

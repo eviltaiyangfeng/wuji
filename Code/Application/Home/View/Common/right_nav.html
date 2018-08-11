@@ -1,0 +1,55 @@
+<div class="clear" id="right_nav">
+    <div class="down">
+        <ul>
+            <li class="p_b_color js_top" style="display:none;">
+                <a class="a1" href="javascript:;" title="返回顶部">
+                </a>
+            </li>
+            <li class="p_b_color">
+                <a class="a3" href="http://wpa.qq.com/msgrd?v=3&uin=2881098777&site=qq&menu=yes" target="_blank" title="联系客服">
+                </a>
+            </li>
+            <li>
+                <a class="a4" href="javascript:;" title="关注微信">
+                </a>
+                <div class="p_cont a4_cont">
+                    <img src="__LOCAL__/images/qrcode.jpg">
+                    <span class="a4_right">
+                        </span>
+                    </img>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    $(function(){
+        var p_plane=true;
+        set_p_plane();
+        $(window).scroll(function(){
+            set_p_plane();
+        });
+        function set_p_plane(){
+            if($(window).scrollTop()>300 && p_plane){
+                p_plane=false;
+                $('#right_nav .js_top').css('display','block');
+                $('#right_nav').animate({bottom:'40%'},800);
+            }
+            if($(window).scrollTop()<300 && !p_plane){
+                p_plane=true;
+                $('#right_nav .js_top').css('display','none');
+                $('#right_nav').animate({bottom:'5%'},800);
+            }
+
+        }
+        $("#right_nav .a4").hover(function(){
+            $("#right_nav .a4_cont").css('display','block');
+        },function(){
+            $("#right_nav .a4_cont").css('display','none');
+        });
+
+        $("#right_nav a").click(function(){
+            $('body,html').animate({scrollTop:0},500);
+        });
+    });
+</script>

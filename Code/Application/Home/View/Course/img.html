@@ -20,7 +20,7 @@
             <meta content="无极代理,挂机宝,变机宝,硬件修改大师" name="keywords"/>
             <meta content="无极代理,挂机宝,变机宝,硬件修改大师" name="description"/>
             <title>
-                无极软件
+                {:C('SITE_INFO.TITLE')}
             </title>
         </link>
     </head>
@@ -46,24 +46,24 @@
                             </p>
                             <ul class="clear news_type">
                                 <li>
-                                    <a href="/home/course/img/type.html">
+                                    <a href="{:U('img')}">
                                         全部
                                     </a>
                                 </li>
                                                                     <li id="good1">
-                                        <a href="/home/course/img?goodid=1.html">
+                                        <a href="{:U('img',array('goodid'=>1))}">
                                             硬件修改大师                                        </a>
                                     </li>
                                                                     <li id="good2">
-                                        <a href="/home/course/img?goodid=2.html">
+                                        <a href="{:U('img',array('goodid'=>2))}">
                                             无极                                        </a>
                                     </li>
                                                                     <li id="good3">
-                                        <a href="/home/course/img?goodid=3.html">
+                                        <a href="{:U('img',array('goodid'=>3))}">
                                             挂机宝                                        </a>
                                     </li>
                                                                     <li id="good5">
-                                        <a href="/home/course/img?goodid=5.html">
+                                        <a href="{:U('img',array('goodid'=>5))}">
                                             变机宝                                        </a>
                                     </li>
                                                             </ul>
@@ -86,213 +86,12 @@
                 $("#good"+goodid).children("a").addClass("active");
                 // $(".news_type li").eq(goodtype).children("a").addClass("active");
             </script>
-            <div id="bottom">
-    <div class="cont">
-        <div class="up clear">
-            <ul class="fl u1">
-                <li>
-                    <p style=" background:url(__WUJI__/imges/bottom_a.png) no-repeat; background-size:20px 20px;">
-                        挂机宝
-                    </p>
-                </li>
-                <li>
-                    <a href="wujidaili13.html">
-                        产品介绍
-                    </a>
-                </li>
-                <li>
-                    <a href="shipinxiangqing22.html">
-                        视频教程
-                    </a>
-                </li>
-                <li>
-                    <a href="tuwenxiangqing24.html">
-                        图文教程
-                    </a>
-                </li>
-                <li>
-                    <a href="wujidaili13.html">
-                        产品价格
-                    </a>
-                </li>
-            </ul>
-            <ul class="fl u1">
-                <li>
-                    <p style=" background:url(__WUJI__/imges/bottom_c.png) no-repeat; background-size:20px 20px;">
-                        无极
-                    </p>
-                </li>
-                <li>
-                    <a href="wujidaili13.html">
-                        产品介绍
-                    </a>
-                </li>
-                <li>
-                    <a href="shipinxiangqing22.html">
-                        视频教程
-                    </a>
-                </li>
-                <li>
-                    <a href="tuwenxiangqing24.html">
-                        图文教程
-                    </a>
-                </li>
-                <li>
-                    <a href="wujidaili13.html">
-                        产品价格
-                    </a>
-                </li>
-            </ul>
-            <ul class="fl u1">
-                <li>
-                    <p style=" background:url(__WUJI__/imges/bottom_b.png) no-repeat; background-size:25px 25px; background-position:0 -2px">
-                        变机宝
-                    </p>
-                </li>
-                <li>
-                    <a href="wujidaili13.html">
-                        产品介绍
-                    </a>
-                </li>
-                <li>
-                    <a href="shipinxiangqing22.html">
-                        视频教程
-                    </a>
-                </li>
-                <li>
-                    <a href="tuwenxiangqing24.html">
-                        图文教程
-                    </a>
-                </li>
-                <li>
-                    <a href="wujidaili13.html">
-                        产品价格
-                    </a>
-                </li>
-            </ul>
-            <ul class="fl u1">
-                <li>
-                    <p style=" background:url(__WUJI__/imges/bottom_d.png) no-repeat; background-size:20px 20px;">
-                        硬件修改大师
-                    </p>
-                </li>
-                <li>
-                    <a href="wujidaili13.html">
-                        产品介绍
-                    </a>
-                </li>
-                <li>
-                    <a href="shipinxiangqing22.html">
-                        视频教程
-                    </a>
-                </li>
-                <li>
-                    <a href="tuwenxiangqing24.html">
-                        图文教程
-                    </a>
-                </li>
-                <li>
-                    <a href="wujidaili13.html">
-                        产品价格
-                    </a>
-                </li>
-            </ul>
-            <div class="fl u3">
-                <p>
-                    微信公众号
-                </p>
-                <img src="__WUJI__/imges/5a7d53b219366.jpg">
-                </img>
-            </div>
-            <ul class="fr u2">
-                <li>
-                    <p>
-                        想加入我们？
-                    </p>
-                </li>
-                <li>
-                    <a href="http://wpa.qq.com/msgrd?v=3&uin=2881098777&site=qq&menu=yes" target="_blank">
-                        联系QQ在线客服
-                    </a>
-                </li>
-                <li>
-                    邮箱 : 408006298@qq.com
-                </li>
-                <li>
-                    大客户通道 微信/手机同号：  13343099802
-                </li>
-                <li>
-                    售后热线：13343099802
-                </li>
-            </ul>
-        </div>
-        <div class="down clear">
-            <i class="fl">
-                Copyright ©2012-2018 无极软件(www.58wuji.com ) 涞水县腾越网络科技有限公司
-            </i>
-            <i class="fr">
-                <a href="http://www.miitbeian.gov.cn" style="color:#ccc" target="_blank">
-                     冀ICP备18015184号-1
-                </a>
-            </i>
-        </div>
-    </div>
-</div>
-<div class="clear" id="right_nav">
-    <div class="down">
-        <ul>
-            <li class="p_b_color js_top" style="display:none;">
-                <a class="a1" href="javascript:;" title="返回顶部">
-                </a>
-            </li>
-            <li class="p_b_color">
-                <a class="a3" href="http://wpa.qq.com/msgrd?v=3&uin=2881098777&site=qq&menu=yes" target="_blank" title="联系客服">
-                </a>
-            </li>
-            <li>
-                <a class="a4" href="javascript:;" title="关注微信">
-                </a>
-                <div class="p_cont a4_cont">
-                    <img src="__WUJI__/imges/wujicode.jpg">
-                        <span class="a4_right">
-                        </span>
-                    </img>
-                </div>
-            </li>
-        </ul>
-    </div>
-</div>
-<script>
-    $(function(){
-                var p_plane=true;
-                set_p_plane();
-                $(window).scroll(function(){
-                    set_p_plane();
-                });
-                function set_p_plane(){
-                    if($(window).scrollTop()>300 && p_plane){
-                        p_plane=false;
-                        $('#right_nav .js_top').css('display','block');
-                        $('#right_nav').animate({bottom:'40%'},800);
-                        }
-                    if($(window).scrollTop()<300 && !p_plane){
-                        p_plane=true;
-                        $('#right_nav .js_top').css('display','none');
-                        $('#right_nav').animate({bottom:'5%'},800);
-                    }
-                        
-                }
-                $("#right_nav .a4").hover(function(){
-                    $("#right_nav .a4_cont").css('display','block');
-                    },function(){
-                    $("#right_nav .a4_cont").css('display','none');
-                    });  
-                    
-                $("#right_nav a").click(function(){
-                    $('body,html').animate({scrollTop:0},500);
-                    });
-                });
-</script>
+
+    <!--foot页面-->
+    <include file="Common/footer"/>
+    <!--right_nav页面-->
+    <include file="Common/right_nav"/>
+
 <style>
     .public_hint{position: fixed;  filter:alpha(opacity=0); color:#fff; left:50%; top:-1000px; margin-left:-120px; margin-top:-25px; z-index:100000; padding:20px; min-width:200px; min-height:40px; border-radius:2px; font-size:16px; line-height:40px; text-align:center;}
             .p_m_ie{position: fixed; top: 0; left: 0; right: 0; bottom: 0; filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#7F000000,endcolorstr=#7F000000); background: rgba(0,0,0,0.5); z-index: 999;

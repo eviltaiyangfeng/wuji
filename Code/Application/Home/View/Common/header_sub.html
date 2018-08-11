@@ -1,7 +1,7 @@
 <div id="top_three">
     <div class="cont clear">
         <div class="fl logo">
-            <img src="http://www.58wuji.com/application/home/view/public/imges/logo_b.png">
+            <img src="__LOCAL__/images/logo_color.png">
         </div>
         <div class="fl">
             <ul class="clear nav">
@@ -16,17 +16,24 @@
         </div>
         <div class="fr">
             <ul class="login">
-
-                <li>
-                    <a class="l_in" href="{:U('Index/login')}">
-                        登录
-                    </a>
-                </li>
-                <li>
-                    <a class="l_reg" href="{:U('Index/register')}">
-                        注册
-                    </a>
-                </li>
+                <empty name="Think.session.user_auth.account">
+                        <li>
+                            <a class="l_in" href="{:U('Index/login')}">
+                                登录
+                            </a>
+                        </li>
+                        <li>
+                            <a class="l_reg" href="{:U('Index/register')}">
+                                注册
+                            </a>
+                        </li>
+                    <else/>
+                        <li>
+                            <a style="display:inline-block; height:30px; line-height:30px; text-align:center; margin:25px 0; width: 100%;border:0px; color: #fff;" href="/center">
+                                欢迎：{$Think.session.user_auth.account}
+                            </a>
+                        </li>
+                </empty>
             </ul>
         </div>
     </div>

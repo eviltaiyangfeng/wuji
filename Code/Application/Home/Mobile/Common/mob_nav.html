@@ -1,0 +1,69 @@
+<style>
+    #mob_nav{ width:16rem; height:2rem; background:#fff; position:fixed; left:0; bottom:0; border-top:1px solid #f1f1f1;}
+    #mob_nav li{ float:left; width:20%; height:2rem; text-align:center;}
+    #mob_nav li i{ display:inline-block; font-size:0.8rem; margin-top:0.2rem; color:#666;}
+    #mob_nav li p{ color:#666;}
+</style>
+<div id="mob_nav">
+    <ul class="clear">
+        <a href="{:U('Index/index')}">
+            <li>
+                <i class="iconfont">
+                    
+                </i>
+                <p>
+                    首页
+                </p>
+            </li>
+        </a>
+        <a href="{:U('Good/index')}">
+            <li>
+                <i class="iconfont">
+                    
+                </i>
+                <p>
+                    产品
+                </p>
+            </li>
+        </a>
+        <a href="{:U('Course/video')}">
+            <li>
+                <i class="iconfont">
+                    
+                </i>
+                <p>
+                    视频
+                </p>
+            </li>
+        </a>
+        <a href="{:U('Course/img')}">
+            <li>
+                <i class="iconfont">
+                    
+                </i>
+                <p>
+                    教程
+                </p>
+            </li>
+        </a>
+        <a href="{:U('User/aboutus')}">
+            <li>
+                <i class="iconfont">
+                    
+                </i>
+                <p>
+                    我们
+                </p>
+            </li>
+        </a>
+    </ul>
+</div>
+<script type="text/javascript">
+    var menu="0";
+    if(typeof(menu)==="undefined"||menu===""){
+        menu=0;
+    }
+    console.log(menu);
+    $("ul a li").eq(menu).children("i").addClass("p_color_a");
+    $("ul a li").eq(menu).children("p").addClass("p_color_a");
+</script>

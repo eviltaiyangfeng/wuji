@@ -2,12 +2,12 @@
 return array(
 	//'配置项'=>'配置值'
     'SITE_INFO' => array(
+        'TITLE' => '掘金无极',
         'SITE_NAME' => '无极软件后台管理系统',
         'QQ' => '7685909',
         'EMAIL' => '7685909@qq.com',
         'SERVER_TEL' => '18784599969',
-        'EMAIL' => '7685909@qq.com',
-        'COMPANY' => 'XX网络科技有限公司',
-        'COPY_RIGHT' => "川ICP备123456号-1",
+        'COMPANY' => '乐山极速网络科技有限责任公司',
+        'COPY_RIGHT' => "蜀ICP备18019722号-1",
     ),
 );

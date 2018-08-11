@@ -6,6 +6,10 @@ class CommonController extends Controller {
 
     public function _initialize()
     {
+        if (ismobile()) {
+            //设置默认默认主题为 Mobile
+            C('DEFAULT_V_LAYER','Mobile');
+        }
         $this->getMenu();
         $this->setMenu(I('menu'));
     }

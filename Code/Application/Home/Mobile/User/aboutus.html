@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html style="font-size: 46.875px;" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="webkit" name="renderer"/>
+    <meta content="width=device-width,user-scalable=no,initial-scale=0.5,minimum-scale=0.5,maximum-scale=0.5" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="无极代理,挂机宝,变机宝,硬件修改大师" name="keywords"/>
+    <meta content="无极代理,挂机宝,变机宝,硬件修改大师" name="description"/>
+    <link href="__WUJI__Mobile/images/ico.ico" rel="shortcut icon"/>
+    <link href="__WUJI__Mobile/css/m_index.css" rel="stylesheet"/>
+    <title>
+        无极软件
+    </title>
+    <script src="__WUJI__Mobile/js/jquery.min.js" type="text/javascript">
+    </script>
+    <script src="__WUJI__Mobile/js/m_index.js" type="text/javascript">
+    </script>
+    <script>
+        var iscale=1/window.devicePixelRatio;
+        document.write('<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale='+iscale+',minimum-scale='+iscale+',maximum-scale='+iscale+'">')
+        var iwidth=document.documentElement.clientWidth;
+        if(iwidth>1540){
+            iwidth=640;
+        }
+        document.getElementsByTagName('html')[0].style.fontSize = iwidth / 16 +'px';
+        $(function(){
+            setfont();
+            function setfont(){
+                var nowfont=$('html').css('fontSize');
+                var oldwidth=document.documentElement.clientWidth;
+                if(oldwidth<1540){
+                    var newwidth=oldwidth/ 16 +'px';
+                    if(nowfont!=newwidth){
+                        $('html').css('fontSize',oldwidth/16-6+'px');
+                    }
+                }
+            }
+        })
+        window.onload = function(){
+            var iwidth=document.documentElement.clientWidth;
+            var vbottom=document.getElementById("mob_nav");
+            // console.log(vbottom);
+            if(iwidth>1540){
+                var p_bottom_left=iwidth-640;
+                vbottom.style.left = p_bottom_left/2+'px';
+            }
+        }
+    </script>
+</head>
+</html>
+<body>
+<style>
+    .index_about{ width:16rem; margin:0 auto; padding-bottom:3.5rem;}
+    .index_about .h1{ height:1.5rem ; line-height:1.5rem; text-align:center; color:#fff;}
+    .index_about .wx{ padding:0.5rem; }
+    .index_about .wx .nav{ padding:0 3.5rem;}
+    .index_about .wx .nav img{ width:2.5rem; border-radius:0.25rem; border:2px solid #ddd;}
+    .index_about .wx .nav .p1{ color:#222; margin:0.3rem; font-size:0.6rem;}
+    .index_about .wx .nav .p2{ color:#666; margin-left:0.3rem;}
+    .index_about .wx .img{ text-align:center;}
+    .index_about .wx .img img{ width:12rem;}
+    .index_about .wx .p3{ text-align:center;}
+    .index_about .tact{ padding:0 0.5rem; border-bottom:1px solid #f1f1f1;}
+    .index_about .tact li{ border-bottom:1px solid #f1f1f1; line-height:1.5rem; font-size:0.6rem;}
+    .index_about .tact li span{ float:left; color:#222;}
+    .index_about .tact li i{ float:right; color:#666;}
+    .index_about .h2{ text-align:center; line-height:2rem; height:1rem; margin-top:0.5rem; color:#777;}
+    .index_about .login{ padding:0 1.8rem;}
+    .index_about .login a{ display:inline-block; width:6rem; height:1.3rem; line-height:1.3rem; margin:0.5rem 0; border-radius:0.65rem; text-align:center; color:#fff;}
+</style>
+<div class="index_about">
+    <p class="h1 p_color_back">
+        联系我们
+    </p>
+    <div class="wx">
+        <div class="img">
+            <img src="__LOCAL__/images/qrcode.jpg"/>
+        </div>
+        <div class="p3">
+            扫一扫二维码,关注微信公众号
+        </div>
+        <!--<div class="p3">-->
+            <!--或微信搜索公众号 ： -->
+        <!--</div>-->
+    </div>
+    <div class="login clear">
+        <a class="fl p_color_back" href="{:U('Index/login')}">
+            登录后台
+        </a>
+        <a class="fr p_color_back" href="{:U('Index/register')}">
+            注册后台
+        </a>
+    </div>
+    <div class="tact">
+        <ul>
+            <li class="clear">
+                        <span>
+                            在线客服
+                        </span>
+                <i>
+                    {:C('SITE_INFO.QQ')}
+                </i>
+            </li>
+            <li class="clear">
+                        <span>
+                            售后热线
+                        </span>
+                <i>
+                    {:C('SITE_INFO.SERVER_TEL')}
+                </i>
+            </li>
+            <li class="clear">
+                        <span>
+                            大客户通道 微信/手机
+                        </span>
+                <i>
+                    {:C('SITE_INFO.SERVER_TEL')}
+                </i>
+            </li>
+            <li class="clear">
+                        <span>
+                            邮箱
+                        </span>
+                <i>
+                    {:C('SITE_INFO.EMAIL')}
+                </i>
+            </li>
+        </ul>
+    </div>
+    <div class="h2">
+        {:C('SITE_INFO.COMPANY')}
+    </div>
+    <div class="h2">
+        {:C('SITE_INFO.COPY_RIGHT')}
+    </div>
+</div>
+
+<include file="Common/mob_nav"/>
+
+</body>
+</html>
