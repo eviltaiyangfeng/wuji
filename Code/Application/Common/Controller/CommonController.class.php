@@ -11,7 +11,9 @@ class CommonController extends Controller {
             C('DEFAULT_V_LAYER','Mobile');
         }
         $this->getMenu();
-        $this->setMenu(I('menu'));
+        if(!empty($_REQUEST['menu'])){
+            $this->setMenu(I('menu'));
+        }
     }
 
     public function getMenu(){
@@ -22,5 +24,8 @@ class CommonController extends Controller {
     }
     public function setMenu($id){
         $this->assign('active_menu',$id);
+    }
+    public function setMobileMenu($id){
+        $this->assign('active_mobile_menu',$id);
     }
 }

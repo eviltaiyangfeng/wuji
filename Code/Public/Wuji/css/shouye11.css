@@ -59,6 +59,7 @@ input[type=number]::-webkit-inner-spin-button , input[type=number]::-webkit-oute
 #top_one .cont .nav li{ float:left; padding:0 20px;}
 #top_one .cont .nav li a{ line-height:80px; color:#fff;}
 #top_one .cont .nav li a:hover{ color:#ff5842;}
+#top_one .cont .nav li .active{ color:#ff5842;}
 #top_one .cont .login li{ float:left;}
 #top_one .cont .login li a{ display:inline-block; width:80px; height:30px; border:1px solid #fff; border-radius:10px; line-height:30px; text-align:center; margin:25px 0;}
 #top_one .cont .login li .l_in{ color:#fff; margin-right:20px;}

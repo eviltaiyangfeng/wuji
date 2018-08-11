@@ -59,11 +59,11 @@
     </ul>
 </div>
 <script type="text/javascript">
-    var menu="0";
+    var menu= "{$active_mobile_menu}";
     if(typeof(menu)==="undefined"||menu===""){
         menu=0;
     }
     console.log(menu);
-    $("ul a li").eq(menu).children("i").addClass("p_color_a");
-    $("ul a li").eq(menu).children("p").addClass("p_color_a");
+    $("ul a li").eq(menu-1).children("i").addClass("p_color_a");
+    $("ul a li").eq(menu-1).children("p").addClass("p_color_a");
 </script>
