@@ -292,7 +292,7 @@ video{ background:#000;}
 .news_index .show_fl .show_cont{ width:880px; overflow:hidden; margin:20px 0 80px 0;}
 #right_nav{ position:fixed; right:20px; bottom:5%; z-index:100;}
 #right_nav .down li{background:#fff; margin-top:3px; width:50px; height:50px; border:1px solid #f1f1f1; position:relative;}
-#right_nav .down a{ display:block; width:40px; height:40px; background:url(../imges/right_nav_p1.png) no-repeat; margin:5px;}
+#right_nav .down a{ display:block; width:40px; height:40px; background:url(../images/right_nav_p1.png) no-repeat; margin:5px;}
 #right_nav .down .a1{ background-position:0 0;}
 #right_nav .down .a2{ background-position:0 0;}
 #right_nav .down .a3{ background-position:0 -80px;}

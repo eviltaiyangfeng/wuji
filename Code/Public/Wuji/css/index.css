@@ -5,7 +5,7 @@ iframe {
 }
 
 .box1{
-        background: url(../imges/bg_01.jpg) no-repeat;
+        background: url(../images/bg_01.jpg) no-repeat;
         background-size: cover;
         overflow-x: hidden;
        
@@ -1678,22 +1678,22 @@ table.table-common tbody tr:first-child td {
     border-radius: 5px;
 }
 .soft_logo_1 {
-    background-image:url(../imges/soft_1.jpg);
+    background-image:url(../images/soft_1.jpg);
 }
 .soft_logo_2 {
-    background-image:url(../imges/soft_2.jpg);
+    background-image:url(../images/soft_2.jpg);
 }
 .soft_logo_3 {
-    background-image:url(../imges/soft_3.jpg);
+    background-image:url(../images/soft_3.jpg);
 }
 .soft_logo_4 {
-    background-image:url(../imges/soft_4.jpg);
+    background-image:url(../images/soft_4.jpg);
 }
 .login_logo_1 {
-    background-image:url(../imges/logo_1.jpg);
+    background-image:url(../images/logo_1.jpg);
 }
 .login_logo_2 {
-    background-image:url(../imges/logo_2.jpg);
+    background-image:url(../images/logo_2.jpg);
 }
 .btn-link {
     color: #3282db;
