@@ -70,28 +70,28 @@
                 </li>
 
                 <li>
-                    <a href="/mobile/course/video">
+                    <a href="{:U('video')}">
                         全部
                     </a>
                 </li>
                 <li id="good1">
-                    <a href="/mobile/course/video?goodid=1.html">
+                    <a href="{:U('video')}?goodid=1">
                         硬件修改大师                                </a>
                 </li>
                 <li id="good2">
-                    <a href="/mobile/course/video?goodid=2.html">
+                    <a href="{:U('video')}?goodid=2">
                         无极                                </a>
                 </li>
                 <li id="good3">
-                    <a href="/mobile/course/video?goodid=3.html">
+                    <a href="{:U('video')}?goodid=3">
                         挂机宝                                </a>
                 </li>
                 <li id="good5">
-                    <a href="/mobile/course/video?goodid=5.html">
+                    <a href="{:U('video')}?goodid=5">
                         变机宝                                </a>
                 </li>
                 <!-- <li>
-<a href="/mobile/course/video">
+<a href="{:U('Course/video')}">
 挂机宝
 </a>
 </li>
@@ -132,7 +132,7 @@
 <script>
     $(function(){
         //软件背景色样色
-        var goodid='0';
+        var goodid="{$goodid}";
         if(goodid<=0){
             $("li").eq(1).children("a").attr("class","p_color_a");
         }else{
