@@ -2,7 +2,7 @@
 return array(
 	//'配置项'=>'配置值'
     'SITE_INFO' => array(
-        'TITLE' => '掘金无极',
+        'TITLE' => '掘金无极软件',
         'SITE_NAME' => '无极软件后台管理系统',
         'QQ' => '7685909',
         'EMAIL' => '7685909@qq.com',

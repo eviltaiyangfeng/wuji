@@ -1,0 +1,88 @@
+1.layui-card:封装了layui的后台管理系统框架
+
+后台：thinkphp3.2
+前端：layerui+layer+jquery+ztree
+
+2.结构介绍
+       common:公共文件
+        --function.php 公共方法
+       Conf:配置文件
+        --config.php 配置文件入口
+        --database.php 数据库配置文件
+        --staticinfo.php 系统静态配置文件
+       controller 系统访问控制类
+         --AdminController.class.php 系统主页控制类
+         --BusinessController.class.php 商圈控制类
+         --CommonController.class.php 公共控制类 作为基类继承
+         --CouponController.class.php 微信卡券控制类
+         --IndexController.class.php 登录退出控制类
+         --MallController.class.php  店铺管理控制类
+         --ResourceCodeController.class.php 页面按钮权限控制类
+         --ResourceController.class.php 菜单控制类
+         --RoleController.class.php 角色控制类
+         --UserController.class.php 用户控制类
+       Model 模型
+         --BusinessModel.class.php 商圈模型
+         --CouponModel.class.php 微信卡卷模型
+         --MallModel.class.php 店铺模型
+         --ResourceCodeModel.class.php 页面菜单权限模型
+         --ResourceModel.class.php 菜单模型
+         --RoleModel.class.php  角色模型
+         --RoleResourceModel.class.php 角色菜单模型
+         --UserModel.class.php 用户模型
+         --UserRoleModel.class.php 用户角色模型
+
+       sql 数据库文件
+
+       View 模板文件
+         --Admin 主页模板
+         --Business 商圈模板
+         --Common 公共模板
+         --Coupon 卡券模板
+         --Index 登录页面模板
+         --Mall 店铺模板
+         --Resource 菜单模板
+         --ResourceCode 菜单按钮模板
+         --Role 角色模板
+         --User 用户模板
+
+       模板页面命名规则：add.html(添加查看页面)、list.html(列表页面)
+
+       封装组件：menutree.js 菜单树
+                   用法：引入jquery.js、menutree.js   调用menuTree.iniTree("menutree",{$menu_tree});  参数：menutree（页面容器id）、{$$menu_tree}(菜单格式，数据格式json
+                   [{"id":"1","url":"","name":"系统设置","open":"1","children":[{"id":"2","url":"User\/index.html","name":"用户管理","open":"0","children":[]},{"id":"5","url":"Role\/index.html","name":"角色管理","open":"0","children":[]},{"id":"3","url":"Business\/index.html","name":"商圈管理","open":"0","children":[]},{"id":"4","url":"Mall\/index.html","name":"店铺管理","open":"0","children":[]},{"id":"7","url":"Resource\/index.html","name":"资源管理","open":"0","children":[]}]},{"id":"9","url":"2","name":"卡券管理","open":"0","children":[{"id":"10","url":"Coupon\/index.html","name":"我的卡卷","open":"0","children":[]}]}]
+
+                 layuitab.js Tab操作（创建、关闭、刷新）
+                   用法：引入layui.js、layuitab.js 添加 addTab(title,url,id,this),参数：title(标题)、url(打开的链接)、id(tab唯一编号)、this(事件触发dom,dom需要属性data-id="id" data-id 作为选中标识)
+
+
+                 Dialog.js 弹层封装 创建ifream Dialog
+                    用法：Dialog.createDialog(url,size,buttonArray); url(访问地址)、size(弹框的大小new Array('700px','600px'))、buttonArray(弹框底部按钮 默认两个按钮【确定】，【取消】)
+                    Dialog 包含表单正则验证方法validateForm 表单提交拦截方法beforeSub
+                    添加表单的事例：
+                    <form class="layui-form layui-form-pane1" id="form_content"  action="{:U('Card/User/doadd')}" style="margin-top: 20px">
+                        <input type="text" name="account" lay-verify="required|name" required placeholder="请输入名称" autocomplete="off" class="layui-input" value="{$user['account']}">
+                    </form>
+                    <script>
+                        form.config.verify['name']=new Array(/^.{1,30}$/,'名称必须小于30个字符');
+                        //检验字段name 目前只支持正则验证
+                        funciton beforeSub(){
+                            //你要拦截提交前的数据
+                            //return true;正常提交
+                            //return false;验证不通过，不能通过
+                        }
+                    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

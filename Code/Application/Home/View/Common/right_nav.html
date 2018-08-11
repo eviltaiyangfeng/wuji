@@ -6,8 +6,14 @@
                 </a>
             </li>
             <li class="p_b_color">
-                <a class="a3" href="http://wpa.qq.com/msgrd?v=3&uin=2881098777&site=qq&menu=yes" target="_blank" title="联系客服">
+                <a class="a3" href="http://wpa.qq.com/msgrd?v=3&uin={:C('SITE_INFO.QQ')}&site=qq&menu=yes" target="_blank" title="联系客服">
                 </a>
+<!--                <div class="p_cont a3_cont">
+                    <img src="__LOCAL__/images/qq_server.jpg">
+                    <span class="a3_right">
+                        </span>
+                    </img>
+                </div>-->
             </li>
             <li>
                 <a class="a4" href="javascript:;" title="关注微信">
@@ -46,6 +52,11 @@
             $("#right_nav .a4_cont").css('display','block');
         },function(){
             $("#right_nav .a4_cont").css('display','none');
+        });
+        $("#right_nav .a3").hover(function(){
+            $("#right_nav .a3_cont").css('display','block');
+        },function(){
+            $("#right_nav .a3_cont").css('display','none');
         });
 
         $("#right_nav a").click(function(){
