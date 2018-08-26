@@ -1665,3 +1665,8 @@ table.table-common tbody tr:first-child td {
     font-weight: normal;
     border-radius: 0;
 }
+code.C2 {
+    background-color: #F19A13;
+    color: #fff;
+    border: none;
+}
