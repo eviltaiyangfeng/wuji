@@ -80,8 +80,12 @@ class GjbController extends Controller {
 
     public function app_list(){
         $post['access_token'] = $this->TEST_TOKEN;
-        $return = curl_request($this->APP_LIST,$post);
-        var_dump($return);
+        $return = json_decode(curl_request($this->APP_LIST,$post),true);
+        if($return['ret'] == 0){
+            return $return['data'];
+        }else{
+            return false;
+        }
     }
 
     public function region_list($branchID = null,$usernum = null){
@@ -94,7 +98,15 @@ class GjbController extends Controller {
             $post['access_token'] = $this->TEST_TOKEN;
             $return = curl_request($this->APP_LIST,$post);
         }
+        if(IS_AJAX){
+            $this->ajaxReturn($return);
+        }else{
+            if($return['ret'] == 0){
+                return $return['data'];
+            }else{
+                return false;
+            }
+        }
 
-        var_dump($return);
     }
 }

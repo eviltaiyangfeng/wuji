@@ -8,492 +8,99 @@
     </title>
     <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <link href="__WUJI__/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="__WUJI__/css/font-awesome.min.css" rel="stylesheet"/>
-    <link href="__WUJI__/css/style.css" rel="stylesheet"/>
+    <link href="__ADMIN__/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="__ADMIN__/css/bootstrap-responsive.css" rel="stylesheet"/>
+    <link href="__ADMIN__/css/base.css" rel="stylesheet"/>
 </head>
-<body class="right-body">
-<div class="row " style="margin:0; padding:5px 0; background: #f0f0f0;">
-    <div class="col-md-4">
-        <ol class="breadcrumb">
-            <li>
-                <a href="soft.html">
-                    <i class="fa fa-home">
-                    </i>
-                    首页
-                </a>
-            </li>
-            <li class="active">
-                软件市场
-            </li>
-        </ol>
-    </div>
-    <div class="col-md-8">
-        <div class="btn-group-xs text-right" style="padding-top:3px;line-height: 28px;">
-        </div>
-    </div>
-</div>
-<div class="section">
-    <table class="table table-striped table-hover table-common">
-        <tbody>
-        <tr>
-            <td colspan="4">
-                <code style="font-size: 14px;">
-                    硬件修改大师
-                </code>
-            </td>
-        </tr>
-        <tr id="soft-">
-            <td class="text-center" rowspan="1" valign="middle" width="20%">
-                            <span class="soft_logo soft_logo_3">
-                            </span>
-            </td>
-            <td class="text-center" valign="middle" width="40%">
-                <small class="text-primary">
-                    硬件修改大师
-                </small>
-            </td>
-            <td class="text-center">
-                <a class="btn btn-info btn-xs" href="{:U('Good/hardsoft')}">
-                    <i class="fa fa-shopping-cart">
-                    </i>
-                    我要开卡
-                </a>
-            </td>
-            <td class="text-center">
-                <a class="btn btn-success btn-xs" href="{:U('Good/cardlist')}">
-                    <i class="fa fa-vcard-o">
-                    </i>
-                    已开卡密
-                </a>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-    <table class="table table-striped table-hover table-common">
-        <tbody>
-        <tr>
-            <td colspan="4">
-                <code style="font-size: 14px;">
-                    无极
-                </code>
-            </td>
-        </tr>
-        <tr id="soft-">
-            <td class="text-center" rowspan="2" valign="middle" width="20%">
-                            <span class="soft_logo soft_logo_2">
-                            </span>
-            </td>
-            <td class="text-center" valign="middle" width="40%">
-                <small class="text-primary">
-                    无极普通版
-                </small>
-            </td>
-            <td class="text-center">
-                <a class="btn btn-info btn-xs" href="{:U('Good/create_wuji')}">
-                    <i class="fa fa-shopping-cart">
-                    </i>
-                    我要开卡
-                </a>
-            </td>
-            <td class="text-center">
-                <a class="btn btn-success btn-xs" href="/home/good/cardlist2">
-                    <i class="fa fa-vcard-o">
-                    </i>
-                    已开卡密
-                </a>
-            </td>
-        </tr>
-        <tr id="soft-">
-            <td class="text-center" valign="middle" width="40%">
-                <small class="text-primary">
-                    无极独享版
-                </small>
-            </td>
-            <td class="text-center">
-                <a class="btn btn-info btn-xs" href="{:U('Good/create_wuji_single')}">
-                    <i class="fa fa-shopping-cart">
-                    </i>
-                    我要开卡
-                </a>
-            </td>
-            <td class="text-center">
-                <a class="btn btn-success btn-xs" href="/home/good/cardlist3">
-                    <i class="fa fa-vcard-o">
-                    </i>
-                    已开卡密
-                </a>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-    <table class="table table-striped table-hover table-common">
-        <tbody>
-        <tr>
-            <td colspan="4">
-                <code style="font-size: 14px;">
-                    挂机宝
-                </code>
-            </td>
-        </tr>
-        <tr id="soft-">
-            <td class="text-center" rowspan="2" valign="middle" width="20%">
-                            <span class="soft_logo soft_logo_1">
-                            </span>
-            </td>
-            <td class="text-center" valign="middle" width="40%">
-                <small class="text-primary">
-                    挂机宝随机版
-                </small>
-            </td>
-            <td class="text-center">
-                <a class="btn btn-info btn-xs" href="{:U('Good/create_gjb_rand')}">
-                    <i class="fa fa-shopping-cart">
-                    </i>
-                    我要开卡
-                </a>
-            </td>
-            <td class="text-center">
-                <a class="btn btn-success btn-xs" href="/home/good/cardlist4">
-                    <i class="fa fa-vcard-o">
-                    </i>
-                    已开卡密
-                </a>
-            </td>
-        </tr>
-        <tr id="soft-">
-            <td class="text-center" valign="middle" width="40%">
-                <small class="text-primary">
-                    挂机宝固定版
-                </small>
-            </td>
-            <td class="text-center">
-                <a class="btn btn-info btn-xs" href="{:U('Good/create_gjb_fixed')}">
-                    <i class="fa fa-shopping-cart">
-                    </i>
-                    我要开卡
-                </a>
-            </td>
-            <td class="text-center">
-                <a class="btn btn-success btn-xs" href="/home/good/cardlist5">
-                    <i class="fa fa-vcard-o">
-                    </i>
-                    已开卡密
-                </a>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-    <table class="table table-striped table-hover table-common">
-        <tbody>
-        <tr>
-            <td colspan="4">
-                <code style="font-size: 14px;">
-                    变机宝
-                </code>
-            </td>
-        </tr>
-        <tr id="soft-">
-            <td class="text-center" rowspan="1" valign="middle" width="20%">
-                            <span class="soft_logo soft_logo_4">
-                            </span>
-            </td>
-            <td class="text-center" valign="middle" width="40%">
-                <small class="text-primary">
-                    变机宝
-                </small>
-            </td>
-            <td class="text-center">
-                <a class="btn btn-info btn-xs" href=":U('Good/create_bjb')}">
-                    <i class="fa fa-shopping-cart">
-                    </i>
-                    我要开卡
-                </a>
-            </td>
-            <td class="text-center">
-                <a class="btn btn-success btn-xs" href="/home/good/cardlist6">
-                    <i class="fa fa-vcard-o">
-                    </i>
-                    已开卡密
-                </a>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+<body style="">
+
+<table class="table table-bordered  definewidth m20 tC7"> <!--------------------------------挂机宝-->
+    <tbody><tr>
+        <th colspan="4" style="background-color:#F5F5F5;"><img src="/Public/admin/images/gjb.png" class="L"><span class="family f24 L" style="margin:10px 0 0 10px;">挂机宝</span></th>
+    </tr>
+    <tr>
+        <td width="10%">挂机宝随机版</td>
+        <td>价格说明：以机器为倍数，1天卡2元（200点），10天卡6元（600点），30天卡15元（1500点），最低5个起开</td>
+        <td width="10%" style="text-align:center;"><a href="{:U('Good/create_gjb_rand')}" class="btn btn-mini  btn-success">我要开卡</a></td>
+    </tr>
+    <tr>
+        <td width="10%">挂机宝固定版</td>
+        <td>价格说明：以机器为倍数，1天卡2元（200点），10天卡6元（600点），30天卡15元（1500点），最低5个起开</td>
+        <td width="10%" style="text-align:center;"><a href="{:U('Good/create_gjb_fixed')}" class="btn btn-mini  btn-success">我要开卡</a></td>
+    </tr>
+    <tr>
+        <td colspan="4"><a href="http://down.54nb.com/20180818a.exe">挂机宝下载</a>&nbsp;&nbsp;<a href="http://www.54nb.com/guajibao/api/sdk.zip">SDK下载</a></td>
+    </tr>
+    </tbody></table>
+
+<table class="table table-bordered  definewidth m40 tC7"> <!--------------------------------无极-->
+    <tbody><tr>
+        <th colspan="4" style="background-color:#F5F5F5;"><img src="/Public/admin/images/wuji.png" class="L"><span class="family f24 L" style="margin:10px 0 0 10px;">无极</span></th>
+    </tr>
+    <tr>
+        <td width="10%">无极共享版</td>
+        <td>价格说明：以机器为倍数，1天卡2元（200点），10天卡9元（900点），30天卡20元（2000点），最低5个起开</td>
+        <td width="10%" style="text-align:center;"><a href="/index.php?m=Admin&amp;c=Card&amp;a=Addwjgx" class="btn btn-mini  btn-success">我要开卡</a></td>
+    </tr>
+    <tr>
+        <td width="10%">无极独享版</td>
+        <td>价格说明：以机器为倍数，1天卡5元（500点），7天卡20元（2000点），30天卡60元（6000点），自选天数价格自动最小化，独享版一个起开</td>
+        <td width="10%" style="text-align:center;"><a href="/index.php?m=Admin&amp;c=Card&amp;a=Addwjdx" class="btn btn-mini  btn-success">我要开卡</a></td>
+    </tr>
+    <tr>
+        <td colspan="4"><a href="http://down.54nb.com/%CE%DE%BC%ABWUJI_Android/wuji_0517b_a.apk">安卓共享版下载</a>&nbsp;&nbsp;<a href="ttp://down.54nb.com/%CE%DE%BC%ABWUJI_Android/wuji_180805a_a.apk">安卓共享版本下载(免Root)</a>&nbsp;&nbsp;<a href="http://down.54nb.com/%CE%DE%BC%ABWUJI_Android/wuji_duli_180815a_a.apk">安卓独享版下载&nbsp;&nbsp;</a><a href="http://down.54nb.com/%CE%DE%BC%ABWUJI_Android/wuji_duli_v_180815a_a.apk">安卓独享版下载(免Root)</a>&nbsp;&nbsp;<a href="http://down.54nb.com/%CE%DE%BC%ABWUJI_Android/wuji_sdk_2.0.zip">SDK下载</a>&nbsp;&nbsp;<a id="wuji_ios" data-toggle="popover" data-placement="bottom" data-original-title="" title="">IOS版下载</a></td>
+    </tr>
+    </tbody></table>
+
+<table class="table table-bordered  definewidth m40 tC7"> <!--------------------------------变机宝-->
+    <tbody><tr>
+        <th colspan="4" style="background-color:#F5F5F5;"><img src="/Public/admin/images/bjb.png" class="L"><span class="family f24 L" style="margin:10px 0 0 10px;">变机宝</span></th>
+    </tr>
+    <tr>
+        <td width="10%">变机宝</td>
+        <td>价格说明：以机器为倍数，30天卡60元（6000点），带虚拟IP功能的120元（12000点）</td>
+        <td width="10%" style="text-align:center;"><a href="/index.php?m=Admin&amp;c=Card&amp;a=Addbjb" class="btn btn-mini btn-success">我要开卡</a></td>
+    </tr>
+    <tr>
+        <td colspan="4"><a href="http://down.54nb.com/%B1%E4%BB%FA%B1%A6/bjb_0326b_a.apk">安卓版下载</a>&nbsp;&nbsp;<a id="bjb_ios" data-toggle="popover" data-placement="bottom" data-original-title="" title="">IOS版下载</a></td>
+    </tr>
+    </tbody></table>
+
+<table class="table table-bordered  definewidth m40 tC7"> <!--------------------------------硬件大师-->
+    <tbody><tr>
+        <th colspan="4" style="background-color:#F5F5F5;"><img src="/Public/admin/images/ds.png" class="L"><span class="family f24 L" style="margin:10px 0 0 10px;">硬件大师</span></th>
+    </tr>
+    <tr>
+        <td width="10%">硬件大师</td>
+        <td>价格说明：以机器为倍数，30天卡28元（2800点）</td>
+        <td width="10%" style="text-align:center;"><a href="/index.php?m=Admin&amp;c=Card&amp;a=Addyjds" class="btn btn-mini  btn-success">我要开卡</a></td>
+    </tr>
+    <tr>
+        <td colspan="4"><a href="http://down.54nb.com/%BE%F2%BD%F0%D3%B2%BC%FE%D0%DE%B8%C4%B4%F3%CA%A6.zip">硬件大师下载</a></td>
+    </tr>
+    </tbody></table>
+
+
+
+
 <script src="__WUJI__/js/jquery.min.js">
 </script>
 <script src="__WUJI__/js/bootstrap.min.js">
 </script>
-<script src="__WUJI__/js/lhgdialog.min.js">
-</script>
-<script src="__WUJI__/js/RGX.lib.min.js">
-</script>
-<script src="__WUJI__/js/laydate.js">
-</script>
+
 <script>
-    var
-        get_timestamp = function (s) {
-            return parseInt(Date.parse(new Date(s + " 0:0:0")) / 1000);
-        },
-        apply_filter = function () {
-            var params = [];
-
-            $('.search_type,.search_key').each(function () {
-                var val = $(this).attr('data-val');
-                if (this.tagName.toUpperCase() == 'INPUT' || this.tagName.toUpperCase() == 'TEXTAREA') {
-                    val = $(this).val();
-                }
-                if ($(this).hasClass('search_key')) {
-                    if ($(this).hasClass('date-picker') || $(this).hasClass('date-picker1')) {
-                        val = get_timestamp(val);
-                        val = isNaN(val) ? '0' : val;
-                    }
-                    else {
-                        val = encodeURIComponent(val);
-                    }
-                }
-
-                if (val != '' && val != '0') {
-                    _filter[$(this).attr('data-key')] = val;
-                }
-                else {
-                    _filter[$(this).attr('data-key')] = '';
-                }
-            });
-
-            for (var key in _filter) {
-                if (_filter.hasOwnProperty(key)) {
-                    if (_filter[key] != '0' && $.trim(_filter[key]) != '') {
-                        params.push(key + '-' + _filter[key]);
-                    }
-                }
-            }
-
-            location.href = RGXLIB.url(_url + '-' + params.join('-'));
-        };
-
     $(function () {
-
-        $('#right_nav .a4').hover(
-            function(){
-                $('#right_nav .a4_cont').css('display','block')
-            },
-            function(){
-                $('#right_nav .a4_cont').css('display','none');
-            }
-        );
-
-        $("#right_nav .a1").click(function(){
-            $('body,html').animate({scrollTop:0},300);
+        $('#wuji_ios').popover({
+            trigger : 'hover',//鼠标以上时触发弹出提示框
+            html:true,//开启html 为true的话，data-content里就能放html代码了
+            content:"<img src='http://54nb.com/wuji/images/code.png' width='81' height='81'>"
+        });
+        $('#bjb_ios').popover({
+            trigger : 'hover',//鼠标以上时触发弹出提示框
+            html:true,//开启html 为true的话，data-content里就能放html代码了
+            content:"<img src='http://54nb.com/bian/images/ios.png' width='81' height='81'>"
         });
 
-        /**
-         * 分页跳转处理
-         */
-        $('body').on('click', '.pagination-atag', function (e) {
-            var url = $(this).attr('href'),
-                callback = $(this).parents('.paging').attr('data-callback');
-
-            if (!$(this).parents('li').hasClass('disabled')) {
-                // Btn Go
-                if ($(this).attr('data-url') != undefined) {
-                    var pn  = parseInt($(this).parents('.input-group').find('.paging_pn').val());
-                    if (isNaN(pn)) {
-                        $(this).parents('.input-group').find('.paging_pn').focus();
-                        url = null;
-                    }
-                    else {
-                        url = $(this).attr('data-url') + pn;
-                    }
-                }
-
-                if (url != null && url != 'javascript:;') {
-                    if (typeof(callback) != 'undefined' && callback != "nil" && callback != "{nil}") {
-                        window[callback](url);
-                    }
-                    else {
-                        location.href = url;
-                    }
-                }
-            }
-
-            e.stopPropagation();
-            return false;
-        });
-
-        $('.dpm_opt').on('click', function () {
-            $($(this).attr('data-target')).attr('data-val', $(this).attr('data-val'));
-            $($(this).attr('data-target')).html($(this).text());;
-        });
-
-        $('.date-picker').on('click', function () {
-            laydate();
-        });
-
-        if ($('.dpm_opt').length > 0) {
-            $('.dpm_opt[data-val=""]').trigger('click');
-        }
-
-        $('.filter-opt').on('click', function () {
-            var key = $(this).attr('data-key'),
-                val = $(this).attr('data-val');
-            if ($.trim(val) != '' && val != '0') {
-                if ($(this).hasClass('active')) {
-                    _filter[key] = '';
-                }
-                else {
-                    _filter[key] = val;
-                }
-                apply_filter();
-            }
-        });
-
-        $('#filter_search_btn').on('click', function () {
-            apply_filter();
-        });
-
-        $('.filter-sort').on('click', function () {
-            // desc => null
-            if ($(this).hasClass('sort-desc')) {
-                _filter[$(this).attr('data-key')] = 1;
-            }
-            // asc => desc
-            else if ($(this).hasClass('sort-asc')) {
-                _filter[$(this).attr('data-key')] = 0;
-            }
-            // asc
-            else {
-                _filter[$(this).attr('data-key')] = 2;
-            }
-            apply_filter();
-        });
-
-
-        $('.modify_field').on('click', function () {
-            $(this).attr('data-val', $(this).text());
-            $(this).attr('contenteditable', true).addClass('modify_active');
-        });
-
-        $('.modify_field').on('keydown', function (e) {
-            if (e.keyCode == 13) {
-                $(this).trigger('blur');
-                e.stopPropagation();
-                return false;
-            }
-        });
-
-        $('.modify_field').on('blur', function () {
-            $(this).attr('contenteditable', false).removeClass('modify_active');
-            if ($(this).attr('data-val') != $(this).text()) {
-                RGX.get_json($(this).attr('data-url') + encodeURIComponent($(this).text()), function (d) {
-                    RGX.msg(d.msg);
-                });
-            }
-        });
-
-        $('.ajax_input').on('focus', function () {
-            $(this).attr('data-val', $(this).val());
-        });
-
-        $('.ajax_input').on('blur', function () {
-            if ($(this).val() != $(this).attr('data-val')) {
-                RGX.get_json($(this).attr('data-url') + encodeURIComponent($(this).val()), function (d) {
-                    if (d.code != '0') {
-                        RGX.msg(d.msg);
-                    }
-                });
-            }
-        });
-
-        $('.ajax_input').on('keydown', function (e) {
-            if (e.keyCode == 13) {
-                $(this).trigger('blur');
-            }
-        });
-
-        $('.check_all').on('click', function () {
-            var checked = this.checked;
-            $('.row_checkbox').each(function () {
-                this.checked = checked;
-            });
-        });
-
-        $('.ajax_update').on('click', function () {
-            RGX.get_json($(this).attr('data-url'), function (d) {
-                RGX.msg(d.msg);
-                if (d['url'] != undefined) {
-                    setTimeout(function () {
-                        location.href = d.url;
-                    }, 500);
-                }
-            });
-            return false;
-        });
-
-        $('.ajax_update_confirm').on('click', function () {
-            if (confirm($(this).attr('data-confirm') || '确定进行该操作?')) {
-                RGX.get_json($(this).attr('data-url'), function (d) {
-                    RGX.msg(d.msg);
-                    if (d['url'] != undefined) {
-                        setTimeout(function () {
-                            location.href = d.url;
-                        }, 500);
-                    }
-                });
-            }
-        });
-
-        $('.ajax_delete').on('click', function () {
-            if (confirm($(this).attr('data-confirm') || '确定删除该记录?')) {
-                var that = $(this);
-                RGX.get_json(that.attr('data-url'), function (d) {
-                    RGX.msg(d.msg);
-                    if (d.code == '0') {
-                        $(that.attr('data-target')).remove();
-                    }
-                });
-            }
-        });
-
-        $('.ajax_delete_all').on('click', function () {
-            var ids = get_ids();
-            if (ids.length == 0) {
-                RGX.msg('请至少选择一项');
-            }
-            else {
-                var url = $(this).attr('data-url') + encodeURIComponent(ids.join(','));
-                RGX.get_json(url, function (d) {
-                    if (d.code == '0') {
-                        location.href = location;
-                    }
-                    else {
-                        RGX.msg(d.msg);
-                    }
-                });
-            }
-        });
-
-        $('body').on('mouseleave', '.select_category_plugin', function () {
-            $(this).hide();
-        });
-
-        $('body').on('click', 'label.weui-check__label', function () {
-            if ($(this).find('input:checked').length == 0) {
-                $(this).find('input').prop('checked', true);
-            }
-            else {
-                $(this).find('input').prop('checked', false);
-            }
-        });
-
-        $('.filter_weui-select').each(function () {
-            _filter[$(this).attr('data-key')] = $(this).val();
-        });
-
-        $('.filter_weui-select').on('change', function () {
-            _filter[$(this).attr('data-key')] = $(this).val();
-        });
     });
 </script>
 </body>
