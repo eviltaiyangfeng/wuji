@@ -10,7 +10,6 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="__WUJI__/css/discuz.css" id="lhgdialoglink" rel="stylesheet"/>
     <link href="__WUJI__/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="__WUJI__/css/font-awesome.min.css" rel="stylesheet"/>
     <link href="__WUJI__/css/style.css" rel="stylesheet"/>
 </head>
 <body class="right-body">
@@ -43,7 +42,6 @@
     <form action="save.html" class="form-horizontal" id="sform">
         <input name="order[goodid]" type="hidden" value="3"/>
         <input name="order[goodtype]" type="hidden" value="4"/>
-        <input name="order[pricetype]" type="hidden" value="1"/>
         <input name="order[pricetype]" type="hidden" value="1"/>
         <input type="hidden" id="day" value="200">
         <input type="hidden" id="week" value="600">
@@ -248,7 +246,7 @@
                 $good_price = $('#day').val();
             }
             $price_content = "一张" + $('#order_day').val() + "天卡x" + $('#order_machines').val() + "台机器x" + $good_price + "点=";
-            $price = $('#order_day').val() * $('#order_machines').val() * $good_price;
+            $price = $('#order_machines').val() * $good_price;
             $("#price_content").html($price_content + '<code class="C2">' + $price + '点</code>');
         }
         $("#order_day").on('change',function(){
@@ -301,7 +299,7 @@
                 //提交数据的类型 POST GET
                 type:"POST",
                 //提交的网址
-                url:"{:U('api')}",
+                url:"{:U('Good/create_order')}",
                 async:false,//同步：意思是当有返回值以后才会进行后面的js程序。
                 //提交的数据
                 data:$("form").serialize(),
@@ -339,7 +337,7 @@
                 //提交数据的类型 POST GET
                 type:"POST",
                 //提交的网址
-                url:"{:U('api')}",
+                url:"{:U('pay')}",
                 async:false,//同步：意思是当有返回值以后才会进行后面的js程序。
                 //提交的数据
                 data:$("form").serialize(),

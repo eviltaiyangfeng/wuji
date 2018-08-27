@@ -8,11 +8,11 @@ class WujiOrderModel extends Model {
         array('account', '6,20', '账号长度在6-15个字符', self::EXISTS_VALIDATE, 'length'), //用户名长度不合法
         array('account','','账号已经存在！',0,'unique',1),
 //        /* 验证密码 */
-        array('password', '6,15', "密码长度不正确", self::EXISTS_VALIDATE, 'length'), //密码长度不合法
+        array('password', '6,15', "密码长度6-15个字符", self::EXISTS_VALIDATE, 'length'), //密码长度不合法
 
 
         /* 验证qq号码 */
-        array('qq', '', 'qq格式不正确', self::EXISTS_VALIDATE,'length'), //手机格式不正确
+        array('qq', '6,15', 'qq格式不正确', self::EXISTS_VALIDATE,'length'), //手机格式不正确
     );
 
     /* 用户模型自动完成 */

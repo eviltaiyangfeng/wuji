@@ -9,10 +9,10 @@
     </title>
     <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <link href="http://www.58wuji.com/application/home/view/public/css/discuz.css" id="lhgdialoglink" rel="stylesheet"/>
-    <link href="http://www.58wuji.com/application/home/view/public/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="http://www.58wuji.com/application/home/view/public/css/font-awesome.min.css" rel="stylesheet"/>
-    <link href="http://www.58wuji.com/application/home/view/public/css/style.css" rel="stylesheet"/>
+    <link href="__WUJI__//css/discuz.css" id="lhgdialoglink" rel="stylesheet"/>
+    <link href="__WUJI__//css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="__WUJI__//css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="__WUJI__//css/style.css" rel="stylesheet"/>
 </head>
 <body class="right-body">
 <div class="row " style="margin:0; padding:5px 0; background: #f0f0f0;">
@@ -45,13 +45,16 @@
         <input name="order[goodid]" type="hidden" value="3"/>
         <input name="order[goodtype]" type="hidden" value="5"/>
         <input name="order[pricetype]" type="hidden" value="2"/>
+        <input type="hidden" id="day" value="200">
+        <input type="hidden" id="week" value="600">
+        <input type="hidden" id="month" value="1500">
         <div class="row">
             <div class="form-group col-md-6">
                 <label class="control-label col-md-3" for="type_label">
                     用户名
                 </label>
                 <div class="col-md-9">
-                    <input class="form-control" id="order_account" maxlength="64" name="order[username]" placeholder="请输入用户名" type="text" value=""/>
+                    <input class="form-control" id="order_account" maxlength="64" name="order[account]" placeholder="请输入用户名" type="text" value=""/>
                     <small>
                         字母,数字组合
                     </small>
@@ -64,7 +67,7 @@
                     </small>
                 </label>
                 <div class="col-md-9">
-                    <input class="form-control" id="order_passwd" maxlength="64" name="order[userpass]" placeholder="请输入密码" type="text" value=""/>
+                    <input class="form-control" id="order_passwd" maxlength="64" name="order[password]" placeholder="请输入密码" type="text" value=""/>
                 </div>
             </div>
         </div>
@@ -189,6 +192,14 @@
             </div>
             <div class="form-group col-md-12">
                 <label class="control-label col-md-3" for="type_label" style="width: 12.5%">
+                    价格
+                </label>
+                <div class="col-md-9" style="width: 87.5%;padding-top: 5px;">
+                    <span style="" id="price_content">一张30天卡x5台机器x1500点=<code class="C2">7500点</code> </span>
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="control-label col-md-3" for="type_label" style="width: 12.5%">
                 </label>
                 <div class="col-md-9" style="width: 87.5%">
                     <button class="btn btn-success" href="javascript:;" id="btn-submit" role="button" type="button">
@@ -238,8 +249,6 @@
 </div>
 <script src="__WUJI__/js/jquery.min.js">
 </script>
-<script src="__WUJI__/js/juicer-min.js">
-</script>
 <script src="__WUJI__/js/bootstrap.min.js">
 </script>
 <script src="__WUJI__/js/lhgdialog.min.js">
@@ -248,9 +257,10 @@
 </script>
 <script src="__WUJI__/js/rgx.js">
 </script>
-<script src="__WUJI__/js/laydate.js"/>
+<script src="__WUJI__/js/laydate.js"></script>
 <script>
     $(function() {
+
         //游戏列表选择
         $("#extra_gameid").change(function(){
             var branchID=$(this).val(),
@@ -260,7 +270,7 @@
                 //提交数据的类型 POST GET
                 type:"POST",
                 //提交的网址
-                url:"/home/good/roomlist",
+                url:"{:U('Gjb/region_list')}",
                 async:false,//同步：意思是当有返回值以后才会进行后面的js程序。
                 //提交的数据
                 data:{branchID:branchID,usernum:usernum},
@@ -358,7 +368,7 @@
                 //提交数据的类型 POST GET
                 type:"POST",
                 //提交的网址
-                url:"/home/good/ifcard",
+                url:"{:U('Good/create_order')}",
                 async:false,//同步：意思是当有返回值以后才会进行后面的js程序。
                 //提交的数据
                 data:$("form").serialize(),
@@ -369,12 +379,11 @@
                 //成功返回之后调用的函数
                 success:function(data){
                     console.log(data);
-                    var dataObj=eval("("+data+")");//转换为json对象
-                    if(dataObj.ret==1){
-                        $("#cardmsg").text(dataObj.cardmsg);
+                    if(data.status==1){
+                        $("#cardmsg").text(data.price);
                         $("#kaika_modal").modal();
                     }else{
-                        RGX.msg(dataObj.msg);
+                        RGX.msg(data.msg);
                         $('#order_account').focus();
                         $('#order_account').select();
                     }

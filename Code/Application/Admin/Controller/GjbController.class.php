@@ -95,8 +95,10 @@ class GjbController extends Controller {
             $return['status'] = 0;
             $return['msg'] = 'branchID or usernum is null';
         }else{
+            $post['branchID'] = $branchID;
+            $post['usernum'] = $usernum;
             $post['access_token'] = $this->TEST_TOKEN;
-            $return = curl_request($this->APP_LIST,$post);
+            $return = curl_request($this->REGION_LIST,$post);
         }
         if(IS_AJAX){
             $this->ajaxReturn($return);
