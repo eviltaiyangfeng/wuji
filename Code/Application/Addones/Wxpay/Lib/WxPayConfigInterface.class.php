@@ -1,5 +1,5 @@
 <?php
-namespace Addones\Wxpay;
+namespace Addones\Wxpay\Lib;
 
 /**
 * 	配置账号信息

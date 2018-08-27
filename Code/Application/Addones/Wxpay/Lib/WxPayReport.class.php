@@ -6,7 +6,7 @@
  * Time: 17:07
  */
 
-namespace Addones\Wxpay;
+namespace Addones\Wxpay\Lib;
 
 
 /**
