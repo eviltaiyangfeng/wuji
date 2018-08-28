@@ -12,6 +12,7 @@
     <link href="__WUJI__/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="__WUJI__/css/font-awesome.min.css" rel="stylesheet"/>
     <link href="__WUJI__/css/style.css" rel="stylesheet"/>
+    <link href="__WUJI__/js/jquery.qrcode.min.js" rel="stylesheet"/>
     </meta>
 </head>
 <body class="right-body">
@@ -211,8 +212,8 @@
                     success:function(data){
                         console.log(data);
                         if(data.status == 1){
-                            $("#paycode").attr("src","{:U('Admin/Pay/qrcode')}?data="+data.url);
-                            $("#ordernum").val(data.out_trade_no);
+                            $("#paycode").attr("src","{:U('Admin/Pay/qrcode')}?data="+data.order.code_url);
+                            $("#ordernum").val(data.order.out_trade_no);
                         }else{
                             alert(data.msg);
                         }
@@ -223,6 +224,18 @@
         });
 
     });
+
+    // 从canvas提取图片image
+    function convertCanvasToImage(canvas){
+
+        //新Image对象,可以理解为DOM;
+        var image = new Image();
+
+        //canvas.toDataURL返回的是一串Base64编码的URL,当然,浏览器自己肯定支持
+        //指定格式PNG
+        image.src = canvas.toDataURL("image/png");
+        return image;
+    }
     //微信支付成功轮训js函数
     function pay_status(){
         var order_id = $("#ordernum").val();

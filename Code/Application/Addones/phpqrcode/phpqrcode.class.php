@@ -1,5 +1,4 @@
 <?php
-namespace Addones\phpqrcode;
 /*
  * PHP QR Code encoder
  *
