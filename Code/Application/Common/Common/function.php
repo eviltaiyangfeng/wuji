@@ -5,13 +5,13 @@
  * Date: 2018/7/15
  * Time: 17:28
  */
+
 /**
  * 数据签名认证
  * @param  array  $data 被认证的数据
  * @return string       签名
  *
  */
-
 function ismobile() {
     // 如果有HTTP_X_WAP_PROFILE则一定是移动设备
     if (isset ($_SERVER['HTTP_X_WAP_PROFILE']))

@@ -8,10 +8,10 @@
     </title>
     <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <link href="http://58wuji.com/application/home/view/public/css/discuz.css" id="lhgdialoglink" rel="stylesheet"/>
-    <link href="http://58wuji.com/application/home/view/public/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="http://58wuji.com/application/home/view/public/css/font-awesome.min.css" rel="stylesheet"/>
-    <link href="http://58wuji.com/application/home/view/public/css/style.css" rel="stylesheet"/>
+    <link href="__WUJI__/css/discuz.css" id="lhgdialoglink" rel="stylesheet"/>
+    <link href="__WUJI__/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="__WUJI__/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="__WUJI__/css/style.css" rel="stylesheet"/>
     </meta>
 </head>
 <body class="right-body">
@@ -84,10 +84,10 @@
                     </p>
                     <div class="points_recharge" style="margin-top:15px;">
                         <div class="points_payment" data-label="支付宝" data-value="1">
-                            <img alt="" src="http://58wuji.com/application/home/view/public/images/aliweb.png"/>
+                            <img alt="" src="__WUJI__/images/aliweb.png"/>
                         </div>
                         <div class="points_payment" data-label="微信" data-value="2">
-                            <img alt="" src="http://58wuji.com/application/home/view/public/images/wxpay.png"/>
+                            <img alt="" src="__WUJI__/images/wxpay.png"/>
                         </div>
                         <div class="clearfix">
                         </div>
@@ -145,17 +145,17 @@
 </div>
 
 
-<script src="http://58wuji.com/application/home/view/public/js/jquery.min.js">
+<script src="__WUJI__/js/jquery.min.js">
 </script>
-<script src="http://58wuji.com/application/home/view/public/js/bootstrap.min.js">
+<script src="__WUJI__/js/bootstrap.min.js">
 </script>
-<script src="http://58wuji.com/application/home/view/public/js/lhgdialog.min.js">
+<script src="__WUJI__/js/lhgdialog.min.js">
 </script>
-<script src="http://58wuji.com/application/home/view/public/js/RGX.lib.min.js">
+<script src="__WUJI__/js/RGX.lib.min.js">
 </script>
-<script src="http://58wuji.com/application/home/view/public/js/rgx.js">
+<script src="__WUJI__/js/rgx.js">
 </script>
-<script src="http://58wuji.com/application/home/view/public/js/laydate.js">
+<script src="__WUJI__/js/laydate.js">
 </script>
 <script>
     $(function() {
@@ -199,7 +199,7 @@
                     //提交数据的类型 POST GET
                     type:"POST",
                     //提交的网址
-                    url:"/home/user/wxpay",
+                    url:"{:U('recharge_order')}",
                     async:false,//同步：意思是当有返回值以后才会进行后面的js程序。
                     //提交的数据
                     data:$("form").serialize(),
@@ -208,12 +208,14 @@
                     //在请求之前调用的函数
                     // beforeSend:function(){$("#msg").html("logining");},
                     //成功返回之后调用的函数
-                    success:function(resdata){
-                        console.log(resdata);
-                        var dataObj=eval("("+resdata+")");//转换为json对象
-
-                        $("#paycode").attr("src","/home/user/qrcode?data="+dataObj.url);
-                        $("#ordernum").val(dataObj.out_trade_no);
+                    success:function(data){
+                        console.log(data);
+                        if(data.status == 1){
+                            $("#paycode").attr("src","{:U('Admin/Pay/qrcode')}?data="+data.url);
+                            $("#ordernum").val(data.out_trade_no);
+                        }else{
+                            alert(data.msg);
+                        }
                     }
                 });
                 $('#pay_wrap').show();
@@ -242,7 +244,7 @@
         });
     }
     //启动定时器
-    var int=self.setInterval(function(){pay_status()},2000);
+//    var int=self.setInterval(function(){pay_status()},2000);
 </script>
 </body>
 </html>

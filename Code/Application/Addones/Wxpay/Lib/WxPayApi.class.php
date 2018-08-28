@@ -418,7 +418,8 @@ class WxPayApi
  	 */
 	public static function notify($config, $callback, &$msg)
 	{
-		if (!isset($GLOBALS['HTTP_RAW_POST_DATA'])) {
+        $data = file_get_contents('php://input');
+		if (!isset($data)) {
 			# 如果没有数据，直接返回失败
 			return false;
 		}
@@ -426,7 +427,7 @@ class WxPayApi
 		//如果返回成功则验证签名
 		try {
 			//获取通知的数据
-			$xml = $GLOBALS['HTTP_RAW_POST_DATA'];
+			$xml = file_get_contents('php://input');
 			$result = WxPayNotifyResults::Init($config, $xml);
 		} catch (WxPayException $e){
 			$msg = $e->errorMessage();

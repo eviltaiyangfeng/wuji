@@ -55,13 +55,16 @@ class JsApiPay
 			//触发微信返回code码
 			$baseUrl = urlencode('http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].$_SERVER['QUERY_STRING']);
 			$url = $this->_CreateOauthUrlForCode($baseUrl);
-			Header("Location: $url");
-			exit();
+            $return['status'] = 0;
+            $return['url'] = $url;
+			return $return;
 		} else {
 			//获取code码，以获取openid
 		    $code = $_GET['code'];
 			$openid = $this->getOpenidFromMp($code);
-			return $openid;
+            $return['status'] = 1;
+            $return['url'] = $openid;
+			return $return;
 		}
 	}
 	

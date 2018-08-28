@@ -8,7 +8,10 @@
 
 namespace Addones\Wxpay;
 use Addones\Wxpay\Lib\WxPayNotify;
-
+use Addones\Wxpay\Lib\WxPayOrderQuery;
+use Addones\Wxpay\Lib\WxPayApi;
+use Think\Exception;
+use Think\Log;
 class PayNotifyCallBack extends WxPayNotify
 {
     //查询订单
@@ -19,7 +22,7 @@ class PayNotifyCallBack extends WxPayNotify
 
         $config = new WxPayConfig();
         $result = WxPayApi::orderQuery($config, $input);
-        Log::DEBUG("query:" . json_encode($result));
+        Log::write("query:" . json_encode($result),'', C('LOG_PATH').'PayInfo_'.date('y_m_d').'.log');
         if(array_key_exists("return_code", $result)
             && array_key_exists("result_code", $result)
             && $result["return_code"] == "SUCCESS"
@@ -38,7 +41,7 @@ class PayNotifyCallBack extends WxPayNotify
      **/
     public function LogAfterProcess($xmlData)
     {
-        Log::DEBUG("call back， return xml:" . $xmlData);
+        Log::write("call back， return xml:" . $xmlData,'', C('LOG_PATH').'PayInfo_'.date('y_m_d').'.log');
         return;
     }
     //重写回调处理函数
@@ -77,7 +80,7 @@ class PayNotifyCallBack extends WxPayNotify
         }
 
         //TODO 3、处理业务逻辑
-        Log::DEBUG("call back:" . json_encode($data));
+        Log::write("call back:" . json_encode($data));
         $notfiyOutput = array();
 
 
