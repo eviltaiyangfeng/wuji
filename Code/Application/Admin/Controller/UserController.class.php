@@ -54,9 +54,16 @@ class UserController extends Controller {
                     $param['is_mobile'] = false;
                 }
                 $order_info = A('Pay')->create_weixin_order($param);
-                $return['status'] = 1;
-                $return['msg'] = '下单成功';
-                $return['price'] = $amount;
+                if($order_info['status']){
+                    $return['status'] = 1;
+                    $return['msg'] = '下单成功';
+                    $return['price'] = $amount;
+                    $return['out_trade_no'] = $param['out_trade_no'];
+                    $return['order'] = $order_info['order'];
+                }else{
+                    $return['status'] = 0;
+                    $return['msg'] =  '下单失败';
+                }
             }else{
                 $return['status'] = 0;
                 $return['msg'] = $model->getError();
