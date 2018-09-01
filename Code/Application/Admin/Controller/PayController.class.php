@@ -22,10 +22,24 @@ use Think\Log;
 class PayController extends Controller
 {
 
-    public function index($param)
+    public function index()
     {
-
-        $this->display();
+        $param['body'] = "无极充值";
+        $param['attach'] = "";
+        $param['out_trade_no'] = "TS".date("YmdHis");
+        $param['fee'] = 1;
+        $param['notify_url'] = C('WEIXIN_PAY_CONFIG.NOTIFY_URL');
+        if(ismobile()){
+            $param['is_mobile'] = true;
+        }else{
+            $param['is_mobile'] = false;
+        }
+        $return = $this->create_weixin_order($param);
+        if($return['status']) {
+            $this->display();
+        }else{
+            header("Location: " . $return['url']);
+        }
     }
 
 
@@ -67,12 +81,11 @@ class PayController extends Controller
             //①、获取用户openid
             $tools = new JsApiPay();
             $return = $tools->GetOpenid();
+            Log::write("GetOpenid:" . json_encode($return), "INFO", '', C('LOG_PATH') . 'PayInfo_' . date('y_m_d') . '.log');
             if ($return['status']) {
-                $param['openId'] = $return['openId'];
+                $param['openId'] = $return['url'];
             } else {
-                $result['status'] = 0;
-                $result['msg'] = '下单失败,请在微信内部打开';
-                return $result;
+                return $return;
                 exit();
             }
             try {

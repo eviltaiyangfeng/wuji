@@ -6,6 +6,8 @@ use Think\Log;
 
 class UserController extends Controller {
 
+    protected $IS_PAY_DEBUG = 1;
+
     public function welcome(){
         $this->display();
     }
@@ -35,6 +37,9 @@ class UserController extends Controller {
         }else{
             $model = D('WujiUserOrder');
             $amount = I('amount');
+            if($this->IS_PAY_DEBUG){
+                $amount = 0.01;
+            }
             $data['fk_user'] = $user['id'];
             $data['money'] = $amount;
             $data['amount'] = $amount * 100;
@@ -47,7 +52,7 @@ class UserController extends Controller {
                 $param['attach'] = "";
                 $param['out_trade_no'] = $data['order_id'];
                 $param['fee'] = $data['money'] * 100;
-                $param['notify_url'] = "http://www.juejinwuji.com/index.php/Admin/PayNotify/index";
+                $param['notify_url'] = C('WEIXIN_PAY_CONFIG.NOTIFY_URL');
                 if(ismobile()){
                     $param['is_mobile'] = true;
                 }else{

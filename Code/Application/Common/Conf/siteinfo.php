@@ -10,4 +10,7 @@ return array(
         'COMPANY' => '乐山极速网络科技有限责任公司',
         'COPY_RIGHT' => "蜀ICP备18019722号-1",
     ),
+    'WEIXIN_PAY_CONFIG' => array(
+        'NOTIFY_URL' => "http://www.juejinwuji.com/index.php/Admin/PayNotify/index",
+    )
 );

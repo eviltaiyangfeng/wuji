@@ -88,6 +88,16 @@ class PayNotifyCallBack extends WxPayNotify
         if(!$this->Queryorder($data["transaction_id"])){
             $msg = "订单查询失败";
             return false;
+        }else{
+            //TODO 4、处理业务逻辑
+            $where['order_id'] = $data['out_trade_no'];
+            $save['openid'] = $data['openid'];
+            $save['total_fee'] = $data['total_fee'];
+            $save['result_code'] = $data['result_code'];
+            $save['transaction_id'] = $data['transaction_id'];
+            $save['status'] = 1;
+            $save['notify_data'] = json_encode($data);
+            D('WujiUserOrder')->where($where)->save($save);
         }
         return true;
     }

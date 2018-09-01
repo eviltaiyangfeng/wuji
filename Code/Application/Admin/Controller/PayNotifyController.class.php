@@ -16,11 +16,11 @@ class PayNotifyController extends Controller {
         $config = new WxPayConfig();
         $notify = new PayNotifyCallBack();
         $flag = $notify->Handle($config, false);
-        Log::write( "flag:".$flag,"INFO",'', C('LOG_PATH').'PayInfo_'.date('y_m_d').'.log');
-        if($flag){
-            echo "success";
+        if($notify->GetReturn_code() == "SUCCESS"){
+            Log::write( "pay: success:".$flag,"INFO",'', C('LOG_PATH').'PayInfo_'.date('y_m_d').'.log');
+
         }else{
-            echo "false";
+            Log::write( "pay: false:".$flag,"INFO",'', C('LOG_PATH').'PayInfo_'.date('y_m_d').'.log');
         }
     }
 }
