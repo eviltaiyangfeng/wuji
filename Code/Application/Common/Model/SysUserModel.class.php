@@ -19,7 +19,7 @@ class SysUserModel extends Model {
     /* 用户模型自动完成 */
     protected $_auto = array(
         array('status', '1', self::MODEL_INSERT),
-        array('createtime',date,self::MODEL_INSERT,'function',array('Y-m-d H:i:s')),
+        array('create_time',date,self::MODEL_INSERT,'function',array('Y-m-d H:i:s')),
         array('last_login_ip', 'get_client_ip', self::MODEL_INSERT, 'function', 1),
     );
 

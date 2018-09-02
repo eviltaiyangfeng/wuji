@@ -28,6 +28,9 @@ class UserController extends Controller {
         $this->display();
     }
 
+    /**
+     * 充值订单
+     */
     public function recharge_order(){
 
         $user = session('user_auth');
@@ -44,10 +47,10 @@ class UserController extends Controller {
             $data['money'] = $amount;
             $data['amount'] = $amount * 100;
             $data['type'] = 'RECHARGE';
-            $data['create_time'] = date("Y-m-d H:i:s");
             $data['order_id'] =  "RC".date("YmdHis");
             $ret = $model->add($data);
             if ($ret){
+                $param['order_id'] = $data['order_id'];
                 $param['body'] = "无极充值";
                 $param['attach'] = "";
                 $param['out_trade_no'] = $data['order_id'];
@@ -73,6 +76,28 @@ class UserController extends Controller {
                 $return['status'] = 0;
                 $return['msg'] = $model->getError();
             }
+        }
+        $this->ajaxReturn($return);
+    }
+
+    /**
+     * 资料更新
+     */
+    public function save(){
+        $model = D('SysUser');
+        $data['id'] = I('id');
+        $data['mobile'] = I('mobile');
+        $data['remark'] = I('desc');
+        $ret = $model->save($data);
+        if($ret){
+            $user = $model->where(array('id'=>$data['id']))->find();
+            $user['menu'] = A('Index')->getMenu($user);
+            session('user_auth',$user);
+            $return['status'] = 1;
+            $return['msg'] = '修改成功';
+        }else{
+            $return['status'] = 0;
+            $return['msg'] = '修改失败';
         }
         $this->ajaxReturn($return);
     }

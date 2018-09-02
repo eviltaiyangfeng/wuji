@@ -8,10 +8,10 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-    <link href="http://www.58wuji.com/application/home/view/public/css/discuz.css" id="lhgdialoglink" rel="stylesheet"/>
-    <link href="http://www.58wuji.com/application/home/view/public/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="http://www.58wuji.com/application/home/view/public/css/font-awesome.min.css" rel="stylesheet"/>
-    <link href="http://www.58wuji.com/application/home/view/public/css/style.css" rel="stylesheet"/>
+    <link href="__WUJI__/css/discuz.css" id="lhgdialoglink" rel="stylesheet"/>
+    <link href="__WUJI__/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="__WUJI__/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="__WUJI__/css/style.css" rel="stylesheet"/>
 </head>
 <body class="right-body">
 <div class="row " style="margin:0; padding:5px 0; background: #f0f0f0;">
@@ -42,15 +42,21 @@
 <div class="section" style="width:90%">
     <form action="save.html" class="form-horizontal" id="sform">
         <input name="order[goodid]" type="hidden" value="5"/>
-        <input name="order[goodtype]" type="hidden" value="6"/>
+        <input id="goodtype" name="order[goodtype]" type="hidden" value="6"/>
         <input name="order[pricetype]" type="hidden" value="5"/>
+        <input type="hidden" id="0_day" value="300">
+        <input type="hidden" id="0_week" value="2100">
+        <input type="hidden" id="0_month" value="6000">
+        <input type="hidden" id="1_day" value="800">
+        <input type="hidden" id="1_week" value="4100">
+        <input type="hidden" id="1_month" value="12000">
         <div class="row">
             <div class="form-group col-md-6">
                 <label class="control-label col-md-3" for="type_label">
                     用户名
                 </label>
                 <div class="col-md-9">
-                    <input class="form-control" id="order_account" maxlength="64" name="order[username]" placeholder="请输入用户名" type="text" value="">
+                    <input class="form-control" id="order_account" maxlength="64" name="order[account]" placeholder="请输入用户名" type="text" value="">
                     <small>
                         字母,数字组合
                     </small>
@@ -64,7 +70,7 @@
                     </small>
                 </label>
                 <div class="col-md-9">
-                    <input class="form-control" id="order_passwd" maxlength="64" name="order[userpass]" placeholder="请输入密码" type="text" value="">
+                    <input class="form-control" id="order_passwd" maxlength="64" name="order[password]" placeholder="请输入密码" type="text" value="">
                     </input>
                 </div>
             </div>
@@ -106,7 +112,7 @@
                     开卡数量
                 </label>
                 <div class="col-md-9">
-                    <input class="form-control" id="order_amount" max="999" maxlength="3" min="1" name="order[num]" placeholder="请输入开卡数量" step="1" type="number" value="1"/>
+                    <input class="form-control" id="order_machines" max="999" maxlength="3" min="1" name="order[num]" placeholder="请输入开卡数量" step="1" type="number" value="1"/>
                     <small>
                         当前账户余额 :
                         <span class="text-danger">
@@ -169,7 +175,7 @@
                         <option  value="6">
                             关
                         </option>
-                        <option value="5">
+                        <option value="7">
                             开
                         </option>
                     </select>
@@ -203,6 +209,14 @@
                     </select>
                     <small>
                     </small>
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="control-label col-md-3" for="type_label" style="width: 12.5%">
+                    价格
+                </label>
+                <div class="col-md-9" style="width: 87.5%;padding-top: 5px;">
+                    <span style="" id="price_content">价格计算中...</span>
                 </div>
             </div>
             <div class="form-group col-md-12">
@@ -243,7 +257,7 @@
                         <p>
                             确定购买？<br/>
                             <!-- 应付 1000=1张 x (1张天卡 x 5机器 x 200) -->
-                            应付 <span id="cardmsg"></span>
+                             <span id="cardmsg"></span>
                         </p>
                         <div class="points_recharge" style="margin-top:15px;">
                             <button class="btn btn-primary" href="javascript:;" id="kaika_yes" role="button" type="button">
@@ -262,23 +276,46 @@
     </div>
     <!--end确认购买提示框-->
 </div>
-<script src="http://www.58wuji.com/application/home/view/public/js/jquery.min.js">
+<script src="__WUJI__/js/jquery.min.js">
 </script>
-<script src="http://www.58wuji.com/application/home/view/public/js/bootstrap.min.js">
+<script src="__WUJI__/js/bootstrap.min.js">
 </script>
-<script src="http://www.58wuji.com/application/home/view/public/js/lhgdialog.min.js">
+<script src="__WUJI__/js/lhgdialog.min.js">
 </script>
-<script src="http://www.58wuji.com/application/home/view/public/js/RGX.lib.min.js">
+<script src="__WUJI__/js/RGX.lib.min.js">
 </script>
-<script src="http://www.58wuji.com/application/home/view/public/js/rgx.js">
+<script src="__WUJI__/js/rgx.js">
 </script>
-<script src="http://www.58wuji.com/application/home/view/public/js/laydate.js">
+<script src="__WUJI__/js/laydate.js">
 </script>
 <script>
     $(function() {
+        function update_price(){
+            $ip = $('#extra_v_ip').val();
+            if( $('#order_day').val() == '30'){
+                $good_price = $('#'+ $ip + '_month').val();
+            }else if($('#order_day').val() == '7'){
+                $good_price = $('#'+ $ip + '_week').val();
+            }else{
+                $good_price = $('#'+ $ip + '_day').val();
+            }
+            $price_content = "一张" + $('#order_day').val() + "天卡x" + $('#order_machines').val() + "台机器x" + $good_price + "点=";
+            $price = $('#order_machines').val() * $good_price;
+            $("#price_content").html($price_content + '<code class="C2">' + $price + '点</code>');
+        }
+        $("#order_day").on('change',function(){
+            update_price();
+        });
+        $("#extra_v_ip").on('change',function(){
+            $("#goodtype").val($("#extra_v_ip").val());
+            update_price();
+        });
+        $("#order_machines").on('change',function(){
+            update_price();
+        });
         $('#btn-submit').on('click', function () {
             var account     =$('#order_account').val();
-            amount      = parseInt($('#order_amount').val()),
+            amount      = parseInt($('#order_machines').val()),
                 qq=$('#order_qq').val();
             days        = parseInt($('#order_day').val());
             //用户名，开卡数量，开卡时长
@@ -299,7 +336,7 @@
             }
             else if (isNaN(amount)) {
                 RGX.msg('至少购买一个');
-                $('#order_amount').focus();
+                $('#order_machines').focus();
             }
             else if(qq= ''||!retqq.test(qq)){
                 RGX.msg('请正确填写qq号码');
@@ -317,7 +354,7 @@
                 //提交数据的类型 POST GET
                 type:"POST",
                 //提交的网址
-                url:"/home/good/ifcard",
+                url:"{:U('check_order')}",
                 async:false,//同步：意思是当有返回值以后才会进行后面的js程序。
                 //提交的数据
                 data:$("form").serialize(),
@@ -328,12 +365,11 @@
                 //成功返回之后调用的函数
                 success:function(data){
                     console.log(data);
-                    var dataObj=eval("("+data+")");//转换为json对象
-                    if(dataObj.ret==1){
-                        $("#cardmsg").text(dataObj.cardmsg);
+                    if(data.status==1){
+                        $("#cardmsg").text("您当前积分:"+data.before+",应付:"+data.need+",支付后剩余:"+data.after);
                         $("#kaika_modal").modal();
                     }else{
-                        RGX.msg(dataObj.msg);
+                        RGX.msg(data.msg);
                         $('#order_account').focus();
                         $('#order_account').select();
                     }
@@ -356,7 +392,7 @@
                 //提交数据的类型 POST GET
                 type:"POST",
                 //提交的网址
-                url:"/home/good/createbjb",
+                url:"{:U('create_order')}",
                 async:false,//同步：意思是当有返回值以后才会进行后面的js程序。
                 //提交的数据
                 data:$("form").serialize(),
@@ -367,12 +403,11 @@
                 //成功返回之后调用的函数
                 success:function(data){
                     console.log(data);
-                    var dataObj=eval("("+data+")");//转换为json对象
-                    RGX.msg(dataObj.msg);
-                    if(dataObj.ret==0){
+                    RGX.msg(data.msg);
+                    if(data.status==1){
                         window.location.href = '/home/good/cardlist6';
                     }else{
-                        RGX.msg(dataObj.msg);
+                        RGX.msg(data.msg);
                         $('#order_account').focus();
                         $('#order_account').select();
                     }

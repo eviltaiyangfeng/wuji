@@ -65,12 +65,17 @@ class GjbController extends Controller {
 
     }
 
-    public function check_user(){
-        $username = I('username');
-        $post['username'] = $username;
-        $post['access_token'] = $this->TEST_TOKEN;
-        $return = curl_request($this->CHECK_USER,$post);
-        var_dump($return);
+    public function check_user($username = null){
+        if(!empty($username)){
+            $post['username'] = $username;
+            $post['access_token'] = $this->TEST_TOKEN;
+            $data = curl_request($this->CHECK_USER,$post);
+            $return['data'] = curl_request($this->CHECK_USER,$post);
+        }else{
+            $return['status'] = 0;
+            $return['msg'] = '必须传递username';
+        }
+        return $return;
 //        {
 //                    "ret": 10005,
 //            "msg": "access_token不正确",

@@ -72,15 +72,15 @@ class PayNotifyCallBack extends WxPayNotify
             $checkResult = $objData->CheckSign($config);
             if($checkResult == false){
                 //签名错误
-                Log::ERROR("签名错误...");
+                Log::write("签名错误...",'', C('LOG_PATH').'PayInfo_'.date('y_m_d').'.log');
                 return false;
             }
         } catch(Exception $e) {
-            Log::ERROR(json_encode($e));
+            Log::write(json_encode($e),'', C('LOG_PATH').'PayInfo_'.date('y_m_d').'.log');
         }
 
         //TODO 3、处理业务逻辑
-        Log::write("call back:" . json_encode($data));
+        Log::write("call back:" . json_encode($data),'', C('LOG_PATH').'PayInfo_'.date('y_m_d').'.log');
         $notfiyOutput = array();
 
 
@@ -90,14 +90,32 @@ class PayNotifyCallBack extends WxPayNotify
             return false;
         }else{
             //TODO 4、处理业务逻辑
+            M()->startTrans();
+            $userordermodel = D('WujiUserOrder');
+            $wxpayordermodel = D('wxpayOrder') ;
+            $usermodel = D('SysUser');
             $where['order_id'] = $data['out_trade_no'];
-            $save['openid'] = $data['openid'];
-            $save['total_fee'] = $data['total_fee'];
-            $save['result_code'] = $data['result_code'];
-            $save['transaction_id'] = $data['transaction_id'];
-            $save['status'] = 1;
-            $save['notify_data'] = json_encode($data);
-            D('WujiUserOrder')->where($where)->save($save);
+            $userorder = $userordermodel->where($where)->find();
+            $wxpay_order = $wxpayordermodel->where($where)->find();
+            if ($wxpay_order && $userorder){
+                $userorder['openid'] = $data['openid'];
+                $userorder['total_fee'] = $data['total_fee'];
+                $userorder['result_code'] = $data['result_code'];
+                $userorder['transaction_id'] = $data['transaction_id'];
+                $userorder['status'] = 1;
+                $userorder['notify_data'] = json_encode($data);
+                $wxpay_order['status'] = 1;
+                $userordermodel->save($userorder);
+                $wxpayordermodel->save($wxpay_order);
+                $ret = $usermodel->where(array('id'=>$userorder['fk_user']))->setInc('point',$userorder['amount']);
+                if($ret){
+                    Log::write("pay result=commit:" . M()->_sql(),'', C('LOG_PATH').'PayInfo_'.date('y_m_d').'.log');
+                    M()->commit();
+                }else{
+                    Log::write("pay result=rollback:" . M()->_sql().":ERR:".M()->getError(),'', C('LOG_PATH').'PayInfo_'.date('y_m_d').'.log');
+                    M()->rollback();
+                }
+            }
         }
         return true;
     }

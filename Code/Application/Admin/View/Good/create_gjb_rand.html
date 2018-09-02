@@ -203,7 +203,7 @@
                             <p>
                                 确定购买？<br/>
                                 <!-- 应付 1000=1张 x (1张天卡 x 5机器 x 200) -->
-                                应付 <span id="cardmsg"></span>
+                                <span id="cardmsg"></span>
                             </p>
                             <div class="points_recharge" style="margin-top:15px;">
                                 <button class="btn btn-primary" href="javascript:;" id="kaika_yes" role="button" type="button">
@@ -299,7 +299,7 @@
                 //提交数据的类型 POST GET
                 type:"POST",
                 //提交的网址
-                url:"{:U('Good/create_order')}",
+                url:"{:U('Good/check_order')}",
                 async:false,//同步：意思是当有返回值以后才会进行后面的js程序。
                 //提交的数据
                 data:$("form").serialize(),
@@ -311,7 +311,7 @@
                 success:function(data){
                     console.log(data);
                     if(data.status==1){
-                        $("#cardmsg").text(data.price);
+                        $("#cardmsg").text("您当前积分:"+data.before+",应付:"+data.need+",支付后剩余:"+data.after);
                         $("#kaika_modal").modal();
                     }else{
                         RGX.msg(data.msg);
@@ -337,7 +337,7 @@
                 //提交数据的类型 POST GET
                 type:"POST",
                 //提交的网址
-                url:"{:U('pay')}",
+                url:"{:U('Good/create_order')}",
                 async:false,//同步：意思是当有返回值以后才会进行后面的js程序。
                 //提交的数据
                 data:$("form").serialize(),

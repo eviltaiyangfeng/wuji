@@ -98,6 +98,8 @@ class PayController extends Controller
                 $jsApiParameters = $tools->GetJsApiParameters($order);
                 $this->assign('jsApiParameters', $jsApiParameters);
                 if ($order) {
+                    $data['openid'] = $param['openId'];
+                    $data['order_id'] = $param['order_id'];
                     $data['appid'] = $input->GetAppid();
                     $data['mch_id'] = $input->GetMch_id();
                     $data['nonce_str'] = $input->GetNonce_str();
@@ -125,6 +127,7 @@ class PayController extends Controller
 
             $order = $notify->GetPayUrl($input);
             if ($order) {
+                $data['order_id'] = $param['order_id'];
                 $data['appid'] = $input->GetAppid();
                 $data['mch_id'] = $input->GetMch_id();
                 $data['nonce_str'] = $input->GetNonce_str();

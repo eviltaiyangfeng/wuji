@@ -70,11 +70,33 @@ class BjbController extends Controller {
 
     }
 
-    public function check_user(){
-        $username = I('username');
-        $post['username'] = $username;
-        $post['access_token'] = $this->TEST_TOKEN;
-        $return = curl_request($this->CHECK_USER,$post);
-        var_dump($return);
+    public function check_user($username = null){
+        if(!empty($username)){
+            $post['username'] = $username;
+            $post['access_token'] = $this->TEST_TOKEN;
+            $data = curl_request($this->CHECK_USER,$post);
+            $data = json_decode($data,true);
+            if ($data['ret'] == 0){
+                $return['status'] = 1;
+                $return['msg'] = $data['msg'];
+                $return['data'] = $data['data'];
+            }else{
+                $return['status'] = 0;
+                $return['msg'] = $data['msg'];
+                $return['data'] = $data['data'];
+                $return['codemsg'] = $this->ERROR_CODE[$data['ret']];
+            }
+        }else{
+            $return['status'] = 0;
+            $return['msg'] = '必须传递username';
+        }
+//        {
+//            "ret": 0,
+//            "msg": "",
+//            "data": {
+//                    "check": 1
+//            }
+//        }
+        return $return;
     }
 }
